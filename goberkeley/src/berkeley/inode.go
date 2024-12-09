@@ -1,7 +1,6 @@
 package berkeley
 
 import (
-	"errors"
 	"time"
 )
 

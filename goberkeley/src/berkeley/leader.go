@@ -8,7 +8,7 @@ import (
 
 // Leader representa el nodo líder en el sistema Berkeley.
 type Leader struct {
-	AbstractNode
+	aAbstractNode          *AbstractNode
 	UnreachableFollowers   sync.Map // Seguidores inalcanzables
 	SuccessfulFollowers    sync.Map // Seguidores que respondieron con éxito
 	NonRespondingFollowers sync.Map // Seguidores que no respondieron a tiempo
@@ -17,27 +17,40 @@ type Leader struct {
 	Logger                 *log.Logger
 }
 
-// NewLeader crea e inicializa un nuevo nodo líder.
-func NewLeader(name, address string, timeout time.Duration, nodeAddresses map[string]string) (*Leader, error) {
-	baseNode, err := NewAbstractNode(name, address, timeout)
+// InitializeLeaderNode crea e inicializa un nuevo nodo líder.
+func InitializeLeaderNode(name, address string, timeout time.Duration, nodeAddresses map[string]string) (*Leader, error) {
+	// Suponiendo que InitializeNodeWithAddresses crea un nodo base y devuelve un puntero a AbstractNode
+	baseNode, err := InitializeNodeWithAddresses(name, address, timeout, nodeAddresses)
 	if err != nil {
 		return nil, err
 	}
 
+	// Inicializamos el líder, asignando el nodo base y un logger
 	leader := &Leader{
-		AbstractNode: *baseNode,
-		Logger:       log.Default(),
+		aAbstractNode: baseNode, // Asignamos el puntero a AbstractNode
+		Logger:        log.Default(),
 	}
 
-	leader.InitializeNodeWithAddresses(nodeAddresses)
 	return leader, nil
+}
+
+// StartAlgorithm implementa el algoritmo de sincronización Berkeley para el líder.
+func (l *Leader) StartAlgorithm() {
+	l.Logger.Println("Iniciando algoritmo de sincronización Berkeley...")
+
+	// Simula el envío de solicitudes de tiempo a los seguidores
+	for followerName, followerAddress := range l.aAbstractNode.NodeAddresses {
+		go l.RequestTimeFromFollower(followerName, followerAddress)
+	}
+
+	// FALTA EL RESTOP--123-- vamos poco a poco
 }
 
 // SendCloseMessage envía un mensaje de cierre a un seguidor.
 func (l *Leader) SendCloseMessage(followerAddress string) {
-	message := `{"operation": "CLOSE", "message": "Cerrar conexión", "leaderName": "` + l.Name + `"}`
+	message := `{"operation": "CLOSE", "message": "Cerrar conexión", "leaderName": "` + l.aAbstractNode.Name + `"}`
 
-	response, err := l.SendMessageSync(followerAddress, message)
+	response, err := l.aAbstractNode.SendMessageSync(followerAddress, message)
 	if err != nil {
 		l.Logger.Printf("Error al enviar mensaje de cierre a %s: %v", followerAddress, err)
 		return
@@ -63,24 +76,11 @@ func (l *Leader) SendCloseMessagesToFollowers() {
 	l.Logger.Println("Todos los mensajes de cierre han sido enviados.")
 }
 
-// StartAlgorithm implementa el algoritmo de sincronización Berkeley para el líder.
-func (l *Leader) StartAlgorithm() {
-	l.Logger.Println("Iniciando algoritmo de sincronización Berkeley...")
-
-	// Simula el envío de solicitudes de tiempo a los seguidores
-	l.NodeAddresses.Range(func(followerName, followerAddress any) bool {
-		go l.RequestTimeFromFollower(followerName.(string), followerAddress.(string))
-		return true
-	})
-
-	// Aquí puedes implementar la lógica de cálculo del delta y la sincronización.
-}
-
 // RequestTimeFromFollower solicita la hora a un seguidor y registra su respuesta.
 func (l *Leader) RequestTimeFromFollower(followerName, followerAddress string) {
-	message := `{"operation": "GET_TIME", "leaderName": "` + l.Name + `"}`
+	message := `{"operation": "GET_TIME", "leaderName": "` + l.aAbstractNode.Name + `"}`
 
-	response, err := l.SendMessageSync(followerAddress, message)
+	response, err := l.aAbstractNode.SendMessageSync(followerAddress, message)
 	if err != nil {
 		l.NonRespondingFollowers.Store(followerName, followerAddress)
 		l.Logger.Printf("Error al solicitar tiempo al seguidor %s: %v", followerName, err)
@@ -125,4 +125,6 @@ func (l *Leader) PrintResults() {
 		return true
 	})
 }
-
+func (l *Leader) Close() {
+	l.aAbstractNode.Close()
+}

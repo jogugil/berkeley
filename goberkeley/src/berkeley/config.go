@@ -4,23 +4,40 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"time"
 )
 
-func Config () {
+type LeaderConfig struct {
+	Name    string `json:"name"`
+	Address string `json:"address"`
+}
+
+type FollowerConfig struct {
+	Name    string `json:"name"`
+	Address string `json:"address"`
+}
+
+type Config struct {
+	Leader    LeaderConfig     `json:"leader"`
+	Followers []FollowerConfig `json:"followers"`
+	Timeout   time.Duration    `json:"timeout"`
+}
+
+func LoadConfig(filepath string) *Config {
 	// Abrir el archivo JSON
-	file, err := os.Open("config.json")
+	file, err := os.Open(filepath)
 	if err != nil {
 		fmt.Println("Error abriendo el archivo:", err)
-		return
+		return nil
 	}
 	defer file.Close()
 
 	// Decodificar el JSON en la estructura Config
-	var config berkeley.Config
+	var config Config
 	decoder := json.NewDecoder(file)
 	if err := decoder.Decode(&config); err != nil {
 		fmt.Println("Error decodificando JSON:", err)
-		return
+		return nil
 	}
 
 	// Imprimir la configuración cargada
@@ -29,5 +46,6 @@ func Config () {
 		fmt.Printf("Seguidor: %s (%s)\n", follower.Name, follower.Address)
 	}
 	fmt.Printf("Timeout: %d ms\n", config.Timeout)
-}
 
+	return &config
+}

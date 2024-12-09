@@ -5,16 +5,6 @@ import (
 	"time"
 )
 
-// FollowerState representa el estado actual de un seguidor.
-type FollowerState string
-
-const (
-	// Estados posibles para el seguidor
-	RequestNotSent FollowerState = "REQUEST_NOT_SENT"
-	Responded      FollowerState = "RESPONDED"
-	Failed         FollowerState = "FAILED"
-)
-
 // FollowerInfo encapsula información sobre un nodo seguidor en el sistema.
 type FollowerInfo struct {
 	Name              string        // Nombre del seguidor

@@ -11,15 +11,37 @@ import (
 
 // Follower representa un nodo seguidor en el sistema distribuido.
 type Follower struct {
-	AbstractNode
+	aAbstractNode *AbstractNode
 	LeaderAddress string
 }
 
 // InitializeNode inicializa el nodo seguidor con su información específica.
-func (f *Follower) InitializeNode(name, address, leaderAddress string, timeout int) error {
-	f.AbstractNode.InitializeNode(name, address, timeout)
-	f.LeaderAddress = leaderAddress
-	return nil
+func InitializeFollowerNode(name, address, leaderAddress string, timeout time.Duration) (*Follower, error) {
+	// Asegúrate de llamar al método correcto de AbstractNode.
+
+	f, err := NewFollower(name, address, leaderAddress, timeout)
+	if err != nil {
+		return nil, err
+	}
+
+	return f, nil
+}
+
+// NewFollower crea e inicializa un nuevo nodo seguidor.
+func NewFollower(name, address, leaderAddress string, timeout time.Duration) (*Follower, error) {
+	// Inicializar el nodo abstracto usando NewAbstractNode
+	abstractNode, err := NewAbstractNode(name, address, timeout)
+	if err != nil {
+		return nil, err
+	}
+
+	// Crear e inicializar la estructura Follower
+	follower := &Follower{
+		aAbstractNode: abstractNode,
+		LeaderAddress: leaderAddress,
+	}
+
+	return follower, nil
 }
 
 // HandleProcess maneja y procesa los mensajes recibidos del líder.
@@ -41,12 +63,12 @@ func (f *Follower) HandleProcess(message string) (string, error) {
 		T0 := int64(data["T0"].(float64))
 		currentTime := f.getCurrentTime()
 		TP := f.displayLeaderMessage(leaderName, leaderMessage, T0, currentTime)
-		return fmt.Sprintf(`{"followerName":"%s", "localTime":"%d", "addressFollower":"%s"}`, f.Name, TP, f.Address), nil
+		return fmt.Sprintf(`{"followerName":"%s", "localTime":"%d", "addressFollower":"%s"}`, f.aAbstractNode.Name, TP, f.aAbstractNode.Address), nil
 	case "MOD_TIME":
 		delta := int64(data["DELTA"].(float64))
 		return f.modSystemTime(delta), nil
 	case "CLOSE":
-		return fmt.Sprintf(`{"followerName":"%s","operation":"CLOSE"}`, f.Name), nil
+		return fmt.Sprintf(`{"followerName":"%s","operation":"CLOSE"}`, f.aAbstractNode.Name), nil
 	default:
 		log.Printf("Operación no reconocida en el mensaje del líder: %s", operation)
 		return `{"error":"Operación no reconocida"}`, nil
@@ -57,7 +79,7 @@ func (f *Follower) HandleProcess(message string) (string, error) {
 func (f *Follower) displayLeaderMessage(leaderName, leaderMessage string, T0, localTime int64) int64 {
 	log.Printf("Mensaje del líder (%s) recibido: %s con T0 %s", leaderName, leaderMessage, time.UnixMilli(T0).String())
 	TP := (T0 + localTime) / 2
-	log.Printf("TP del seguidor %s es %s", f.Name, time.UnixMilli(TP).String())
+	log.Printf("TP del seguidor %s es %s", f.aAbstractNode.Name, time.UnixMilli(TP).String())
 	return TP
 }
 
@@ -65,8 +87,8 @@ func (f *Follower) displayLeaderMessage(leaderName, leaderMessage string, T0, lo
 func (f *Follower) modSystemTime(delta int64) string {
 	currentLocalTime := time.Now().UnixMilli()
 	modSystemTime := currentLocalTime + delta
-	log.Printf("Tiempo del seguidor %s modificado de %s a %s", f.Name, time.UnixMilli(currentLocalTime).String(), time.UnixMilli(modSystemTime).String())
-	return fmt.Sprintf(`{"followerName":"%s", "localTime":"%d","operation":"OK_MOD_TIME"}`, f.Name, modSystemTime)
+	log.Printf("Tiempo del seguidor %s modificado de %s a %s", f.aAbstractNode.Name, time.UnixMilli(currentLocalTime).String(), time.UnixMilli(modSystemTime).String())
+	return fmt.Sprintf(`{"followerName":"%s", "localTime":"%d","operation":"OK_MOD_TIME"}`, f.aAbstractNode.Name, modSystemTime)
 }
 
 // getCurrentTime obtiene la hora actual del sistema en milisegundos desde la época Unix.
@@ -83,15 +105,15 @@ func (f *Follower) StartAlgorithm() error {
 		log.Printf("Error al crear el socket REP: %v", err)
 		return fmt.Errorf("error al inicializar el socket REP: %v", err)
 	}
-	f.Socket = socket
+	f.aAbstractNode.Socket = socket
 
-	err = f.Socket.Bind("tcp://" + f.Address)
+	err = f.aAbstractNode.Socket.Bind("tcp://" + f.aAbstractNode.Address)
 	if err != nil {
-		log.Printf("Error al enlazar el socket REP para el seguidor %s: %v", f.Name, err)
+		log.Printf("Error al enlazar el socket REP para el seguidor %s: %v", f.aAbstractNode.Name, err)
 		return fmt.Errorf("error al enlazar el socket REP: %v", err)
 	}
 
-	log.Printf("Iniciando escucha para el seguidor %s en %s", f.Name, f.Address)
-	f.StartListening()
+	log.Printf("Iniciando escucha para el seguidor %s en %s", f.aAbstractNode.Name, f.aAbstractNode.Address)
+	f.aAbstractNode.StartListening()
 	return nil
 }

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pebbe/zmq4" // Librería para trabajar con ZeroMQ
+	zmq "github.com/pebbe/zmq4" // Librería para trabajar con ZeroMQ
 )
 
 // AbstractNode proporciona la funcionalidad base para nodos en el sistema.
@@ -15,15 +15,15 @@ type AbstractNode struct {
 	Address       string
 	Timeout       time.Duration
 	NodeAddresses map[string]string
-	Context       *zmq4.Context
-	Socket        *zmq4.Socket
+	Context       *zmq.Context
+	Socket        *zmq.Socket
 	Logger        *log.Logger
 	Mutex         sync.Mutex // Para proteger recursos compartidos
 }
 
 // NewAbstractNode crea e inicializa un nuevo nodo base.
 func NewAbstractNode(name, address string, timeout time.Duration) (*AbstractNode, error) {
-	context, err := zmq4.NewContext()
+	context, err := zmq.NewContext()
 	if err != nil {
 		return nil, errors.New("error al crear el contexto ZeroMQ")
 	}
@@ -38,17 +38,23 @@ func NewAbstractNode(name, address string, timeout time.Duration) (*AbstractNode
 }
 
 // InitializeNodeWithAddresses inicializa un nodo con direcciones de otros nodos.
-func (n *AbstractNode) InitializeNodeWithAddresses(addresses map[string]string) {
+func InitializeNodeWithAddresses(name, address string, timeout time.Duration, addresses map[string]string) (*AbstractNode, error) {
+	var n *AbstractNode
+	n, err := NewAbstractNode(name, address, timeout)
+	if err != nil {
+		return nil, err
+	}
 	n.NodeAddresses = addresses
 	n.Logger.Printf("Nodo %s inicializado con direcciones %v", n.Name, addresses)
+	return n, nil
 }
 
 // SendMessageSync envía un mensaje de forma síncrona y espera una respuesta.
 func (n *AbstractNode) SendMessageSync(address, message string) (string, error) {
 	n.Mutex.Lock()
 	defer n.Mutex.Unlock()
-
-	socket, err := n.Context.NewSocket(zmq4.REQ)
+	var socket *zmq.Socket
+	socket, err := n.Context.NewSocket(zmq.REQ)
 	if err != nil {
 		return "", errors.New("error al crear el socket REQ")
 	}
@@ -80,7 +86,7 @@ func (n *AbstractNode) SendMessageAsync(address, message string) error {
 	n.Mutex.Lock()
 	defer n.Mutex.Unlock()
 
-	socket, err := n.Context.NewSocket(zmq4.PUSH)
+	socket, err := n.Context.NewSocket(zmq.PUSH)
 	if err != nil {
 		return errors.New("error al crear el socket PUSH")
 	}
@@ -105,7 +111,7 @@ func (n *AbstractNode) StartListening() error {
 	n.Mutex.Lock()
 	defer n.Mutex.Unlock()
 
-	socket, err := n.Context.NewSocket(zmq4.REP)
+	socket, err := n.Context.NewSocket(zmq.REP)
 	if err != nil {
 		return errors.New("error al crear el socket REP")
 	}
@@ -156,5 +162,3 @@ func (n *AbstractNode) handleProcess(message string) string {
 	n.Logger.Printf("Procesando mensaje: %s", message)
 	return `{"status":"unhandled"}`
 }
-
-
