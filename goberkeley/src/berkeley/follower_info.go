@@ -10,7 +10,6 @@ type FollowerInfo struct {
 	Name              string        // Nombre del seguidor
 	Address           string        // Dirección del seguidor en formato "host:puerto"
 	State             FollowerState // Estado actual del seguidor
-	DateFollower      time.Time     // Fecha y hora local del seguidor
 	CurrentTime       int64         // T0: Hora inicial del líder
 	FollowerTime      int64         // Hora local del seguidor en milisegundos desde la época UNIX
 	CommunicationTime int64         // Tiempo de comunicación entre líder y seguidor en milisegundos
@@ -44,11 +43,6 @@ func (f *FollowerInfo) GetAddress() string {
 // GetName devuelve el nombre del seguidor.
 func (f *FollowerInfo) GetName() string {
 	return f.Name
-}
-
-// GetDateFollower devuelve la fecha y hora local del seguidor.
-func (f *FollowerInfo) GetDateFollower() time.Time {
-	return f.DateFollower
 }
 
 // GetDiffTime devuelve la diferencia de tiempo entre el líder y el seguidor.
@@ -93,10 +87,13 @@ func (f *FollowerInfo) SetState(state FollowerState) {
 
 // String genera una representación en cadena del objeto FollowerInfo.
 func (f *FollowerInfo) String() string {
+	// Convertir DateFollower de int64 (timestamp en milisegundos) a time.Time
+	timestampFollower := time.Unix(0, f.GetFollowerTime()*int64(time.Millisecond))
+	timestampLeader := time.Unix(0, f.GetCurrentTime()*int64(time.Millisecond))
 	// Usar el formato adecuado para la fecha
 	return fmt.Sprintf("Nombre: %s, Estado: %s, Hora local del Seguidor: %d, Fecha: %s, "+
-		"Hora inicial T0 del líder: %d, Tiempo de comunicación: %d ms, TripTime: %d ms, "+
+		"Hora inicial T0 del líder: %d, Fecha: %s,  Tiempo de comunicación: %d ms, TripTime: %d ms, "+
 		"Diferencia de tiempo: %d ms, Diferencia global (delta): %d ms, Dirección: %s",
-		f.Name, f.State, f.FollowerTime, f.DateFollower.Format(time.RFC3339), // Formato RFC3339 para la fecha
-		f.CurrentTime, f.CommunicationTime, f.TripTime, f.DiffTime, f.Delta, f.Address)
+		f.Name, f.State, f.FollowerTime, timestampFollower.Format("2006-01-02 15:04:05"), // Formato para la fecha
+		f.CurrentTime, timestampLeader, f.CommunicationTime, f.TripTime, f.DiffTime, f.Delta, f.Address)
 }
