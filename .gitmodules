@@ -1,0 +1,6 @@
+[submodule "jberkeley"]
+    path = jberkeley
+    url = https://github.com/jogugil/jberkeley.git
+[submodule "goberkeley"]
+    path = goberkeley
+    url = https://github.com/jogugil/goberkeley.git
