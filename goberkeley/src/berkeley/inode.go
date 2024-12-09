@@ -1,10 +1,6 @@
 package berkeley
 
 import (
-<<<<<<< HEAD
-=======
-	"errors"
->>>>>>> 4df5b3de8e63625e208a4e5d62139f2f2b1cb612
 	"time"
 )
 

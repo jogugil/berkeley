@@ -5,19 +5,6 @@ import (
 	"time"
 )
 
-<<<<<<< HEAD
-=======
-// FollowerState representa el estado actual de un seguidor.
-type FollowerState string
-
-const (
-	// Estados posibles para el seguidor
-	RequestNotSent FollowerState = "REQUEST_NOT_SENT"
-	Responded      FollowerState = "RESPONDED"
-	Failed         FollowerState = "FAILED"
-)
-
->>>>>>> 4df5b3de8e63625e208a4e5d62139f2f2b1cb612
 // FollowerInfo encapsula información sobre un nodo seguidor en el sistema.
 type FollowerInfo struct {
 	Name              string        // Nombre del seguidor
@@ -40,10 +27,6 @@ func NewFollowerInfo(address, name string, localTime, communicationTime, nowTime
 		Name:              name,
 		Address:           address,
 		LocalTime:         localTime,
-<<<<<<< HEAD
-=======
-		DateFollower:      time.UnixMilli(localTime),
->>>>>>> 4df5b3de8e63625e208a4e5d62139f2f2b1cb612
 		CommunicationTime: communicationTime,
 		TripTime:          tripTime,
 		DiffTime:          diffTime,
