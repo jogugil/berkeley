@@ -11,7 +11,8 @@ type FollowerInfo struct {
 	Address           string        // Dirección del seguidor en formato "host:puerto"
 	State             FollowerState // Estado actual del seguidor
 	DateFollower      time.Time     // Fecha y hora local del seguidor
-	LocalTime         int64         // Hora local del seguidor en milisegundos desde la época UNIX
+	CurrentTime       int64         // T0: Hora inicial del líder
+	FollowerTime      int64         // Hora local del seguidor en milisegundos desde la época UNIX
 	CommunicationTime int64         // Tiempo de comunicación entre líder y seguidor en milisegundos
 	TripTime          int64         // Tiempo de ida y vuelta (triptime) estimado
 	DiffTime          int64         // Diferencia de tiempo calculada entre líder y seguidor
@@ -19,14 +20,15 @@ type FollowerInfo struct {
 }
 
 // NewFollowerInfo crea un nuevo objeto FollowerInfo con los valores proporcionados.
-func NewFollowerInfo(address, name string, localTime, communicationTime, nowTime int64) *FollowerInfo {
-	tripTime := communicationTime / 2
-	diffTime := (localTime + tripTime) - nowTime
+func NewFollowerInfo(address, name string, followerTime, currentTimer, communicationTime, nowTime int64) *FollowerInfo {
+	tripTime := (nowTime - currentTimer) / 2
+	diffTime := (followerTime + tripTime) - nowTime
 
 	return &FollowerInfo{
 		Name:              name,
 		Address:           address,
-		LocalTime:         localTime,
+		FollowerTime:      followerTime,
+		CurrentTime:       currentTimer,
 		CommunicationTime: communicationTime,
 		TripTime:          tripTime,
 		DiffTime:          diffTime,
@@ -55,8 +57,13 @@ func (f *FollowerInfo) GetDiffTime() int64 {
 }
 
 // GetLocalTime devuelve la hora local del seguidor.
-func (f *FollowerInfo) GetLocalTime() int64 {
-	return f.LocalTime
+func (f *FollowerInfo) GetFollowerTime() int64 {
+	return f.FollowerTime
+}
+
+// CurrentTime devuelve la hora T0 del líder.
+func (f *FollowerInfo) GetCurrentTime() int64 {
+	return f.CurrentTime
 }
 
 // GetCommunicationTime devuelve el tiempo de comunicación entre líder y seguidor.
@@ -86,9 +93,10 @@ func (f *FollowerInfo) SetState(state FollowerState) {
 
 // String genera una representación en cadena del objeto FollowerInfo.
 func (f *FollowerInfo) String() string {
-	return fmt.Sprintf("Nombre: %s, Estado: %s, Hora local: %d, Fecha: %s, "+
-		"Tiempo de comunicación: %d ms, TripTime: %d ms, Diferencia de tiempo: %d ms, "+
-		"Diferencia global (delta): %d ms, Dirección: %s",
-		f.Name, f.State, f.LocalTime, f.DateFollower, f.CommunicationTime,
-		f.TripTime, f.DiffTime, f.Delta, f.Address)
+	// Usar el formato adecuado para la fecha
+	return fmt.Sprintf("Nombre: %s, Estado: %s, Hora local del Seguidor: %d, Fecha: %s, "+
+		"Hora inicial T0 del líder: %d, Tiempo de comunicación: %d ms, TripTime: %d ms, "+
+		"Diferencia de tiempo: %d ms, Diferencia global (delta): %d ms, Dirección: %s",
+		f.Name, f.State, f.FollowerTime, f.DateFollower.Format(time.RFC3339), // Formato RFC3339 para la fecha
+		f.CurrentTime, f.CommunicationTime, f.TripTime, f.DiffTime, f.Delta, f.Address)
 }

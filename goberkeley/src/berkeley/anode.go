@@ -165,7 +165,7 @@ func (n *AbstractNode) StartListening() error {
 
 			// Llama al método HandleProcess, que es implementado por el tipo real de nodo (Follower, Leader, etc.).
 			// Este método procesará el mensaje recibido y generará una respuesta.
-			n.Logger.Printf("Procesando mensaje en %s...", n.Name)
+			//n.Logger.Printf("Procesando mensaje en %s...", n.Name)
 			response, err := n.Handler.HandleProcess(message)
 			if err != nil {
 				// Si hay un error al procesar el mensaje, loguea el error y termina el bucle.

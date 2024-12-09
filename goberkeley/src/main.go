@@ -11,7 +11,7 @@ func main() {
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 
 	// Cargar la configuración desde el archivo JSON
-	configFile := "../config.json"
+	configFile := "config.json"
 	config, err := loadConfig(configFile)
 	if err != nil {
 		log.Fatalf("Error al cargar la configuración: %v", err)

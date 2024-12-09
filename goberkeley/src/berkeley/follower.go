@@ -46,7 +46,7 @@ func NewFollower(name, address, leaderAddress string, timeout time.Duration) (*F
 // HandleProcess maneja y procesa los mensajes recibidos del líder.
 // Implementación de HandleProcess para Follower
 func (f *Follower) HandleProcess(message string) (string, error) {
-	log.Printf("Recibiendo mensaje del líder: %s", message) // Traza para ver el mensaje recibido
+	// log.Printf("Recibiendo mensaje del líder: %s", message) // Traza para ver el mensaje recibido
 
 	// Deserialización del mensaje JSON
 	var data map[string]interface{}
@@ -54,14 +54,14 @@ func (f *Follower) HandleProcess(message string) (string, error) {
 		log.Printf("Error al deserializar el mensaje JSON: %v", err)
 		return `{"error":"Error al procesar el mensaje JSON"}`, nil
 	}
-	log.Printf("Mensaje deserializado correctamente: %+v", data) // Traza para mostrar el mensaje deserializado
+	// log.Printf("Mensaje deserializado correctamente: %+v", data) // Traza para mostrar el mensaje deserializado
 
 	// Extraer los campos del mensaje deserializado
-	leaderAddr := data["leader_address"].(string)
+	//leaderAddr := data["leader_address"].(string)
+	//leaderMessage := data["message"].(string)
 	operation := data["operation"].(string)
-	leaderMessage := data["message"].(string)
 
-	log.Printf("Procesando mensaje del líder: %s desde %s con operación: %s", leaderAddr, f.LeaderAddress, operation)
+	// log.Printf("Procesando mensaje del líder: %s desde %s con operación: %s", leaderAddr, f.LeaderAddress, operation)
 
 	// Procesar según la operación especificada
 	switch operation {
@@ -76,25 +76,24 @@ func (f *Follower) HandleProcess(message string) (string, error) {
 		// Convertir de float64 a int64
 		T0 := int64(T0Float)
 
-		log.Printf("T0 recibido: %d", T0)
+		//log.Printf("T0 recibido: %d", T0)
 		currentTime := f.getCurrentTime()
 
-		log.Printf("Operación GET_TIME: T0 recibido %d, Hora local calculada: %d", T0, currentTime) // Traza para tiempo
+		log.Printf("⏰ Operación GET_TIME: T0 recibido %d, Hora local calculada: %d en el seguidor: %s ", T0, currentTime, f.aAbstractNode.Name) // Traza para tiempo
 
 		// Llamada a la función que maneja el mensaje del líder y muestra su mensaje
-		TP := f.displayLeaderMessage(leaderAddr, leaderMessage, T0, currentTime)
-		log.Printf("Hora procesada TP: %d", TP) // Traza para TP
+		TP := f.displayLeaderMessage(T0, currentTime)
 
 		// Responder con el formato esperado
 		return fmt.Sprintf(`{"followerName":"%s", "localTime":"%d", "addressFollower":"%s"}`, f.aAbstractNode.Name, TP, f.aAbstractNode.Address), nil
 	case "UPDATE_TIME":
 		delta := int64(data["delta"].(float64))
-		log.Printf("Operación UPDATE_TIME: Delta recibido: %d", delta) // Traza para delta
+		log.Printf("🔄 Operación UPDATE_TIME: Delta recibido: %d en el seguidor: %s", delta, f.aAbstractNode.Name) // Traza para delta
 
 		// Modificar el sistema según el delta
 		return f.modSystemTime(delta), nil
 	case "CLOSE":
-		log.Printf("Operación CLOSE: Cerrando seguidor %s", f.aAbstractNode.Name) // Traza para CLOSE
+		log.Printf("🔌 Operación CLOSE: Cerrando seguidor %s", f.aAbstractNode.Name) // Traza para CLOSE
 		return fmt.Sprintf(`{"followerName":"%s","operation":"CLOSE"}`, f.aAbstractNode.Name), nil
 	default:
 		log.Printf("Operación no reconocida en el mensaje del líder: %s", operation) // Traza para operación no reconocida
@@ -103,10 +102,10 @@ func (f *Follower) HandleProcess(message string) (string, error) {
 }
 
 // displayLeaderMessage muestra el mensaje del líder y calcula un tiempo promedio (TP).
-func (f *Follower) displayLeaderMessage(leaderAddr, leaderMessage string, T0, localTime int64) int64 {
-	log.Printf("Mensaje del líder con dirección (%s) recibido: %s con T0 %s", leaderAddr, leaderMessage, time.UnixMilli(T0).String())
+func (f *Follower) displayLeaderMessage(T0, localTime int64) int64 {
+	// log.Printf("Mensaje del líder con dirección (%s) recibido: %s con T0 %s", leaderAddr, leaderMessage, time.UnixMilli(T0).String())
 	TP := (T0 + localTime) / 2
-	log.Printf("TP del seguidor %s es %s", f.aAbstractNode.Name, time.UnixMilli(TP).String())
+	log.Printf("TP (TP := (T0 + localTime) / 2) del seguidor: (%s, %s) es %s", f.aAbstractNode.Name, f.aAbstractNode.Address, time.UnixMilli(TP).String())
 	return TP
 }
 
@@ -120,9 +119,9 @@ func (f *Follower) modSystemTime(delta int64) string {
 
 // getCurrentTime obtiene la hora actual del sistema en milisegundos desde la época Unix.
 func (f *Follower) getCurrentTime() int64 {
-	TP := time.Now().UnixMilli()
-	log.Printf("Fecha y hora local del seguidor: TP: %s", time.UnixMilli(TP).String())
-	return TP
+	currentTime := time.Now().UnixMilli()
+	log.Printf("Fecha y hora local del seguidor: TP: %s", time.UnixMilli(currentTime).String())
+	return currentTime
 }
 
 // StartAlgorithm configura e inicia el socket REP para escuchar mensajes entrantes
