@@ -1,15 +1,20 @@
 package berkeley
 
 import (
+<<<<<<< HEAD
 	"encoding/json"
 	"fmt"
 
 	"log"
 	"strconv"
+=======
+	"log"
+>>>>>>> 4df5b3de8e63625e208a4e5d62139f2f2b1cb612
 	"sync"
 	"time"
 )
 
+<<<<<<< HEAD
 // Mensaje JSON que se envía al seguidor.
 type TimeRequest struct {
 	Message    string `json:"message"`
@@ -50,10 +55,27 @@ func (l *Leader) HandleProcess(message string) (string, error) {
 func InitializeLeaderNode(name, address string, timeout time.Duration, nodeAddresses map[string]string) (*Leader, error) {
 	// Suponiendo que InitializeNodeWithAddresses crea un nodo base y devuelve un puntero a AbstractNode
 	baseNode, err := InitializeNodeWithAddresses(name, address, timeout, nodeAddresses)
+=======
+// Leader representa el nodo líder en el sistema Berkeley.
+type Leader struct {
+	AbstractNode
+	UnreachableFollowers   sync.Map // Seguidores inalcanzables
+	SuccessfulFollowers    sync.Map // Seguidores que respondieron con éxito
+	NonRespondingFollowers sync.Map // Seguidores que no respondieron a tiempo
+	TimeUpdatedFollowers   sync.Map // Seguidores que actualizaron su tiempo correctamente
+	FailedFollowers        sync.Map // Seguidores que no pudieron actualizar su tiempo
+	Logger                 *log.Logger
+}
+
+// NewLeader crea e inicializa un nuevo nodo líder.
+func NewLeader(name, address string, timeout time.Duration, nodeAddresses map[string]string) (*Leader, error) {
+	baseNode, err := NewAbstractNode(name, address, timeout)
+>>>>>>> 4df5b3de8e63625e208a4e5d62139f2f2b1cb612
 	if err != nil {
 		return nil, err
 	}
 
+<<<<<<< HEAD
 	// Inicializamos el líder, asignando el nodo base y un logger
 	leader := &Leader{
 		aAbstractNode: baseNode, // Asignamos el puntero a AbstractNode
@@ -79,11 +101,51 @@ func (l *Leader) initStructs() {
 	if l.FailedFollowers == nil {
 		l.FailedFollowers = make(map[string]*FollowerInfo)
 	}
+=======
+	leader := &Leader{
+		AbstractNode: *baseNode,
+		Logger:       log.Default(),
+	}
+
+	leader.InitializeNodeWithAddresses(nodeAddresses)
+	return leader, nil
+}
+
+// SendCloseMessage envía un mensaje de cierre a un seguidor.
+func (l *Leader) SendCloseMessage(followerAddress string) {
+	message := `{"operation": "CLOSE", "message": "Cerrar conexión", "leaderName": "` + l.Name + `"}`
+
+	response, err := l.SendMessageSync(followerAddress, message)
+	if err != nil {
+		l.Logger.Printf("Error al enviar mensaje de cierre a %s: %v", followerAddress, err)
+		return
+	}
+
+	l.Logger.Printf("Respuesta de cierre del seguidor %s: %s", followerAddress, response)
+}
+
+// SendCloseMessagesToFollowers envía mensajes de cierre a todos los seguidores que respondieron con éxito.
+func (l *Leader) SendCloseMessagesToFollowers() {
+	var wg sync.WaitGroup
+
+	l.SuccessfulFollowers.Range(func(key, value any) bool {
+		wg.Add(1)
+		go func(address string) {
+			defer wg.Done()
+			l.SendCloseMessage(address)
+		}(key.(string))
+		return true
+	})
+
+	wg.Wait()
+	l.Logger.Println("Todos los mensajes de cierre han sido enviados.")
+>>>>>>> 4df5b3de8e63625e208a4e5d62139f2f2b1cb612
 }
 
 // StartAlgorithm implementa el algoritmo de sincronización Berkeley para el líder.
 func (l *Leader) StartAlgorithm() {
 	l.Logger.Println("Iniciando algoritmo de sincronización Berkeley...")
+<<<<<<< HEAD
 	l.initStructs()
 	// Simula el envío de solicitudes de tiempo a los seguidores
 	l.processFollowers()
@@ -487,3 +549,65 @@ func (l *Leader) printResults() {
 func (l *Leader) Close() {
 	l.aAbstractNode.Close()
 }
+=======
+
+	// Simula el envío de solicitudes de tiempo a los seguidores
+	l.NodeAddresses.Range(func(followerName, followerAddress any) bool {
+		go l.RequestTimeFromFollower(followerName.(string), followerAddress.(string))
+		return true
+	})
+
+	// Aquí puedes implementar la lógica de cálculo del delta y la sincronización.
+}
+
+// RequestTimeFromFollower solicita la hora a un seguidor y registra su respuesta.
+func (l *Leader) RequestTimeFromFollower(followerName, followerAddress string) {
+	message := `{"operation": "GET_TIME", "leaderName": "` + l.Name + `"}`
+
+	response, err := l.SendMessageSync(followerAddress, message)
+	if err != nil {
+		l.NonRespondingFollowers.Store(followerName, followerAddress)
+		l.Logger.Printf("Error al solicitar tiempo al seguidor %s: %v", followerName, err)
+		return
+	}
+
+	l.SuccessfulFollowers.Store(followerName, response)
+	l.Logger.Printf("Hora recibida del seguidor %s: %s", followerName, response)
+}
+
+// PrintResults muestra los resultados del algoritmo.
+func (l *Leader) PrintResults() {
+	l.Logger.Println("Resultados del algoritmo Berkeley:")
+
+	l.Logger.Println("Seguidores inalcanzables:")
+	l.UnreachableFollowers.Range(func(key, value any) bool {
+		l.Logger.Printf("- %s: %v", key, value)
+		return true
+	})
+
+	l.Logger.Println("Seguidores que no respondieron a tiempo:")
+	l.NonRespondingFollowers.Range(func(key, value any) bool {
+		l.Logger.Printf("- %s: %v", key, value)
+		return true
+	})
+
+	l.Logger.Println("Seguidores que respondieron correctamente:")
+	l.SuccessfulFollowers.Range(func(key, value any) bool {
+		l.Logger.Printf("- %s: %v", key, value)
+		return true
+	})
+
+	l.Logger.Println("Seguidores que actualizaron su tiempo correctamente:")
+	l.TimeUpdatedFollowers.Range(func(key, value any) bool {
+		l.Logger.Printf("- %s: %v", key, value)
+		return true
+	})
+
+	l.Logger.Println("Seguidores que no pudieron actualizar su tiempo:")
+	l.FailedFollowers.Range(func(key, value any) bool {
+		l.Logger.Printf("- %s: %v", key, value)
+		return true
+	})
+}
+
+>>>>>>> 4df5b3de8e63625e208a4e5d62139f2f2b1cb612
