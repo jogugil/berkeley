@@ -27,7 +27,6 @@ func NewFollowerInfo(address, name string, localTime, communicationTime, nowTime
 		Name:              name,
 		Address:           address,
 		LocalTime:         localTime,
-		DateFollower:      time.UnixMilli(localTime),
 		CommunicationTime: communicationTime,
 		TripTime:          tripTime,
 		DiffTime:          diffTime,

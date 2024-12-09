@@ -5,47 +5,13 @@ import (
 	"goberkeley/berkeley"
 	"log"
 	"time"
-
-	zmq "github.com/pebbe/zmq4"
 )
 
-func ejemploREQ() {
-	// Crear un nuevo contexto de ZeroMQ
-	context, err := zmq.NewContext()
-	if err != nil {
-		log.Fatal("Error al crear el contexto ZeroMQ:", err)
-	}
-
-	// Crear un socket de tipo REQ
-	socket, err := context.NewSocket(zmq.REQ)
-	if err != nil {
-		log.Fatal("Error al crear el socket REQ:", err)
-	}
-	defer socket.Close()
-
-	// Conectar al servidor
-	err = socket.Connect("tcp://localhost:5555")
-	if err != nil {
-		log.Fatal("Error al conectar al servidor:", err)
-	}
-
-	// Enviar un mensaje al servidor
-	_, err = socket.Send("Hola servidor", 0)
-	if err != nil {
-		log.Fatal("Error al enviar el mensaje:", err)
-	}
-
-	// Recibir respuesta del servidor
-	reply, err := socket.Recv(0)
-	if err != nil {
-		log.Fatal("Error al recibir la respuesta:", err)
-	}
-
-	log.Printf("Respuesta recibida: %s", reply)
-}
 func main() {
+	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+
 	// Cargar la configuración desde el archivo JSON
-	configFile := "/path/to/config.json"
+	configFile := "../config.json"
 	config, err := loadConfig(configFile)
 	if err != nil {
 		log.Fatalf("Error al cargar la configuración: %v", err)
@@ -72,6 +38,7 @@ func main() {
 	for _, followerConfig := range config.Followers {
 		var follower *berkeley.Follower
 		follower, err := berkeley.InitializeFollowerNode(followerConfig.Name, followerConfig.Address, config.Leader.Address, config.Timeout)
+
 		if err != nil {
 			log.Fatalf("Error al inicializar el seguidor %s: %v", followerConfig.Name, err)
 		}

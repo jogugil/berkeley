@@ -24,4 +24,10 @@ const (
 
 	// TIME_UPDATED indica que la hora del sistema del seguidor se actualizó correctamente.
 	TimeUpdated FollowerState = "TIME_UPDATED"
+
+	// ERROR_CLOSE indica que  no pude enviar el cierre del socket en el seguidor.
+	ErrorClose FollowerState = "ERROR_CLOSE"
+
+	// Ok_CLOSE indica que   pude  cerrar el socket en el seguidor.
+	OkClose FollowerState = "Ok_CLOSE"
 )
