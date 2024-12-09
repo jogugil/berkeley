@@ -1,0 +1,94 @@
+\doxysection{Referencia de la Clase org.\+jogugi.\+berkeley.\+Config}
+\label{classorg_1_1jogugi_1_1berkeley_1_1_config}\index{org.jogugi.berkeley.Config@{org.jogugi.berkeley.Config}}
+
+
+Clase de configuración para los nodos en el sistema.  
+
+
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Follower\+Config}
+\begin{DoxyCompactList}\small\item\em Configuración del nodo seguidor. \end{DoxyCompactList}\item 
+class \textbf{ Leader\+Config}
+\begin{DoxyCompactList}\small\item\em Configuración del nodo líder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Leader\+Config} \textbf{ leader}
+\begin{DoxyCompactList}\small\item\em Nodo líder del sistema. \end{DoxyCompactList}\item 
+List$<$ \textbf{ Follower\+Config} $>$ \textbf{ followers}
+\begin{DoxyCompactList}\small\item\em Lista de nodos seguidores. \end{DoxyCompactList}\item 
+int \textbf{ timeout}
+\begin{DoxyCompactList}\small\item\em Tiempo de espera global para todos los nodos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase de configuración para los nodos en el sistema. 
+
+Esta clase proporciona la configuración necesaria para inicializar los nodos en el sistema, incluyendo la configuración del líder y los seguidores, así como el tiempo de espera global. 
+
+Definición en la línea 12 del archivo Config.\+java.
+
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_config_a512495322c37a38c3390877832c49f99}} 
+\index{org.jogugi.berkeley.Config@{org.jogugi.berkeley.Config}!followers@{followers}}
+\index{followers@{followers}!org.jogugi.berkeley.Config@{org.jogugi.berkeley.Config}}
+\doxysubsubsection{followers}
+{\footnotesize\ttfamily List$<$\textbf{ Follower\+Config}$>$ org.\+jogugi.\+berkeley.\+Config.\+followers}
+
+
+
+Lista de nodos seguidores. 
+
+Esta propiedad contiene una lista de configuraciones de nodos seguidores, cada una con su nombre y dirección. Los seguidores se conectan al líder. 
+
+Definición en la línea 73 del archivo Config.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Main.\+main().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_config_aff7f9cd312d34a45d45bf608bc2ea658}} 
+\index{org.jogugi.berkeley.Config@{org.jogugi.berkeley.Config}!leader@{leader}}
+\index{leader@{leader}!org.jogugi.berkeley.Config@{org.jogugi.berkeley.Config}}
+\doxysubsubsection{leader}
+{\footnotesize\ttfamily \textbf{ Leader\+Config} org.\+jogugi.\+berkeley.\+Config.\+leader}
+
+
+
+Nodo líder del sistema. 
+
+Esta propiedad contiene la configuración del nodo líder, que incluye su nombre y dirección. 
+
+Definición en la línea 64 del archivo Config.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Main.\+main().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_config_a0f53430aaf2c02b601069383a7df893f}} 
+\index{org.jogugi.berkeley.Config@{org.jogugi.berkeley.Config}!timeout@{timeout}}
+\index{timeout@{timeout}!org.jogugi.berkeley.Config@{org.jogugi.berkeley.Config}}
+\doxysubsubsection{timeout}
+{\footnotesize\ttfamily int org.\+jogugi.\+berkeley.\+Config.\+timeout}
+
+
+
+Tiempo de espera global para todos los nodos. 
+
+Este campo define el tiempo máximo que los nodos esperarán por una respuesta antes de considerar que ocurrió un error de tiempo de espera. 
+
+Definición en la línea 82 del archivo Config.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Main.\+main().
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Config.\+java}\end{DoxyCompactItemize}

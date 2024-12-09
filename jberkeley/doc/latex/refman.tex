@@ -1,0 +1,196 @@
+\let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}\documentclass[twoside]{book}
+
+%% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
+\usepackage{ifthen}
+\ifx\requestedLaTeXdate\undefined
+\usepackage{array}
+\else
+\usepackage{array}[=2016-10-06]
+\fi
+%%
+% Packages required by doxygen
+\usepackage{fixltx2e}
+\usepackage{calc}
+\usepackage{doxygen}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage{multirow}
+\PassOptionsToPackage{warn}{textcomp}
+\usepackage{textcomp}
+\usepackage[nointegrals]{wasysym}
+\usepackage[table]{xcolor}
+\usepackage{ifpdf,ifxetex}
+
+% NLS support packages
+\usepackage[spanish]{babel}
+% Font selection
+\usepackage[T1]{fontenc}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\renewcommand{\familydefault}{\sfdefault}
+\allsectionsfont{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\renewcommand{\DoxyLabelFont}{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+
+% Arguments of doxygenemoji:
+% 1) ':<text>:' form of the emoji, already "LaTeX"-escaped
+% 2) file with the name of the emoji without the .png extension
+% in case image exist use this otherwise use the ':<text>:' form
+\newcommand{\doxygenemoji}[2]{%
+  \IfFileExists{./#2.png}{\raisebox{-0.1em}{\includegraphics[height=0.9em]{./#2.png}}}{#1}%
+}
+% Page & text layout
+\usepackage{geometry}
+\geometry{%
+  a4paper,%
+  top=2.5cm,%
+  bottom=2.5cm,%
+  left=2.5cm,%
+  right=2.5cm%
+}
+\tolerance=750
+\hfuzz=15pt
+\hbadness=750
+\setlength{\emergencystretch}{15pt}
+\setlength{\parindent}{0cm}
+\newcommand{\doxynormalparskip}{\setlength{\parskip}{3ex plus 2ex minus 2ex}}
+\newcommand{\doxytocparskip}{\setlength{\parskip}{1ex plus 0ex minus 0ex}}
+\doxynormalparskip
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@parafont%
+  }%
+}
+\renewcommand{\subparagraph}{%
+  \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@subparafont%
+  }%
+}
+\makeatother
+
+% Headers & footers
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead[LE]{\fancyplain{}{\bfseries\thepage}}
+\fancyhead[CE]{\fancyplain{}{}}
+\fancyhead[RE]{\fancyplain{}{\bfseries\leftmark}}
+\fancyhead[LO]{\fancyplain{}{\bfseries\rightmark}}
+\fancyhead[CO]{\fancyplain{}{}}
+\fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
+\fancyfoot[LE]{\fancyplain{}{}}
+\fancyfoot[CE]{\fancyplain{}{}}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Generado por Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Generado por Doxygen }}
+\fancyfoot[CO]{\fancyplain{}{}}
+\fancyfoot[RO]{\fancyplain{}{}}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{#1}{}%
+}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection\ #1}%
+}
+
+% Indices & bibliography
+\usepackage{natbib}
+\usepackage[titles]{tocloft}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{5}
+\makeindex
+
+\usepackage{newunicodechar}
+  \newunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \newunicodechar{²}{${}^{2}$}% Superscript two
+  \newunicodechar{³}{${}^{3}$}% Superscript three
+
+% Custom commands
+\newcommand{\clearemptydoublepage}{%
+  \newpage{\pagestyle{empty}\cleardoublepage}%
+}
+
+\usepackage{caption}
+\captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+
+\usepackage{etoc}
+\etocsettocstyle{\doxytocparskip}{\doxynormalparskip}
+\renewcommand{\numberline}[1]{#1~}
+%===== C O N T E N T S =====
+
+\begin{document}
+
+% Titlepage & ToC
+\pagenumbering{alph}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}%
+{\Large Algoritmo Berkeley con sockets R\+E\+Q/\+R\+EP Zero\+M\+MQ \\[1ex]\large J.\+Javier\+Guti�rrez\+Gil({\texttt{ jogugi@posgrado.\+upv.\+es}})V0.\+1 }\\
+\vspace*{1cm}
+{\large Generado por Doxygen 1.8.16}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+
+%--- Begin generated contents ---
+\chapter{Indice de namespaces}
+\input{namespaces}
+\chapter{Indice jerárquico}
+\input{hierarchy}
+\chapter{Índice de clases}
+\input{annotated}
+\chapter{Indice de archivos}
+\input{files}
+\chapter{Documentación de namespaces}
+\input{db/d96/namespaceorg}
+\input{d6/dd6/namespaceorg_1_1jogugi}
+\input{de/d08/namespaceorg_1_1jogugi_1_1berkeley}
+\chapter{Documentación de las clases}
+\input{d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node}
+\input{d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config}
+\input{d6/de0/enumorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception_1_1_error_type}
+\input{df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower}
+\input{d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config}
+\input{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}
+\input{d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state}
+\input{d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node}
+\input{d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader}
+\input{d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config}
+\input{d3/df2/classorg_1_1jogugi_1_1berkeley_1_1_logger_manager}
+\input{d9/d64/classorg_1_1jogugi_1_1berkeley_1_1_main}
+\input{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}
+\chapter{Documentación de archivos}
+\input{d8/d6a/_abstract_node_8java}
+\input{d5/df8/_config_8java}
+\input{d3/de6/_follower_8java}
+\input{d5/d27/_follower_info_8java}
+\input{d7/d0c/_follower_state_8java}
+\input{d5/d7b/_i_node_8java}
+\input{d3/d2a/_leader_8java}
+\input{d7/d4c/_logger_manager_8java}
+\input{d0/da5/_main_8java}
+\input{db/dbc/_socket_zero_m_q_exception_8java}
+%--- End generated contents ---
+
+% Index
+\backmatter
+\newpage
+\phantomsection
+\clearemptydoublepage
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex
+
+\end{document}

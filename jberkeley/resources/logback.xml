@@ -1,0 +1,53 @@
+<configuration>
+
+    <!-- Definir un appender para la salida por consola -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{0} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+	<!-- Niveles de log en orden de detalle (de mayor a menor):
+	     TRACE < DEBUG < INFO < WARN < ERROR < FATAL
+	     
+	     - TRACE: El nivel más detallado. Se usa para información detallada sobre el flujo interno de la aplicación.
+	     - DEBUG: Información de depuración. Se usa para detallar el comportamiento del programa durante el desarrollo.
+	     - INFO:  Mensajes informativos. Se usa pa ra registrar eventos generales del sistema y el flujo de la aplicación.
+	     - WARN:  Advertencias. Se usa para eventos que no son errores pero podrían indicar problemas en el futuro.
+	     - ERROR: Errores. Se usa cuando algo falla en la aplicación y requiere atención.
+	     - FATAL: El nivel más grave. Se usa para errores críticos que generalmente terminan la ejecución de la aplicación.
+	-->
+
+    <!-- Definir el logger principal para toda la aplicación 
+    
+	    <root level="trace">
+	        <appender-ref ref="console" />
+	    </root>
+	    
+	 -->
+    
+	<!-- Para fichero
+	
+		<root level="trace">
+	    	<appender-ref ref="file" />
+		</root>
+	
+	-->
+ 	
+    <!-- Logger para la clase MAin que construye la situación y arranca el algoritmo -->
+    <logger name="org.jogugi.berkeley.Main" level="warn">
+        <appender-ref ref="console" />
+    </logger>
+    <!-- Logger para la clase Leader -->
+    <logger name="org.jogugi.berkeley.Leader" level="trace">
+        <appender-ref ref="console" />
+    </logger>
+    <!-- Logger para la clase Follower -->
+    <logger name="org.jogugi.berkeley.Follower" level="trace">
+        <appender-ref ref="console" />
+    </logger>
+    <!-- Logger para la clase AbstractNode -->
+    <logger name="org.jogugi.berkeley.AbstractNode" level="debug">
+        <appender-ref ref="console" />
+    </logger>
+</configuration>

@@ -1,0 +1,270 @@
+\doxysection{Referencia de la Clase org.\+jogugi.\+berkeley.\+Follower\+Info}
+\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info}\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+
+
+Clase que representa información detallada de un nodo seguidor en el sistema.  
+
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Follower\+Info} (String address, String name, long local\+Time, long communication\+Time, long now\+Time)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase {\ttfamily \doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}}. \end{DoxyCompactList}\item 
+String \textbf{ get\+Adrress\+Follower} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la dirección del seguidor. \end{DoxyCompactList}\item 
+String \textbf{ get\+Name} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el nombre del seguidor. \end{DoxyCompactList}\item 
+Date \textbf{ get\+Date\+Follower} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la fecha y hora local del seguidor. \end{DoxyCompactList}\item 
+long \textbf{ get\+Diff\+Time} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la diferencia de tiempo entre el líder y el seguidor. \end{DoxyCompactList}\item 
+long \textbf{ get\+Local\+Time} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la hora local del seguidor. \end{DoxyCompactList}\item 
+long \textbf{ get\+Communication\+Time} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el tiempo de comunicación entre el líder y el seguidor. \end{DoxyCompactList}\item 
+long \textbf{ get\+Delta} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la diferencia global de tiempo (delta). \end{DoxyCompactList}\item 
+void \textbf{ set\+Delta} (long delta)
+\begin{DoxyCompactList}\small\item\em Establece la diferencia global de tiempo (delta) para el seguidor. \end{DoxyCompactList}\item 
+\textbf{ Follower\+State} \textbf{ get\+State} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el estado actual del seguidor. \end{DoxyCompactList}\item 
+void \textbf{ set\+State} (\textbf{ Follower\+State} state)
+\begin{DoxyCompactList}\small\item\em Establece el estado del seguidor. \end{DoxyCompactList}\item 
+String \textbf{ to\+String} ()
+\begin{DoxyCompactList}\small\item\em Representación en cadena del objeto {\ttfamily \doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que representa información detallada de un nodo seguidor en el sistema. 
+
+La clase {\ttfamily \doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}} encapsula información sobre un seguidor, incluyendo su nombre, dirección, tiempos relacionados con la comunicación, diferencias horarias y estado actual. 
+
+Definición en la línea 11 del archivo Follower\+Info.\+java.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_a215d59b84707a0d729703beed629e980}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!FollowerInfo@{FollowerInfo}}
+\index{FollowerInfo@{FollowerInfo}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{FollowerInfo()}
+{\footnotesize\ttfamily org.\+jogugi.\+berkeley.\+Follower\+Info.\+Follower\+Info (\begin{DoxyParamCaption}\item[{String}]{address,  }\item[{String}]{name,  }\item[{long}]{local\+Time,  }\item[{long}]{communication\+Time,  }\item[{long}]{now\+Time }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase {\ttfamily \doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}}. 
+
+Inicializa un objeto {\ttfamily \doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}} con los valores proporcionados.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em address} & Dirección del seguidor. \\
+\hline
+{\em name} & Nombre del seguidor. \\
+\hline
+{\em local\+Time} & Hora local del seguidor en milisegundos desde la época U\+N\+IX. \\
+\hline
+{\em communication\+Time} & Tiempo de comunicación en milisegundos. \\
+\hline
+{\em now\+Time} & Hora actual del líder en milisegundos desde la época U\+N\+IX. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 51 del archivo Follower\+Info.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Follower\+State.\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+N\+O\+T\+\_\+\+S\+E\+NT.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_ac39362df144f8b2baa4645ad5ba2d422}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!getAdrressFollower@{getAdrressFollower}}
+\index{getAdrressFollower@{getAdrressFollower}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{getAdrressFollower()}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+Adrress\+Follower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene la dirección del seguidor. 
+
+
+
+Definición en la línea 63 del archivo Follower\+Info.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+send\+Time\+Update\+To\+Follower().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_ad9ff1a42dd09a9b1b39db4d9506cc7cd}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!getCommunicationTime@{getCommunicationTime}}
+\index{getCommunicationTime@{getCommunicationTime}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{getCommunicationTime()}
+{\footnotesize\ttfamily long org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+Communication\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene el tiempo de comunicación entre el líder y el seguidor. 
+
+
+
+Definición en la línea 88 del archivo Follower\+Info.\+java.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_a0bd9f974e65400c148d81a7d5b2ae9cb}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!getDateFollower@{getDateFollower}}
+\index{getDateFollower@{getDateFollower}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{getDateFollower()}
+{\footnotesize\ttfamily Date org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+Date\+Follower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene la fecha y hora local del seguidor. 
+
+
+
+Definición en la línea 73 del archivo Follower\+Info.\+java.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_a5998386207202771454df5382722caa1}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!getDelta@{getDelta}}
+\index{getDelta@{getDelta}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{getDelta()}
+{\footnotesize\ttfamily long org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+Delta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene la diferencia global de tiempo (delta). 
+
+
+
+Definición en la línea 93 del archivo Follower\+Info.\+java.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_ae428c4cf85498c21a4f5def2309b688d}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!getDiffTime@{getDiffTime}}
+\index{getDiffTime@{getDiffTime}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{getDiffTime()}
+{\footnotesize\ttfamily long org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+Diff\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene la diferencia de tiempo entre el líder y el seguidor. 
+
+
+
+Definición en la línea 78 del archivo Follower\+Info.\+java.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_a256aa9967da4aeb0ce7fd7a67decdaae}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!getLocalTime@{getLocalTime}}
+\index{getLocalTime@{getLocalTime}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{getLocalTime()}
+{\footnotesize\ttfamily long org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+Local\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene la hora local del seguidor. 
+
+
+
+Definición en la línea 83 del archivo Follower\+Info.\+java.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_a612f64a83ebb1536b90e0ecdad3704f7}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!getName@{getName}}
+\index{getName@{getName}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{getName()}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene el nombre del seguidor. 
+
+
+
+Definición en la línea 68 del archivo Follower\+Info.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_a3293be9da0a963c6143d0fb1d061a071}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!getState@{getState}}
+\index{getState@{getState}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{getState()}
+{\footnotesize\ttfamily \textbf{ Follower\+State} org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene el estado actual del seguidor. 
+
+
+
+Definición en la línea 106 del archivo Follower\+Info.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time() y org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_a42210473e0ec5b8fb26d1be0488d79a6}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!setDelta@{setDelta}}
+\index{setDelta@{setDelta}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{setDelta()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Follower\+Info.\+set\+Delta (\begin{DoxyParamCaption}\item[{long}]{delta }\end{DoxyParamCaption})}
+
+
+
+Establece la diferencia global de tiempo (delta) para el seguidor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta} & Valor de la diferencia global de tiempo en milisegundos. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 101 del archivo Follower\+Info.\+java.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_a8bfcd61118801a2c0d21ae40617cdf57}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!setState@{setState}}
+\index{setState@{setState}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{setState()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Follower\+Info.\+set\+State (\begin{DoxyParamCaption}\item[{\textbf{ Follower\+State}}]{state }\end{DoxyParamCaption})}
+
+
+
+Establece el estado del seguidor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & Nuevo estado del seguidor. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 114 del archivo Follower\+Info.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time() y org.\+jogugi.\+berkeley.\+Leader.\+send\+Time\+Update\+To\+Follower().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_info_a251da7a9392992e2aa9e30df32ab31bd}} 
+\index{org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}!toString@{toString}}
+\index{toString@{toString}!org.jogugi.berkeley.FollowerInfo@{org.jogugi.berkeley.FollowerInfo}}
+\doxysubsubsection{toString()}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Follower\+Info.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Representación en cadena del objeto {\ttfamily \doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}}. 
+
+\begin{DoxyReturn}{Devuelve}
+Una descripción detallada de los atributos del seguidor. 
+\end{DoxyReturn}
+
+
+Definición en la línea 124 del archivo Follower\+Info.\+java.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Follower\+Info.\+java}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.4.8/
+HostUrl=https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.4.8/logback-core-1.4.8.jar

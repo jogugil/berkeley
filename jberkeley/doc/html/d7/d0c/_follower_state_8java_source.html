@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Algoritmo Berkeley con sockets REQ/REP ZeroMMQ: Fichero Fuente FollowerState.java</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Algoritmo Berkeley con sockets REQ/REP ZeroMMQ
+   &#160;<span id="projectnumber">J.JavierGuti�rrezGil(jogugi@posgrado.upv.es)V0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b8e0663afee48cb679b74bbd21bdf843.html">org</a></li><li class="navelem"><a class="el" href="../../dir_6160c0f7ff13126ab98d465bf76cedd8.html">jogugi</a></li><li class="navelem"><a class="el" href="../../dir_6a5d3f00176bd55399ec92d443df29a0.html">berkeley</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">FollowerState.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/d0c/_follower_state_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>org.jogugi.berkeley;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html">    7</a></span>&#160;<span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html">FollowerState</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a8476f96dee5a30bef85e009e6406d236">   12</a></span>&#160;    <a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a8476f96dee5a30bef85e009e6406d236">RESPONDED</a>,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a0d3384d13a413abade6461decd7a8502">   17</a></span>&#160;    <a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a0d3384d13a413abade6461decd7a8502">NO_RESPONSE</a>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a37b737ba89a01c089a80eab208e74b8b">   22</a></span>&#160;    <a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a37b737ba89a01c089a80eab208e74b8b">CONNECTION_ERROR</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#ab4a29e1ee4a2f443fb1cb8535a77b5f0">   27</a></span>&#160;    <a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#ab4a29e1ee4a2f443fb1cb8535a77b5f0">REQUEST_NOT_SENT</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a8ebe036598386b53018081f957636876">   32</a></span>&#160;    <a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a8ebe036598386b53018081f957636876">REQUEST_DELTA_SENT</a>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#af4a17c69274b7946d5457388c6bac0cc">   36</a></span>&#160;    <a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#af4a17c69274b7946d5457388c6bac0cc">TIME_ERROR_SENT_UPDATE</a>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a725f8f1f61117fe2c8585569e7063c0a">   40</a></span>&#160;    TIME_UPDATED</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aenumorg_1_1jogugi_1_1berkeley_1_1_follower_state_html_a37b737ba89a01c089a80eab208e74b8b"><div class="ttname"><a href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a37b737ba89a01c089a80eab208e74b8b">org.jogugi.berkeley.FollowerState.CONNECTION_ERROR</a></div><div class="ttdeci">CONNECTION_ERROR</div><div class="ttdoc">Hubo un error de conexión al intentar comunicarse con el seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d0c/_follower_state_8java_source.html#l00022">FollowerState.java:22</a></div></div>
+<div class="ttc" id="aenumorg_1_1jogugi_1_1berkeley_1_1_follower_state_html_af4a17c69274b7946d5457388c6bac0cc"><div class="ttname"><a href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#af4a17c69274b7946d5457388c6bac0cc">org.jogugi.berkeley.FollowerState.TIME_ERROR_SENT_UPDATE</a></div><div class="ttdeci">TIME_ERROR_SENT_UPDATE</div><div class="ttdoc">La solicitud de actualización de la hora fue enviada pero hubo un error en ese envío.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d0c/_follower_state_8java_source.html#l00036">FollowerState.java:36</a></div></div>
+<div class="ttc" id="aenumorg_1_1jogugi_1_1berkeley_1_1_follower_state_html_a8ebe036598386b53018081f957636876"><div class="ttname"><a href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a8ebe036598386b53018081f957636876">org.jogugi.berkeley.FollowerState.REQUEST_DELTA_SENT</a></div><div class="ttdeci">REQUEST_DELTA_SENT</div><div class="ttdoc">La solicitud de actualización de la hora fue enviada al seguidor para actualizar su hora.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d0c/_follower_state_8java_source.html#l00032">FollowerState.java:32</a></div></div>
+<div class="ttc" id="aenumorg_1_1jogugi_1_1berkeley_1_1_follower_state_html"><div class="ttname"><a href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html">org.jogugi.berkeley.FollowerState</a></div><div class="ttdoc">Enumeración que define los posibles estados de un seguidor durante el proceso de actualización de la ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d0c/_follower_state_8java_source.html#l00007">FollowerState.java:7</a></div></div>
+<div class="ttc" id="aenumorg_1_1jogugi_1_1berkeley_1_1_follower_state_html_a0d3384d13a413abade6461decd7a8502"><div class="ttname"><a href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a0d3384d13a413abade6461decd7a8502">org.jogugi.berkeley.FollowerState.NO_RESPONSE</a></div><div class="ttdeci">NO_RESPONSE</div><div class="ttdoc">El seguidor no ha respondido a la solicitud dentro del tiempo esperado.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d0c/_follower_state_8java_source.html#l00017">FollowerState.java:17</a></div></div>
+<div class="ttc" id="aenumorg_1_1jogugi_1_1berkeley_1_1_follower_state_html_ab4a29e1ee4a2f443fb1cb8535a77b5f0"><div class="ttname"><a href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#ab4a29e1ee4a2f443fb1cb8535a77b5f0">org.jogugi.berkeley.FollowerState.REQUEST_NOT_SENT</a></div><div class="ttdeci">REQUEST_NOT_SENT</div><div class="ttdoc">La solicitud de actualización de la hora no fue enviada debido a algún error.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d0c/_follower_state_8java_source.html#l00027">FollowerState.java:27</a></div></div>
+<div class="ttc" id="aenumorg_1_1jogugi_1_1berkeley_1_1_follower_state_html_a8476f96dee5a30bef85e009e6406d236"><div class="ttname"><a href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#a8476f96dee5a30bef85e009e6406d236">org.jogugi.berkeley.FollowerState.RESPONDED</a></div><div class="ttdeci">RESPONDED</div><div class="ttdoc">El seguidor ha respondido correctamente a la solicitud del líder.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d0c/_follower_state_8java_source.html#l00012">FollowerState.java:12</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

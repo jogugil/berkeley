@@ -1,0 +1,751 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Algoritmo Berkeley con sockets REQ/REP ZeroMMQ: Referencia de la Clase org.jogugi.berkeley.AbstractNode</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Algoritmo Berkeley con sockets REQ/REP ZeroMMQ
+   &#160;<span id="projectnumber">J.JavierGuti�rrezGil(jogugi@posgrado.upv.es)V0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../db/d96/namespaceorg.html">org</a></li><li class="navelem"><a class="el" href="../../d6/dd6/namespaceorg_1_1jogugi.html">jogugi</a></li><li class="navelem"><a class="el" href="../../de/d08/namespaceorg_1_1jogugi_1_1berkeley.html">berkeley</a></li><li class="navelem"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html">AbstractNode</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a> &#124;
+<a href="#pro-attribs">Atributos protegidos</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../d7/d0c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase org.jogugi.berkeley.AbstractNode<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase abstracta que implementa la interfaz <code><a class="el" href="../../d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node.html" title="Interfaz que define las operaciones básicas para un nodo en el sistema.">INode</a></code>.  
+ <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#details">Más...</a></p>
+
+<p>Herencias <a class="el" href="../../d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node.html">org.jogugi.berkeley.INode</a>.</p>
+
+<p>Heredado por <a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html">org.jogugi.berkeley.Follower</a> y <a class="el" href="../../d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader.html">org.jogugi.berkeley.Leader</a>.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:aab49bd4dbe8efa4fc5fcd3792964e796"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#aab49bd4dbe8efa4fc5fcd3792964e796">initializeNode</a> (String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a2fec798ddf0df1cd6a0aedcd8b3ea0a4">name</a>, String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a>, int <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a0baa9f7e816448f789f25b2baa9a92ac">timeout</a>)</td></tr>
+<tr class="memdesc:aab49bd4dbe8efa4fc5fcd3792964e796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el nodo con el nombre, dirección y tiempo de espera.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#aab49bd4dbe8efa4fc5fcd3792964e796">Más...</a><br /></td></tr>
+<tr class="separator:aab49bd4dbe8efa4fc5fcd3792964e796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39fe900fa81cdcd395e3782c7ca5a2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ac39fe900fa81cdcd395e3782c7ca5a2c">initializeNode</a> (String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a2fec798ddf0df1cd6a0aedcd8b3ea0a4">name</a>, String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a>, int <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a0baa9f7e816448f789f25b2baa9a92ac">timeout</a>, HashMap&lt; String, String &gt; listNodeAddresses)</td></tr>
+<tr class="memdesc:ac39fe900fa81cdcd395e3782c7ca5a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el nodo con el nombre, dirección, tiempo de espera y la lista de nodos.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ac39fe900fa81cdcd395e3782c7ca5a2c">Más...</a><br /></td></tr>
+<tr class="separator:ac39fe900fa81cdcd395e3782c7ca5a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af92f86656228a1b38583de8429c1e783"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#af92f86656228a1b38583de8429c1e783">sendMessageSync</a> (String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a>, String message)  throws SocketZeroMQException </td></tr>
+<tr class="memdesc:af92f86656228a1b38583de8429c1e783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía un mensaje de manera síncrona y espera una respuesta.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#af92f86656228a1b38583de8429c1e783">Más...</a><br /></td></tr>
+<tr class="separator:af92f86656228a1b38583de8429c1e783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51bbbcf52f5e11b754b424c426b1a58f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a51bbbcf52f5e11b754b424c426b1a58f">sendMessageAsync</a> (String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a>, String message)  throws SocketZeroMQException </td></tr>
+<tr class="memdesc:a51bbbcf52f5e11b754b424c426b1a58f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía un mensaje de manera asíncrona.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a51bbbcf52f5e11b754b424c426b1a58f">Más...</a><br /></td></tr>
+<tr class="separator:a51bbbcf52f5e11b754b424c426b1a58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19dcf84e3b5eb0562779070022bb33b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a19dcf84e3b5eb0562779070022bb33b8">startListening</a> ()  throws SocketZeroMQException </td></tr>
+<tr class="memdesc:a19dcf84e3b5eb0562779070022bb33b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia el proceso de escucha de mensajes en el nodo.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a19dcf84e3b5eb0562779070022bb33b8">Más...</a><br /></td></tr>
+<tr class="separator:a19dcf84e3b5eb0562779070022bb33b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf96feb8bcc6248ee5098f3f9ab0c5b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#abf96feb8bcc6248ee5098f3f9ab0c5b2">close</a> ()  throws SocketZeroMQException </td></tr>
+<tr class="memdesc:abf96feb8bcc6248ee5098f3f9ab0c5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cierra los recursos utilizados por el nodo, incluyendo el socket y el contexto.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#abf96feb8bcc6248ee5098f3f9ab0c5b2">Más...</a><br /></td></tr>
+<tr class="separator:abf96feb8bcc6248ee5098f3f9ab0c5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a003b04707fccab72d90325720750e272"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a003b04707fccab72d90325720750e272">startAlgorithm</a> ()  throws SocketZeroMQException, InterruptedException, ExecutionException </td></tr>
+<tr class="memdesc:a003b04707fccab72d90325720750e272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para iniciar el algoritmo del nodo.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a003b04707fccab72d90325720750e272">Más...</a><br /></td></tr>
+<tr class="separator:a003b04707fccab72d90325720750e272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr class="memitem:adb62b4dd7636e684f787de2a1f62d771"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#adb62b4dd7636e684f787de2a1f62d771">handleProcess</a> (String message)  throws SocketZeroMQException</td></tr>
+<tr class="memdesc:adb62b4dd7636e684f787de2a1f62d771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método abstracto para manejar el procesamiento de los mensajes recibidos.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#adb62b4dd7636e684f787de2a1f62d771">Más...</a><br /></td></tr>
+<tr class="separator:adb62b4dd7636e684f787de2a1f62d771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Atributos protegidos</h2></td></tr>
+<tr class="memitem:ad19b245b7e970f01a8b0b5429226511c"><td class="memItemLeft" align="right" valign="top">ZContext&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ad19b245b7e970f01a8b0b5429226511c">context</a> = null</td></tr>
+<tr class="memdesc:ad19b245b7e970f01a8b0b5429226511c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contexto de ZeroMQ utilizado para la creación de sockets.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ad19b245b7e970f01a8b0b5429226511c">Más...</a><br /></td></tr>
+<tr class="separator:ad19b245b7e970f01a8b0b5429226511c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a993bd16dddf72a4650dd5d78e58d68ea"><td class="memItemLeft" align="right" valign="top">ZMQ.Socket&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a993bd16dddf72a4650dd5d78e58d68ea">socket</a> = null</td></tr>
+<tr class="memdesc:a993bd16dddf72a4650dd5d78e58d68ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket REP del nodo utilizado para recibir mensajes.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a993bd16dddf72a4650dd5d78e58d68ea">Más...</a><br /></td></tr>
+<tr class="separator:a993bd16dddf72a4650dd5d78e58d68ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fec798ddf0df1cd6a0aedcd8b3ea0a4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a2fec798ddf0df1cd6a0aedcd8b3ea0a4">name</a></td></tr>
+<tr class="memdesc:a2fec798ddf0df1cd6a0aedcd8b3ea0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre del nodo.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a2fec798ddf0df1cd6a0aedcd8b3ea0a4">Más...</a><br /></td></tr>
+<tr class="separator:a2fec798ddf0df1cd6a0aedcd8b3ea0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8298e431c5984409d9a1df4213ab687e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a></td></tr>
+<tr class="memdesc:a8298e431c5984409d9a1df4213ab687e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección del nodo en formato <code>host:puerto</code>.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">Más...</a><br /></td></tr>
+<tr class="separator:a8298e431c5984409d9a1df4213ab687e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0baa9f7e816448f789f25b2baa9a92ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a0baa9f7e816448f789f25b2baa9a92ac">timeout</a></td></tr>
+<tr class="memdesc:a0baa9f7e816448f789f25b2baa9a92ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tiempo de espera en milisegundos para operaciones de socket.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a0baa9f7e816448f789f25b2baa9a92ac">Más...</a><br /></td></tr>
+<tr class="separator:a0baa9f7e816448f789f25b2baa9a92ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad28f213086afa19e58f83686cf70fdd8"><td class="memItemLeft" align="right" valign="top">Map&lt; String, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ad28f213086afa19e58f83686cf70fdd8">nodeAddresses</a> = null</td></tr>
+<tr class="memdesc:ad28f213086afa19e58f83686cf70fdd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapa que contiene las direcciones de otros nodos en el sistema.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ad28f213086afa19e58f83686cf70fdd8">Más...</a><br /></td></tr>
+<tr class="separator:ad28f213086afa19e58f83686cf70fdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd5c79735d554a9c6c124c43bbb3d1a8"><td class="memItemLeft" align="right" valign="top">List&lt; ZMQ.Socket &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#acd5c79735d554a9c6c124c43bbb3d1a8">listSocketsREQ</a></td></tr>
+<tr class="memdesc:acd5c79735d554a9c6c124c43bbb3d1a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de sockets REQ utilizados para enviar solicitudes a otros nodos.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#acd5c79735d554a9c6c124c43bbb3d1a8">Más...</a><br /></td></tr>
+<tr class="separator:acd5c79735d554a9c6c124c43bbb3d1a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:add7ebbfee9f199fd67834eeb40bb1c29"><td class="memItemLeft" align="right" valign="top">static final Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#add7ebbfee9f199fd67834eeb40bb1c29">logger</a> = LoggerFactory.getLogger(AbstractNode.class)</td></tr>
+<tr class="memdesc:add7ebbfee9f199fd67834eeb40bb1c29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logger utilizado para registrar información, advertencias y errores.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#add7ebbfee9f199fd67834eeb40bb1c29">Más...</a><br /></td></tr>
+<tr class="separator:add7ebbfee9f199fd67834eeb40bb1c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase abstracta que implementa la interfaz <code><a class="el" href="../../d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node.html" title="Interfaz que define las operaciones básicas para un nodo en el sistema.">INode</a></code>. </p>
+<p>La clase <code><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html" title="Clase abstracta que implementa la interfaz INode.">AbstractNode</a></code> proporciona la implementación base para un nodo en el sistema. Maneja el contexto de ZeroMQ, los sockets de comunicación y contiene las operaciones comunes para el envío y recepción de mensajes, además de almacenar la información del nodo como su nombre, dirección y tiempos de espera. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00023">23</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+</div><h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="abf96feb8bcc6248ee5098f3f9ab0c5b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf96feb8bcc6248ee5098f3f9ab0c5b2">&#9670;&nbsp;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void org.jogugi.berkeley.AbstractNode.close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> throws <a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html">SocketZeroMQException</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cierra los recursos utilizados por el nodo, incluyendo el socket y el contexto. </p>
+<p>Este método cierra el socket asociado al nodo y también el contexto ZeroMQ, liberando así los recursos utilizados por el nodo. Una vez cerrados estos recursos, el nodo deja de poder enviar o recibir mensajes. El proceso de cierre es registrado en los logs del sistema.</p>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html" title="Excepción personalizada para errores en la operación de sockets de ZeroMQ.">SocketZeroMQException</a></td><td>Si ocurre un error al intentar cerrar el socket o el contexto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="../../d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node.html#a756a0475f96adcaf2a22ce3819748b78">org.jogugi.berkeley.INode</a>.</p>
+
+<p>Reimplementado en <a class="el" href="../../d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader.html#ab6780212726f5b68e762290ed83e01c4">org.jogugi.berkeley.Leader</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00240">240</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00028">org.jogugi.berkeley.AbstractNode.context</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00063">org.jogugi.berkeley.AbstractNode.logger</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00038">org.jogugi.berkeley.AbstractNode.name</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00033">org.jogugi.berkeley.AbstractNode.socket</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00184">org.jogugi.berkeley.AbstractNode.startListening()</a>.</p>
+
+</div>
+</div>
+<a id="adb62b4dd7636e684f787de2a1f62d771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb62b4dd7636e684f787de2a1f62d771">&#9670;&nbsp;</a></span>handleProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract String org.jogugi.berkeley.AbstractNode.handleProcess </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td> throws <a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html">SocketZeroMQException</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método abstracto para manejar el procesamiento de los mensajes recibidos. </p>
+<p>Este método debe ser implementado en las subclases específicas para definir el comportamiento que debe seguir el nodo al recibir un mensaje. El mensaje es procesado y se devuelve una respuesta basada en la lógica del nodo.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>El mensaje recibido que debe ser procesado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>La respuesta procesada al mensaje. </dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html" title="Excepción personalizada para errores en la operación de sockets de ZeroMQ.">SocketZeroMQException</a></td><td>Si ocurre un error al procesar el mensaje. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado en <a class="el" href="../../d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader.html#a18c735ec7effdc8e73f9335b8c6a7bdc">org.jogugi.berkeley.Leader</a> y <a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a47fda8712ae1cac72ade2e942ebfcea4">org.jogugi.berkeley.Follower</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00184">org.jogugi.berkeley.AbstractNode.startListening()</a>.</p>
+
+</div>
+</div>
+<a id="aab49bd4dbe8efa4fc5fcd3792964e796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab49bd4dbe8efa4fc5fcd3792964e796">&#9670;&nbsp;</a></span>initializeNode() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void org.jogugi.berkeley.AbstractNode.initializeNode </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el nodo con el nombre, dirección y tiempo de espera. </p>
+<p>Este constructor inicializa un nodo con los parámetros básicos: nombre del nodo, dirección del nodo y el tiempo de espera. También crea el contexto de ZeroMQ para la comunicación.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nombre del nodo. </td></tr>
+    <tr><td class="paramname">address</td><td>Dirección del nodo en formato <code>host:puerto</code>. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Tiempo de espera para las operaciones de socket. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="../../d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node.html#a9a22482529407a899e3d3588d76d2ede">org.jogugi.berkeley.INode</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00078">78</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00043">org.jogugi.berkeley.AbstractNode.address</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00063">org.jogugi.berkeley.AbstractNode.logger</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00038">org.jogugi.berkeley.AbstractNode.name</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00048">org.jogugi.berkeley.AbstractNode.timeout</a>.</p>
+
+</div>
+</div>
+<a id="ac39fe900fa81cdcd395e3782c7ca5a2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac39fe900fa81cdcd395e3782c7ca5a2c">&#9670;&nbsp;</a></span>initializeNode() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void org.jogugi.berkeley.AbstractNode.initializeNode </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HashMap&lt; String, String &gt;&#160;</td>
+          <td class="paramname"><em>listNodeAddresses</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el nodo con el nombre, dirección, tiempo de espera y la lista de nodos. </p>
+<p>Este constructor inicializa un nodo con los parámetros básicos: nombre del nodo, dirección del nodo, tiempo de espera y la lista de direcciones de otros nodos en el sistema. También crea el contexto de ZeroMQ para la comunicación.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nombre del nodo. </td></tr>
+    <tr><td class="paramname">address</td><td>Dirección del nodo en formato <code>host:puerto</code>. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Tiempo de espera para las operaciones de socket. </td></tr>
+    <tr><td class="paramname">listNodeAddresses</td><td>Lista de direcciones de otros nodos en el sistema. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="../../d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node.html#a4413fdf941804e7b0e5828ad26ac5738">org.jogugi.berkeley.INode</a>.</p>
+
+<p>Reimplementado en <a class="el" href="../../d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader.html#a7c5229a90d24deef6473a8b3bbfa5f17">org.jogugi.berkeley.Leader</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00100">100</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00043">org.jogugi.berkeley.AbstractNode.address</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00063">org.jogugi.berkeley.AbstractNode.logger</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00038">org.jogugi.berkeley.AbstractNode.name</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00048">org.jogugi.berkeley.AbstractNode.timeout</a>.</p>
+
+</div>
+</div>
+<a id="a51bbbcf52f5e11b754b424c426b1a58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51bbbcf52f5e11b754b424c426b1a58f">&#9670;&nbsp;</a></span>sendMessageAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void org.jogugi.berkeley.AbstractNode.sendMessageAsync </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> throws <a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html">SocketZeroMQException</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envía un mensaje de manera asíncrona. </p>
+<p>Este método crea un socket PUSH para enviar un mensaje de manera asíncrona a la dirección especificada. No espera una respuesta, sino que simplemente envía el mensaje y termina la operación.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>La dirección a la que se enviará el mensaje en formato <code>host:puerto</code>. </td></tr>
+    <tr><td class="paramname">message</td><td>El mensaje que se va a enviar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html" title="Excepción personalizada para errores en la operación de sockets de ZeroMQ.">SocketZeroMQException</a></td><td>Si ocurre un error al enviar el mensaje. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="../../d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node.html#ab8d0af46efd0473d96eb662515f82739">org.jogugi.berkeley.INode</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00159">159</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00043">org.jogugi.berkeley.AbstractNode.address</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00028">org.jogugi.berkeley.AbstractNode.context</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00063">org.jogugi.berkeley.AbstractNode.logger</a> y <a class="el" href="../../db/dbc/_socket_zero_m_q_exception_8java_source.html#l00025">org.jogugi.berkeley.SocketZeroMQException.ErrorType.SEND_ERROR</a>.</p>
+
+</div>
+</div>
+<a id="af92f86656228a1b38583de8429c1e783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af92f86656228a1b38583de8429c1e783">&#9670;&nbsp;</a></span>sendMessageSync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String org.jogugi.berkeley.AbstractNode.sendMessageSync </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> throws <a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html">SocketZeroMQException</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envía un mensaje de manera síncrona y espera una respuesta. </p>
+<p>Este método crea un socket REQ para enviar un mensaje a una dirección específica y espera una respuesta del servidor. Si no se recibe respuesta dentro del tiempo de espera o si ocurre un error durante el envío/recepción, se lanza una excepción.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>La dirección a la que se enviará el mensaje en formato <code>host:puerto</code>. </td></tr>
+    <tr><td class="paramname">message</td><td>El mensaje que se va a enviar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>La respuesta recibida del servidor.</dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html" title="Excepción personalizada para errores en la operación de sockets de ZeroMQ.">SocketZeroMQException</a></td><td>Si ocurre un error al enviar o recibir el mensaje. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="../../d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node.html#abad023c34433d9562d957c68bbe10295">org.jogugi.berkeley.INode</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00123">123</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00043">org.jogugi.berkeley.AbstractNode.address</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00028">org.jogugi.berkeley.AbstractNode.context</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00063">org.jogugi.berkeley.AbstractNode.logger</a>, <a class="el" href="../../db/dbc/_socket_zero_m_q_exception_8java_source.html#l00026">org.jogugi.berkeley.SocketZeroMQException.ErrorType.RECEIVE_ERROR</a> y <a class="el" href="../../db/dbc/_socket_zero_m_q_exception_8java_source.html#l00025">org.jogugi.berkeley.SocketZeroMQException.ErrorType.SEND_ERROR</a>.</p>
+
+</div>
+</div>
+<a id="a003b04707fccab72d90325720750e272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003b04707fccab72d90325720750e272">&#9670;&nbsp;</a></span>startAlgorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void org.jogugi.berkeley.AbstractNode.startAlgorithm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> throws <a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html">SocketZeroMQException</a>, InterruptedException, ExecutionException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método para iniciar el algoritmo del nodo. </p>
+<p>Este método se sobrecarga por el tipo de nodo (por ejemplo, nodo líder o seguidor) y debe ser implementado en las subclases específicas. Si no se implementa en una subclase, lanza un error.</p>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html" title="Excepción personalizada para errores en la operación de sockets de ZeroMQ.">SocketZeroMQException</a></td><td>Si ocurre un error en la comunicación con ZeroMQ. </td></tr>
+    <tr><td class="paramname">InterruptedException</td><td>Si el hilo es interrumpido mientras se ejecuta el algoritmo. </td></tr>
+    <tr><td class="paramname">ExecutionException</td><td>Si ocurre un error durante la ejecución del algoritmo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="../../d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node.html#a60c5f589181ec612d790a994adcf9ef1">org.jogugi.berkeley.INode</a>.</p>
+
+<p>Reimplementado en <a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#aed06cd149e1668825f1a55371b03aa27">org.jogugi.berkeley.Follower</a> y <a class="el" href="../../d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader.html#aec7d580d39a7959adbb12b5fd450f83d">org.jogugi.berkeley.Leader</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00267">267</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00063">org.jogugi.berkeley.AbstractNode.logger</a>.</p>
+
+</div>
+</div>
+<a id="a19dcf84e3b5eb0562779070022bb33b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19dcf84e3b5eb0562779070022bb33b8">&#9670;&nbsp;</a></span>startListening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void org.jogugi.berkeley.AbstractNode.startListening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> throws <a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html">SocketZeroMQException</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicia el proceso de escucha de mensajes en el nodo. </p>
+<p>Este método pone al nodo en un estado en el que puede escuchar mensajes entrantes en su socket. El nodo recibe mensajes de forma continua en un hilo separado, los procesa y, opcionalmente, responde con un mensaje. Si recibe un mensaje que indica que el nodo debe cerrarse (por ejemplo, un mensaje con la operación <code>"CLOSE"</code>), el nodo cierra su socket y termina el proceso de escucha.</p>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html" title="Excepción personalizada para errores en la operación de sockets de ZeroMQ.">SocketZeroMQException</a></td><td>Si el socket no está inicializado o ocurre un error en el proceso de escucha. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementa <a class="el" href="../../d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node.html#a81112a22f34be7566a521851110f0745">org.jogugi.berkeley.INode</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00184">184</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00240">org.jogugi.berkeley.AbstractNode.close()</a>, <a class="el" href="../../db/dbc/_socket_zero_m_q_exception_8java_source.html#l00024">org.jogugi.berkeley.SocketZeroMQException.ErrorType.CONNECTION_ERROR</a>, <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#adb62b4dd7636e684f787de2a1f62d771">org.jogugi.berkeley.AbstractNode.handleProcess()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00063">org.jogugi.berkeley.AbstractNode.logger</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00038">org.jogugi.berkeley.AbstractNode.name</a>, <a class="el" href="../../db/dbc/_socket_zero_m_q_exception_8java_source.html#l00026">org.jogugi.berkeley.SocketZeroMQException.ErrorType.RECEIVE_ERROR</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00033">org.jogugi.berkeley.AbstractNode.socket</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d3/de6/_follower_8java_source.html#l00196">org.jogugi.berkeley.Follower.startAlgorithm()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a id="a8298e431c5984409d9a1df4213ab687e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8298e431c5984409d9a1df4213ab687e">&#9670;&nbsp;</a></span>address</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String org.jogugi.berkeley.AbstractNode.address</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dirección del nodo en formato <code>host:puerto</code>. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00043">43</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d3/de6/_follower_8java_source.html#l00069">org.jogugi.berkeley.Follower.handleProcess()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00049">org.jogugi.berkeley.Follower.initializeNode()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00078">org.jogugi.berkeley.AbstractNode.initializeNode()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00078">org.jogugi.berkeley.Leader.initializeNode()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00149">org.jogugi.berkeley.Leader.processFollowers()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00159">org.jogugi.berkeley.AbstractNode.sendMessageAsync()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00123">org.jogugi.berkeley.AbstractNode.sendMessageSync()</a> y <a class="el" href="../../d3/de6/_follower_8java_source.html#l00196">org.jogugi.berkeley.Follower.startAlgorithm()</a>.</p>
+
+</div>
+</div>
+<a id="ad19b245b7e970f01a8b0b5429226511c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad19b245b7e970f01a8b0b5429226511c">&#9670;&nbsp;</a></span>context</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ZContext org.jogugi.berkeley.AbstractNode.context = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contexto de ZeroMQ utilizado para la creación de sockets. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00028">28</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00240">org.jogugi.berkeley.AbstractNode.close()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00688">org.jogugi.berkeley.Leader.close()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00267">org.jogugi.berkeley.Leader.processFollowerTime()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00566">org.jogugi.berkeley.Leader.sendCloseMessage()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00159">org.jogugi.berkeley.AbstractNode.sendMessageAsync()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00123">org.jogugi.berkeley.AbstractNode.sendMessageSync()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00493">org.jogugi.berkeley.Leader.sendTimeUpdateToFollower()</a> y <a class="el" href="../../d3/de6/_follower_8java_source.html#l00196">org.jogugi.berkeley.Follower.startAlgorithm()</a>.</p>
+
+</div>
+</div>
+<a id="acd5c79735d554a9c6c124c43bbb3d1a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd5c79735d554a9c6c124c43bbb3d1a8">&#9670;&nbsp;</a></span>listSocketsREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;ZMQ.Socket&gt; org.jogugi.berkeley.AbstractNode.listSocketsREQ</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lista de sockets REQ utilizados para enviar solicitudes a otros nodos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00058">58</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+</div>
+</div>
+<a id="add7ebbfee9f199fd67834eeb40bb1c29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add7ebbfee9f199fd67834eeb40bb1c29">&#9670;&nbsp;</a></span>logger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Logger org.jogugi.berkeley.AbstractNode.logger = LoggerFactory.getLogger(AbstractNode.class)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logger utilizado para registrar información, advertencias y errores. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00063">63</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00240">org.jogugi.berkeley.AbstractNode.close()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00078">org.jogugi.berkeley.AbstractNode.initializeNode()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00159">org.jogugi.berkeley.AbstractNode.sendMessageAsync()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00123">org.jogugi.berkeley.AbstractNode.sendMessageSync()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00267">org.jogugi.berkeley.AbstractNode.startAlgorithm()</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00184">org.jogugi.berkeley.AbstractNode.startListening()</a>.</p>
+
+</div>
+</div>
+<a id="a2fec798ddf0df1cd6a0aedcd8b3ea0a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fec798ddf0df1cd6a0aedcd8b3ea0a4">&#9670;&nbsp;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String org.jogugi.berkeley.AbstractNode.name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Nombre del nodo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00038">38</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00240">org.jogugi.berkeley.AbstractNode.close()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00131">org.jogugi.berkeley.Follower.displayLeaderMessage()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00069">org.jogugi.berkeley.Follower.handleProcess()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00049">org.jogugi.berkeley.Follower.initializeNode()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00078">org.jogugi.berkeley.Leader.initializeNode()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00078">org.jogugi.berkeley.AbstractNode.initializeNode()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00154">org.jogugi.berkeley.Follower.modSystemTime()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00149">org.jogugi.berkeley.Leader.processFollowers()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00267">org.jogugi.berkeley.Leader.processFollowerTime()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00566">org.jogugi.berkeley.Leader.sendCloseMessage()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00493">org.jogugi.berkeley.Leader.sendTimeUpdateToFollower()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00196">org.jogugi.berkeley.Follower.startAlgorithm()</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00184">org.jogugi.berkeley.AbstractNode.startListening()</a>.</p>
+
+</div>
+</div>
+<a id="ad28f213086afa19e58f83686cf70fdd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad28f213086afa19e58f83686cf70fdd8">&#9670;&nbsp;</a></span>nodeAddresses</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;String, String&gt; org.jogugi.berkeley.AbstractNode.nodeAddresses = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mapa que contiene las direcciones de otros nodos en el sistema. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00053">53</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00410">org.jogugi.berkeley.Leader.callFollowersWithUpdatedTime()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00149">org.jogugi.berkeley.Leader.processFollowers()</a> y <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00267">org.jogugi.berkeley.Leader.processFollowerTime()</a>.</p>
+
+</div>
+</div>
+<a id="a993bd16dddf72a4650dd5d78e58d68ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a993bd16dddf72a4650dd5d78e58d68ea">&#9670;&nbsp;</a></span>socket</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ZMQ.Socket org.jogugi.berkeley.AbstractNode.socket = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Socket REP del nodo utilizado para recibir mensajes. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00033">33</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00240">org.jogugi.berkeley.AbstractNode.close()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00688">org.jogugi.berkeley.Leader.close()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00196">org.jogugi.berkeley.Follower.startAlgorithm()</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00184">org.jogugi.berkeley.AbstractNode.startListening()</a>.</p>
+
+</div>
+</div>
+<a id="a0baa9f7e816448f789f25b2baa9a92ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0baa9f7e816448f789f25b2baa9a92ac">&#9670;&nbsp;</a></span>timeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int org.jogugi.berkeley.AbstractNode.timeout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tiempo de espera en milisegundos para operaciones de socket. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00048">48</a> del archivo <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d3/de6/_follower_8java_source.html#l00049">org.jogugi.berkeley.Follower.initializeNode()</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00078">org.jogugi.berkeley.AbstractNode.initializeNode()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00078">org.jogugi.berkeley.Leader.initializeNode()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00149">org.jogugi.berkeley.Leader.processFollowers()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00267">org.jogugi.berkeley.Leader.processFollowerTime()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00566">org.jogugi.berkeley.Leader.sendCloseMessage()</a>, <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00625">org.jogugi.berkeley.Leader.sendCloseMessagesToFollowers()</a> y <a class="el" href="../../d3/d2a/_leader_8java_source.html#l00493">org.jogugi.berkeley.Leader.sendTimeUpdateToFollower()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li><a class="el" href="../../d8/d6a/_abstract_node_8java_source.html">AbstractNode.java</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

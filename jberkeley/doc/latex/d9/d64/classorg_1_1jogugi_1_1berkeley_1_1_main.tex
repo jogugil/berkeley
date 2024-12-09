@@ -1,0 +1,103 @@
+\doxysection{Referencia de la Clase org.\+jogugi.\+berkeley.\+Main}
+\label{classorg_1_1jogugi_1_1berkeley_1_1_main}\index{org.jogugi.berkeley.Main@{org.jogugi.berkeley.Main}}
+
+
+Clase principal que gestiona la inicialización y ejecución del líder y los seguidores en el sistema.  
+
+
+\doxysubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ main} (String[$\,$] args)  throws I\+O\+Exception, Interrupted\+Exception, Socket\+Zero\+M\+Q\+Exception 
+\begin{DoxyCompactList}\small\item\em Método principal que inicia el proceso de inicialización y ejecución del sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \textbf{ logger} = Logger\+Factory.\+get\+Logger(Main.\+class)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase principal que gestiona la inicialización y ejecución del líder y los seguidores en el sistema. 
+
+Esta clase se encarga de cargar la configuración desde un archivo J\+S\+ON, inicializar los nodos de los seguidores y el líder, y coordinar la ejecución de los algoritmos en el sistema. Además, gestiona las excepciones y asegura que el flujo de trabajo continúe o se detenga dependiendo de la correcta inicialización de los componentes.
+
+Los pasos clave en este proceso son\+:
+\begin{DoxyEnumerate}
+\item Cargar la configuración desde un archivo J\+S\+ON.
+\item Crear e inicializar los seguidores y el líder.
+\item Iniciar los algoritmos en los seguidores y el líder.
+\item Gestionar el tiempo de espera para la sincronización.
+\item Cerrar el nodo del líder de forma segura.
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Autor}
+[Tu nombre] 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Desde}
+[Fecha de creación] 
+\end{DoxySince}
+
+
+Definición en la línea 31 del archivo Main.\+java.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_main_afe8005cd035273c1d2ad4e332369bde2}} 
+\index{org.jogugi.berkeley.Main@{org.jogugi.berkeley.Main}!main@{main}}
+\index{main@{main}!org.jogugi.berkeley.Main@{org.jogugi.berkeley.Main}}
+\doxysubsubsection{main()}
+{\footnotesize\ttfamily static void org.\+jogugi.\+berkeley.\+Main.\+main (\begin{DoxyParamCaption}\item[{String[$\,$]}]{args }\end{DoxyParamCaption}) throws I\+O\+Exception, Interrupted\+Exception, \textbf{ Socket\+Zero\+M\+Q\+Exception}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Método principal que inicia el proceso de inicialización y ejecución del sistema. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em args} & Argumentos de línea de comandos. No se utilizan en esta implementación. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em I\+O\+Exception} & Si ocurre un error al leer el archivo de configuración o durante la inicialización de los nodos. \\
+\hline
+{\em Interrupted\+Exception} & Si la ejecución es interrumpida durante los períodos de espera. \\
+\hline
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & Si ocurre un error al intentar establecer comunicación a través de Zero\+MQ. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 42 del archivo Main.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Config.\+Leader\+Config.\+address, org.\+jogugi.\+berkeley.\+Config.\+Follower\+Config.\+address, org.\+jogugi.\+berkeley.\+Leader.\+close(), org.\+jogugi.\+berkeley.\+Config.\+followers, org.\+jogugi.\+berkeley.\+Follower.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Leader.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Config.\+leader, org.\+jogugi.\+berkeley.\+Main.\+logger, org.\+jogugi.\+berkeley.\+Config.\+Leader\+Config.\+name, org.\+jogugi.\+berkeley.\+Config.\+Follower\+Config.\+name, org.\+jogugi.\+berkeley.\+Leader.\+start\+Algorithm(), org.\+jogugi.\+berkeley.\+Follower.\+start\+Algorithm() y org.\+jogugi.\+berkeley.\+Config.\+timeout.
+
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_main_a032cd2c8ffaca431eb347bea111bde9d}} 
+\index{org.jogugi.berkeley.Main@{org.jogugi.berkeley.Main}!logger@{logger}}
+\index{logger@{logger}!org.jogugi.berkeley.Main@{org.jogugi.berkeley.Main}}
+\doxysubsubsection{logger}
+{\footnotesize\ttfamily final Logger org.\+jogugi.\+berkeley.\+Main.\+logger = Logger\+Factory.\+get\+Logger(Main.\+class)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definición en la línea 32 del archivo Main.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Main.\+main().
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Main.\+java}\end{DoxyCompactItemize}

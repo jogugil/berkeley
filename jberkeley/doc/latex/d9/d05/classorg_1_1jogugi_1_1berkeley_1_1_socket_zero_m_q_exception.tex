@@ -1,0 +1,130 @@
+\doxysection{Referencia de la Clase org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception}
+\label{classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}\index{org.jogugi.berkeley.SocketZeroMQException@{org.jogugi.berkeley.SocketZeroMQException}}
+
+
+Excepción personalizada para errores en la operación de sockets de Zero\+MQ.  
+
+
+
+
+Herencias Exception.
+
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Error\+Type}
+\begin{DoxyCompactList}\small\item\em Enumeración de los tipos de errores posibles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Socket\+Zero\+M\+Q\+Exception} (String message, \textbf{ Error\+Type} \textbf{ error\+Type})
+\begin{DoxyCompactList}\small\item\em Constructor de la excepción. \end{DoxyCompactList}\item 
+\textbf{ Error\+Type} \textbf{ get\+Error\+Type} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el tipo de error asociado a esta excepción. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Error\+Type} \textbf{ error\+Type}
+\begin{DoxyCompactList}\small\item\em Tipo de error que ocurrió. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static final long \textbf{ serial\+Version\+U\+ID} = 1L
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Excepción personalizada para errores en la operación de sockets de Zero\+MQ. 
+
+Esta clase extiende de {\ttfamily Exception} y se utiliza para manejar errores específicos que ocurren durante las operaciones de sockets utilizando Zero\+MQ. Los tipos de errores cubiertos son relacionados con la conexión, el envío y la recepción de mensajes. 
+
+Definición en la línea 10 del archivo Socket\+Zero\+M\+Q\+Exception.\+java.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception_a2350fea816c9c82ece9a2cf7f589daf2}} 
+\index{org.jogugi.berkeley.SocketZeroMQException@{org.jogugi.berkeley.SocketZeroMQException}!SocketZeroMQException@{SocketZeroMQException}}
+\index{SocketZeroMQException@{SocketZeroMQException}!org.jogugi.berkeley.SocketZeroMQException@{org.jogugi.berkeley.SocketZeroMQException}}
+\doxysubsubsection{SocketZeroMQException()}
+{\footnotesize\ttfamily org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+Socket\+Zero\+M\+Q\+Exception (\begin{DoxyParamCaption}\item[{String}]{message,  }\item[{\textbf{ Error\+Type}}]{error\+Type }\end{DoxyParamCaption})}
+
+
+
+Constructor de la excepción. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em message} & El mensaje de error que describe el problema ocurrido. \\
+\hline
+{\em error\+Type} & El tipo de error que ocurrió, basado en la enumeración {\ttfamily \doxyref{Error\+Type}{p.}{d6/de0/enumorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception_1_1_error_type}}. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 37 del archivo Socket\+Zero\+M\+Q\+Exception.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+error\+Type.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception_a3e32a9b3c888d3060f086a6bbfc5386b}} 
+\index{org.jogugi.berkeley.SocketZeroMQException@{org.jogugi.berkeley.SocketZeroMQException}!getErrorType@{getErrorType}}
+\index{getErrorType@{getErrorType}!org.jogugi.berkeley.SocketZeroMQException@{org.jogugi.berkeley.SocketZeroMQException}}
+\doxysubsubsection{getErrorType()}
+{\footnotesize\ttfamily \textbf{ Error\+Type} org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+get\+Error\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene el tipo de error asociado a esta excepción. 
+
+\begin{DoxyReturn}{Devuelve}
+El tipo de error que se produjo durante la operación de Zero\+MQ. 
+\end{DoxyReturn}
+
+
+Definición en la línea 47 del archivo Socket\+Zero\+M\+Q\+Exception.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+error\+Type.
+
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception_abce4553ede0603707cdac089d70240f4}} 
+\index{org.jogugi.berkeley.SocketZeroMQException@{org.jogugi.berkeley.SocketZeroMQException}!errorType@{errorType}}
+\index{errorType@{errorType}!org.jogugi.berkeley.SocketZeroMQException@{org.jogugi.berkeley.SocketZeroMQException}}
+\doxysubsubsection{errorType}
+{\footnotesize\ttfamily \textbf{ Error\+Type} org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+error\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tipo de error que ocurrió. 
+
+
+
+Definición en la línea 29 del archivo Socket\+Zero\+M\+Q\+Exception.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+get\+Error\+Type() y org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+Socket\+Zero\+M\+Q\+Exception().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception_a597981706591b35a6599b015011fee77}} 
+\index{org.jogugi.berkeley.SocketZeroMQException@{org.jogugi.berkeley.SocketZeroMQException}!serialVersionUID@{serialVersionUID}}
+\index{serialVersionUID@{serialVersionUID}!org.jogugi.berkeley.SocketZeroMQException@{org.jogugi.berkeley.SocketZeroMQException}}
+\doxysubsubsection{serialVersionUID}
+{\footnotesize\ttfamily final long org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+serial\+Version\+U\+ID = 1L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definición en la línea 15 del archivo Socket\+Zero\+M\+Q\+Exception.\+java.
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Socket\+Zero\+M\+Q\+Exception.\+java}\end{DoxyCompactItemize}

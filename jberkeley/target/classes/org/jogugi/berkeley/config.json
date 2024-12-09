@@ -1,0 +1,17 @@
+{
+    "leader": {
+        "name": "Leader1",
+        "address": "127.0.0.1:5000"
+    },
+    "followers": [
+        {
+            "name": "Follower1",
+            "address": "127.0.0.1:5001"
+        },
+        {
+            "name": "Follower2",
+            "address": "127.0.0.1:5002"
+        }
+    ],
+    "timeout": 15000
+}

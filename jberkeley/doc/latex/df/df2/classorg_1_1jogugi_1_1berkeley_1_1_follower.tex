@@ -1,0 +1,308 @@
+\doxysection{Referencia de la Clase org.\+jogugi.\+berkeley.\+Follower}
+\label{classorg_1_1jogugi_1_1berkeley_1_1_follower}\index{org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}}
+
+
+Clase que representa un nodo seguidor en un sistema distribuido.  
+
+
+
+
+Herencias \textbf{ org.\+jogugi.\+berkeley.\+Abstract\+Node}.
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ initialize\+Node} (String \textbf{ name}, String \textbf{ address}, String \textbf{ leader\+Address}, int \textbf{ timeout})  throws I\+O\+Exception, Socket\+Zero\+M\+Q\+Exception 
+\begin{DoxyCompactList}\small\item\em Inicializa el nodo seguidor con la información específica. \end{DoxyCompactList}\item 
+void \textbf{ start\+Algorithm} ()  throws Socket\+Zero\+M\+Q\+Exception 
+\begin{DoxyCompactList}\small\item\em Inicia el algoritmo configurando y enlazando el socket Zero\+MQ. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+String \textbf{ handle\+Process} (String message)  throws Socket\+Zero\+M\+Q\+Exception 
+\begin{DoxyCompactList}\small\item\em Maneja y procesa los mensajes recibidos del líder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+long \textbf{ display\+Leader\+Message} (String leader\+Name, String leader\+Message, long T0, long local\+Time)
+\begin{DoxyCompactList}\small\item\em Muestra el mensaje del líder y calcula un valor intermedio de tiempo (TP). \end{DoxyCompactList}\item 
+String \textbf{ mod\+System\+Time} (long delta)
+\begin{DoxyCompactList}\small\item\em Modifica el tiempo local del sistema en función de un delta. \end{DoxyCompactList}\item 
+long \textbf{ get\+Current\+Time} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la hora actual del sistema en milisegundos desde la época Unix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+String \textbf{ leader\+Address}
+\begin{DoxyCompactList}\small\item\em Dirección del nodo líder en formato {\ttfamily host\+:puerto}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \textbf{ logger} = Logger\+Factory.\+get\+Logger(Follower.\+class)
+\begin{DoxyCompactList}\small\item\em Logger para registrar eventos y mensajes del nodo seguidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Otros miembros heredados}
+
+
+\doxysubsection{Descripción detallada}
+Clase que representa un nodo seguidor en un sistema distribuido. 
+
+La clase {\ttfamily \doxyref{Follower}{p.}{df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower}} extiende la funcionalidad de la clase abstracta {\ttfamily \doxyref{Abstract\+Node}{p.}{d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node}}. Representa un nodo seguidor que interactúa con un nodo líder en un sistema distribuido. El seguidor es capaz de recibir y procesar mensajes del líder, así como manejar operaciones específicas como obtener la hora, modificarla, y cerrar la conexión. 
+
+Definición en la línea 21 del archivo Follower.\+java.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_a1f664e73aada1bf311d75bb1f8d57f9f}} 
+\index{org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}!displayLeaderMessage@{displayLeaderMessage}}
+\index{displayLeaderMessage@{displayLeaderMessage}!org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}}
+\doxysubsubsection{displayLeaderMessage()}
+{\footnotesize\ttfamily long org.\+jogugi.\+berkeley.\+Follower.\+display\+Leader\+Message (\begin{DoxyParamCaption}\item[{String}]{leader\+Name,  }\item[{String}]{leader\+Message,  }\item[{long}]{T0,  }\item[{long}]{local\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Muestra el mensaje del líder y calcula un valor intermedio de tiempo (TP). 
+
+Este método registra el mensaje del líder recibido, la hora proporcionada por el líder (T0), y la hora local del seguidor. Además, calcula un tiempo promedio (TP) basado en T0 y el tiempo local del seguidor, y lo registra en el log.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em leader\+Name} & El nombre del líder que envía el mensaje. \\
+\hline
+{\em leader\+Message} & El mensaje recibido del líder. \\
+\hline
+{\em T0} & La marca de tiempo enviada por el líder en milisegundos desde la época. \\
+\hline
+{\em local\+Time} & La hora local actual del seguidor en milisegundos desde la época. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+El tiempo promedio (TP) calculado a partir de T0 y la hora local del seguidor. 
+\end{DoxyReturn}
+
+
+Definición en la línea 131 del archivo Follower.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Follower.\+logger y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Follower.\+handle\+Process().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_a79033a6460c65997aeabab8dfc204aae}} 
+\index{org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}!getCurrentTime@{getCurrentTime}}
+\index{getCurrentTime@{getCurrentTime}!org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}}
+\doxysubsubsection{getCurrentTime()}
+{\footnotesize\ttfamily long org.\+jogugi.\+berkeley.\+Follower.\+get\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obtiene la hora actual del sistema en milisegundos desde la época Unix. 
+
+Este método registra el tiempo actual en milisegundos (TP) junto con la dirección del seguidor y también lo convierte en una fecha legible para su registro.
+
+\begin{DoxyReturn}{Devuelve}
+El tiempo actual del sistema en milisegundos desde el 1 de enero de 1970 (época Unix). 
+\end{DoxyReturn}
+
+
+Definición en la línea 175 del archivo Follower.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Follower.\+logger.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Follower.\+handle\+Process().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_a47fda8712ae1cac72ade2e942ebfcea4}} 
+\index{org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}!handleProcess@{handleProcess}}
+\index{handleProcess@{handleProcess}!org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}}
+\doxysubsubsection{handleProcess()}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Follower.\+handle\+Process (\begin{DoxyParamCaption}\item[{String}]{message }\end{DoxyParamCaption}) throws \textbf{ Socket\+Zero\+M\+Q\+Exception}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Maneja y procesa los mensajes recibidos del líder. 
+
+Este método deserializa un mensaje J\+S\+ON enviado por el líder, identifica la operación solicitada (por ejemplo, obtener la hora, modificar el tiempo o cerrar la conexión) y responde de acuerdo con la operación especificada.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em message} & El mensaje J\+S\+ON recibido del líder. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Una cadena J\+S\+ON con la respuesta apropiada para la operación realizada. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & En caso de errores relacionados con el socket. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \textbf{ org.\+jogugi.\+berkeley.\+Abstract\+Node} \doxyref{}{p.}{d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_adb62b4dd7636e684f787de2a1f62d771}.
+
+
+
+Definición en la línea 69 del archivo Follower.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+address, org.\+jogugi.\+berkeley.\+Follower.\+display\+Leader\+Message(), org.\+jogugi.\+berkeley.\+Follower.\+get\+Current\+Time(), org.\+jogugi.\+berkeley.\+Follower.\+leader\+Address, org.\+jogugi.\+berkeley.\+Follower.\+logger, org.\+jogugi.\+berkeley.\+Follower.\+mod\+System\+Time() y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_a9645ebb72f7ce9b208e49f3510afe125}} 
+\index{org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}!initializeNode@{initializeNode}}
+\index{initializeNode@{initializeNode}!org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}}
+\doxysubsubsection{initializeNode()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Follower.\+initialize\+Node (\begin{DoxyParamCaption}\item[{String}]{name,  }\item[{String}]{address,  }\item[{String}]{leader\+Address,  }\item[{int}]{timeout }\end{DoxyParamCaption}) throws I\+O\+Exception, \textbf{ Socket\+Zero\+M\+Q\+Exception}}
+
+
+
+Inicializa el nodo seguidor con la información específica. 
+
+Este método configura el nodo seguidor asignándole su nombre, dirección, dirección del líder y tiempo de espera. Extiende la funcionalidad de la clase base {\ttfamily \doxyref{Abstract\+Node}{p.}{d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node}}.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del nodo seguidor. \\
+\hline
+{\em address} & Dirección del nodo seguidor en formato {\ttfamily host\+:puerto}. \\
+\hline
+{\em leader\+Address} & Dirección del líder en formato {\ttfamily host\+:puerto}. \\
+\hline
+{\em timeout} & Tiempo de espera (en milisegundos) para las operaciones del nodo. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em I\+O\+Exception} & Si ocurre un error al inicializar el nodo. \\
+\hline
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & Si ocurre un error relacionado con Zero\+MQ. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 49 del archivo Follower.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+address, org.\+jogugi.\+berkeley.\+Follower.\+leader\+Address, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+timeout.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Main.\+main().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_afb6a8b4410e479c8372205a5e5b899cd}} 
+\index{org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}!modSystemTime@{modSystemTime}}
+\index{modSystemTime@{modSystemTime}!org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}}
+\doxysubsubsection{modSystemTime()}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Follower.\+mod\+System\+Time (\begin{DoxyParamCaption}\item[{long}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modifica el tiempo local del sistema en función de un delta. 
+
+Este método simula un cambio en el tiempo del sistema sumando un delta al tiempo local actual. También registra el tiempo antes y después de la modificación en los logs y devuelve una representación J\+S\+ON de la operación.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta} & El desplazamiento en milisegundos a aplicar al tiempo local actual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Una cadena J\+S\+ON que contiene el nombre del seguidor, el nuevo tiempo local modificado y el estado de la operación. 
+\end{DoxyReturn}
+
+
+Definición en la línea 154 del archivo Follower.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Follower.\+logger y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Follower.\+handle\+Process().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_aed06cd149e1668825f1a55371b03aa27}} 
+\index{org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}!startAlgorithm@{startAlgorithm}}
+\index{startAlgorithm@{startAlgorithm}!org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}}
+\doxysubsubsection{startAlgorithm()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Follower.\+start\+Algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws \textbf{ Socket\+Zero\+M\+Q\+Exception}}
+
+
+
+Inicia el algoritmo configurando y enlazando el socket Zero\+MQ. 
+
+Este método configura un socket de tipo R\+EP (respuesta) para recibir mensajes y lo enlaza a la dirección especificada. Luego inicia el proceso de escucha de mensajes entrantes.
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & Si ocurre un error al configurar o enlazar el socket. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \textbf{ org.\+jogugi.\+berkeley.\+Abstract\+Node} \doxyref{}{p.}{d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_a003b04707fccab72d90325720750e272}.
+
+
+
+Definición en la línea 196 del archivo Follower.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+address, org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+Error\+Type.\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+context, org.\+jogugi.\+berkeley.\+Follower.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+socket y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+start\+Listening().
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Main.\+main().
+
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_a0be85f69ebfad1f6fbb06495229a0dfa}} 
+\index{org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}!leaderAddress@{leaderAddress}}
+\index{leaderAddress@{leaderAddress}!org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}}
+\doxysubsubsection{leaderAddress}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Follower.\+leader\+Address\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dirección del nodo líder en formato {\ttfamily host\+:puerto}. 
+
+
+
+Definición en la línea 26 del archivo Follower.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Follower.\+handle\+Process() y org.\+jogugi.\+berkeley.\+Follower.\+initialize\+Node().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_follower_af811a672a8df9e299e5768716ab098b1}} 
+\index{org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}!logger@{logger}}
+\index{logger@{logger}!org.jogugi.berkeley.Follower@{org.jogugi.berkeley.Follower}}
+\doxysubsubsection{logger}
+{\footnotesize\ttfamily final Logger org.\+jogugi.\+berkeley.\+Follower.\+logger = Logger\+Factory.\+get\+Logger(Follower.\+class)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Logger para registrar eventos y mensajes del nodo seguidor. 
+
+
+
+Definición en la línea 31 del archivo Follower.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Follower.\+display\+Leader\+Message(), org.\+jogugi.\+berkeley.\+Follower.\+get\+Current\+Time(), org.\+jogugi.\+berkeley.\+Follower.\+handle\+Process(), org.\+jogugi.\+berkeley.\+Follower.\+mod\+System\+Time() y org.\+jogugi.\+berkeley.\+Follower.\+start\+Algorithm().
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Follower.\+java}\end{DoxyCompactItemize}

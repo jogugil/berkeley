@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Algoritmo Berkeley con sockets REQ/REP ZeroMMQ: Fichero Fuente Config.java</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Algoritmo Berkeley con sockets REQ/REP ZeroMMQ
+   &#160;<span id="projectnumber">J.JavierGuti�rrezGil(jogugi@posgrado.upv.es)V0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b8e0663afee48cb679b74bbd21bdf843.html">org</a></li><li class="navelem"><a class="el" href="../../dir_6160c0f7ff13126ab98d465bf76cedd8.html">jogugi</a></li><li class="navelem"><a class="el" href="../../dir_6a5d3f00176bd55399ec92d443df29a0.html">berkeley</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Config.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/df8/_config_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>org.jogugi.berkeley;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonProperty;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html">   12</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html">Config</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config.html">   19</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="../../d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config.html">LeaderConfig</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config.html#aaee91a927ea746ce534e21fb77e3967d">   26</a></span>&#160;        <span class="keyword">public</span> String <a class="code" href="../../d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config.html#aaee91a927ea746ce534e21fb77e3967d">name</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config.html#abc012cbb677adbf84a03bfe3101d6f59">   33</a></span>&#160;        <span class="keyword">public</span> String <a class="code" href="../../d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config.html#abc012cbb677adbf84a03bfe3101d6f59">address</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config.html">   41</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span><a class="code" href="../../d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config.html">FollowerConfig</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config.html#acf8bf90b1123d5fc3574e41de374a313">   48</a></span>&#160;        <span class="keyword">public</span> String <a class="code" href="../../d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config.html#acf8bf90b1123d5fc3574e41de374a313">name</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config.html#a7285d3780a9ffd093fbdf18fb1e08820">   55</a></span>&#160;        <span class="keyword">public</span> String <a class="code" href="../../d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config.html#a7285d3780a9ffd093fbdf18fb1e08820">address</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    @JsonProperty(<span class="stringliteral">&quot;leader&quot;</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#aff7f9cd312d34a45d45bf608bc2ea658">   64</a></span>&#160;    public <a class="code" href="../../d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config.html">LeaderConfig</a> <a class="code" href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#aff7f9cd312d34a45d45bf608bc2ea658">leader</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    @JsonProperty(&quot;<a class="code" href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#a512495322c37a38c3390877832c49f99">followers</a>&quot;)</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#a512495322c37a38c3390877832c49f99">   73</a></span>&#160;    public List&lt;<a class="code" href="../../d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config.html">FollowerConfig</a>&gt; <a class="code" href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#a512495322c37a38c3390877832c49f99">followers</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    @JsonProperty(&quot;<a class="code" href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#a0f53430aaf2c02b601069383a7df893f">timeout</a>&quot;)</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#a0f53430aaf2c02b601069383a7df893f">   82</a></span>&#160;    public <span class="keywordtype">int</span> <a class="code" href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#a0f53430aaf2c02b601069383a7df893f">timeout</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config_html_abc012cbb677adbf84a03bfe3101d6f59"><div class="ttname"><a href="../../d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config.html#abc012cbb677adbf84a03bfe3101d6f59">org.jogugi.berkeley.Config.LeaderConfig.address</a></div><div class="ttdeci">String address</div><div class="ttdoc">Dirección del nodo líder.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df8/_config_8java_source.html#l00033">Config.java:33</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config_html"><div class="ttname"><a href="../../d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config.html">org.jogugi.berkeley.Config.LeaderConfig</a></div><div class="ttdoc">Configuración del nodo líder.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df8/_config_8java_source.html#l00019">Config.java:19</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_config_html_a0f53430aaf2c02b601069383a7df893f"><div class="ttname"><a href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#a0f53430aaf2c02b601069383a7df893f">org.jogugi.berkeley.Config.timeout</a></div><div class="ttdeci">int timeout</div><div class="ttdoc">Tiempo de espera global para todos los nodos.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df8/_config_8java_source.html#l00082">Config.java:82</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config_html_aaee91a927ea746ce534e21fb77e3967d"><div class="ttname"><a href="../../d4/d76/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_leader_config.html#aaee91a927ea746ce534e21fb77e3967d">org.jogugi.berkeley.Config.LeaderConfig.name</a></div><div class="ttdeci">String name</div><div class="ttdoc">Nombre del nodo líder.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df8/_config_8java_source.html#l00026">Config.java:26</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config_html"><div class="ttname"><a href="../../d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config.html">org.jogugi.berkeley.Config.FollowerConfig</a></div><div class="ttdoc">Configuración del nodo seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df8/_config_8java_source.html#l00041">Config.java:41</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config_html_acf8bf90b1123d5fc3574e41de374a313"><div class="ttname"><a href="../../d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config.html#acf8bf90b1123d5fc3574e41de374a313">org.jogugi.berkeley.Config.FollowerConfig.name</a></div><div class="ttdeci">String name</div><div class="ttdoc">Nombre del nodo seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df8/_config_8java_source.html#l00048">Config.java:48</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_config_html_aff7f9cd312d34a45d45bf608bc2ea658"><div class="ttname"><a href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#aff7f9cd312d34a45d45bf608bc2ea658">org.jogugi.berkeley.Config.leader</a></div><div class="ttdeci">LeaderConfig leader</div><div class="ttdoc">Nodo líder del sistema.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df8/_config_8java_source.html#l00064">Config.java:64</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config_html_a7285d3780a9ffd093fbdf18fb1e08820"><div class="ttname"><a href="../../d1/d85/classorg_1_1jogugi_1_1berkeley_1_1_config_1_1_follower_config.html#a7285d3780a9ffd093fbdf18fb1e08820">org.jogugi.berkeley.Config.FollowerConfig.address</a></div><div class="ttdeci">String address</div><div class="ttdoc">Dirección del nodo seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df8/_config_8java_source.html#l00055">Config.java:55</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_config_html"><div class="ttname"><a href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html">org.jogugi.berkeley.Config</a></div><div class="ttdoc">Clase de configuración para los nodos en el sistema.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df8/_config_8java_source.html#l00012">Config.java:12</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_config_html_a512495322c37a38c3390877832c49f99"><div class="ttname"><a href="../../d2/d57/classorg_1_1jogugi_1_1berkeley_1_1_config.html#a512495322c37a38c3390877832c49f99">org.jogugi.berkeley.Config.followers</a></div><div class="ttdeci">List&lt; FollowerConfig &gt; followers</div><div class="ttdoc">Lista de nodos seguidores.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df8/_config_8java_source.html#l00073">Config.java:73</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Algoritmo Berkeley con sockets REQ/REP ZeroMMQ: Fichero Fuente FollowerInfo.java</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Algoritmo Berkeley con sockets REQ/REP ZeroMMQ
+   &#160;<span id="projectnumber">J.JavierGuti�rrezGil(jogugi@posgrado.upv.es)V0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b8e0663afee48cb679b74bbd21bdf843.html">org</a></li><li class="navelem"><a class="el" href="../../dir_6160c0f7ff13126ab98d465bf76cedd8.html">jogugi</a></li><li class="navelem"><a class="el" href="../../dir_6a5d3f00176bd55399ec92d443df29a0.html">berkeley</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">FollowerInfo.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d27/_follower_info_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">package </span>org.jogugi.berkeley;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> java.util.Date;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html">   11</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html">FollowerInfo</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    String name;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    String address;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html">FollowerState</a> state;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    Date dateFollower;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">long</span> localTime;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">long</span> communicationTime;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">long</span> tripTime;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">long</span> diffTime;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">long</span> delta;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a215d59b84707a0d729703beed629e980">   51</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a215d59b84707a0d729703beed629e980">FollowerInfo</a>(String address, String name, <span class="keywordtype">long</span> localTime, <span class="keywordtype">long</span> communicationTime, <span class="keywordtype">long</span> nowTime) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        this.name = name;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        this.address = address;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        this.localTime = localTime;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        this.dateFollower = <span class="keyword">new</span> Date(localTime);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        this.communicationTime = communicationTime;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        this.tripTime = communicationTime / 2;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        this.diffTime = (localTime + tripTime) - nowTime;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        this.state = <a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html">FollowerState</a>.<a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#ab4a29e1ee4a2f443fb1cb8535a77b5f0">REQUEST_NOT_SENT</a>; <span class="comment">// Estado inicial por defecto</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#ac39362df144f8b2baa4645ad5ba2d422">   63</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#ac39362df144f8b2baa4645ad5ba2d422">getAdrressFollower</a>() {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> address;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a612f64a83ebb1536b90e0ecdad3704f7">   68</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a612f64a83ebb1536b90e0ecdad3704f7">getName</a>() {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> name;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a0bd9f974e65400c148d81a7d5b2ae9cb">   73</a></span>&#160;    <span class="keyword">public</span> Date <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a0bd9f974e65400c148d81a7d5b2ae9cb">getDateFollower</a>() {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> dateFollower;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#ae428c4cf85498c21a4f5def2309b688d">   78</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#ae428c4cf85498c21a4f5def2309b688d">getDiffTime</a>() {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> diffTime;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a256aa9967da4aeb0ce7fd7a67decdaae">   83</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a256aa9967da4aeb0ce7fd7a67decdaae">getLocalTime</a>() {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> localTime;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#ad9ff1a42dd09a9b1b39db4d9506cc7cd">   88</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#ad9ff1a42dd09a9b1b39db4d9506cc7cd">getCommunicationTime</a>() {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> communicationTime;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a5998386207202771454df5382722caa1">   93</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">long</span> <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a5998386207202771454df5382722caa1">getDelta</a>() {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> delta;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a42210473e0ec5b8fb26d1be0488d79a6">  101</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a42210473e0ec5b8fb26d1be0488d79a6">setDelta</a>(<span class="keywordtype">long</span> delta) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        this.delta = delta;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a3293be9da0a963c6143d0fb1d061a071">  106</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html">FollowerState</a> <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a3293be9da0a963c6143d0fb1d061a071">getState</a>() {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> state;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a8bfcd61118801a2c0d21ae40617cdf57">  114</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a8bfcd61118801a2c0d21ae40617cdf57">setState</a>(<a class="code" href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html">FollowerState</a> state) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        this.state = state;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    @Override</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a251da7a9392992e2aa9e30df32ab31bd">  124</a></span>&#160;    <span class="keyword">public</span> String <a class="code" href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a251da7a9392992e2aa9e30df32ab31bd">toString</a>() {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Nombre: &quot;</span> + name + <span class="stringliteral">&quot;, &quot;</span> + <span class="stringliteral">&quot;State: &quot;</span> + state + <span class="stringliteral">&quot;, &quot;</span> +</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;               <span class="stringliteral">&quot;Hora local: &quot;</span> + (localTime != -1 ? localTime : <span class="stringliteral">&quot;No respondió&quot;</span>) + <span class="stringliteral">&quot;, &quot;</span> +</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;               <span class="stringliteral">&quot;Hora del seguidor: &quot;</span> + (dateFollower != <span class="keyword">null</span> ? dateFollower.toString() : <span class="stringliteral">&quot;No disponible&quot;</span>) + <span class="stringliteral">&quot;, &quot;</span> +</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;               <span class="stringliteral">&quot;Tiempo de comunicación: &quot;</span> + communicationTime + <span class="stringliteral">&quot; ms, &quot;</span> +</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;               <span class="stringliteral">&quot;Triptime con el seguidor: &quot;</span> + tripTime + <span class="stringliteral">&quot; ms, &quot;</span> +</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;               <span class="stringliteral">&quot;Diferencia de tiempo para el seguidor: &quot;</span> + diffTime + <span class="stringliteral">&quot; ms, &quot;</span> +</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;               <span class="stringliteral">&quot;Diferencia de tiempo global (delta): &quot;</span> + delta + <span class="stringliteral">&quot; ms, &quot;</span> +</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;               <span class="stringliteral">&quot;Dirección del seguidor: &quot;</span> + (address != <span class="keyword">null</span> ? address : <span class="stringliteral">&quot;No disponible&quot;</span>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_a215d59b84707a0d729703beed629e980"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a215d59b84707a0d729703beed629e980">org.jogugi.berkeley.FollowerInfo.FollowerInfo</a></div><div class="ttdeci">FollowerInfo(String address, String name, long localTime, long communicationTime, long nowTime)</div><div class="ttdoc">Constructor de la clase FollowerInfo.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00051">FollowerInfo.java:51</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_a42210473e0ec5b8fb26d1be0488d79a6"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a42210473e0ec5b8fb26d1be0488d79a6">org.jogugi.berkeley.FollowerInfo.setDelta</a></div><div class="ttdeci">void setDelta(long delta)</div><div class="ttdoc">Establece la diferencia global de tiempo (delta) para el seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00101">FollowerInfo.java:101</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_ad9ff1a42dd09a9b1b39db4d9506cc7cd"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#ad9ff1a42dd09a9b1b39db4d9506cc7cd">org.jogugi.berkeley.FollowerInfo.getCommunicationTime</a></div><div class="ttdeci">long getCommunicationTime()</div><div class="ttdoc">Obtiene el tiempo de comunicación entre el líder y el seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00088">FollowerInfo.java:88</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_ac39362df144f8b2baa4645ad5ba2d422"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#ac39362df144f8b2baa4645ad5ba2d422">org.jogugi.berkeley.FollowerInfo.getAdrressFollower</a></div><div class="ttdeci">String getAdrressFollower()</div><div class="ttdoc">Obtiene la dirección del seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00063">FollowerInfo.java:63</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_a251da7a9392992e2aa9e30df32ab31bd"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a251da7a9392992e2aa9e30df32ab31bd">org.jogugi.berkeley.FollowerInfo.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdoc">Representación en cadena del objeto FollowerInfo.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00124">FollowerInfo.java:124</a></div></div>
+<div class="ttc" id="aenumorg_1_1jogugi_1_1berkeley_1_1_follower_state_html"><div class="ttname"><a href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html">org.jogugi.berkeley.FollowerState</a></div><div class="ttdoc">Enumeración que define los posibles estados de un seguidor durante el proceso de actualización de la ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d0c/_follower_state_8java_source.html#l00007">FollowerState.java:7</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html">org.jogugi.berkeley.FollowerInfo</a></div><div class="ttdoc">Clase que representa información detallada de un nodo seguidor en el sistema.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00011">FollowerInfo.java:11</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_ae428c4cf85498c21a4f5def2309b688d"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#ae428c4cf85498c21a4f5def2309b688d">org.jogugi.berkeley.FollowerInfo.getDiffTime</a></div><div class="ttdeci">long getDiffTime()</div><div class="ttdoc">Obtiene la diferencia de tiempo entre el líder y el seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00078">FollowerInfo.java:78</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_a5998386207202771454df5382722caa1"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a5998386207202771454df5382722caa1">org.jogugi.berkeley.FollowerInfo.getDelta</a></div><div class="ttdeci">long getDelta()</div><div class="ttdoc">Obtiene la diferencia global de tiempo (delta).</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00093">FollowerInfo.java:93</a></div></div>
+<div class="ttc" id="aenumorg_1_1jogugi_1_1berkeley_1_1_follower_state_html_ab4a29e1ee4a2f443fb1cb8535a77b5f0"><div class="ttname"><a href="../../d4/d96/enumorg_1_1jogugi_1_1berkeley_1_1_follower_state.html#ab4a29e1ee4a2f443fb1cb8535a77b5f0">org.jogugi.berkeley.FollowerState.REQUEST_NOT_SENT</a></div><div class="ttdeci">REQUEST_NOT_SENT</div><div class="ttdoc">La solicitud de actualización de la hora no fue enviada debido a algún error.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d0c/_follower_state_8java_source.html#l00027">FollowerState.java:27</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_a8bfcd61118801a2c0d21ae40617cdf57"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a8bfcd61118801a2c0d21ae40617cdf57">org.jogugi.berkeley.FollowerInfo.setState</a></div><div class="ttdeci">void setState(FollowerState state)</div><div class="ttdoc">Establece el estado del seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00114">FollowerInfo.java:114</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_a256aa9967da4aeb0ce7fd7a67decdaae"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a256aa9967da4aeb0ce7fd7a67decdaae">org.jogugi.berkeley.FollowerInfo.getLocalTime</a></div><div class="ttdeci">long getLocalTime()</div><div class="ttdoc">Obtiene la hora local del seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00083">FollowerInfo.java:83</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_a0bd9f974e65400c148d81a7d5b2ae9cb"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a0bd9f974e65400c148d81a7d5b2ae9cb">org.jogugi.berkeley.FollowerInfo.getDateFollower</a></div><div class="ttdeci">Date getDateFollower()</div><div class="ttdoc">Obtiene la fecha y hora local del seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00073">FollowerInfo.java:73</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_a3293be9da0a963c6143d0fb1d061a071"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a3293be9da0a963c6143d0fb1d061a071">org.jogugi.berkeley.FollowerInfo.getState</a></div><div class="ttdeci">FollowerState getState()</div><div class="ttdoc">Obtiene el estado actual del seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00106">FollowerInfo.java:106</a></div></div>
+<div class="ttc" id="aclassorg_1_1jogugi_1_1berkeley_1_1_follower_info_html_a612f64a83ebb1536b90e0ecdad3704f7"><div class="ttname"><a href="../../d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info.html#a612f64a83ebb1536b90e0ecdad3704f7">org.jogugi.berkeley.FollowerInfo.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdoc">Obtiene el nombre del seguidor.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d27/_follower_info_8java_source.html#l00068">FollowerInfo.java:68</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

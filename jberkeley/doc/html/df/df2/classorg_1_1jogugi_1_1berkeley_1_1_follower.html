@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Algoritmo Berkeley con sockets REQ/REP ZeroMMQ: Referencia de la Clase org.jogugi.berkeley.Follower</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Algoritmo Berkeley con sockets REQ/REP ZeroMMQ
+   &#160;<span id="projectnumber">J.JavierGuti�rrezGil(jogugi@posgrado.upv.es)V0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../db/d96/namespaceorg.html">org</a></li><li class="navelem"><a class="el" href="../../d6/dd6/namespaceorg_1_1jogugi.html">jogugi</a></li><li class="navelem"><a class="el" href="../../de/d08/namespaceorg_1_1jogugi_1_1berkeley.html">berkeley</a></li><li class="navelem"><a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html">Follower</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pro-methods">Métodos protegidos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../dd/d98/classorg_1_1jogugi_1_1berkeley_1_1_follower-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase org.jogugi.berkeley.Follower</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase que representa un nodo seguidor en un sistema distribuido.  
+ <a href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#details">Más...</a></p>
+
+<p>Herencias <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html">org.jogugi.berkeley.AbstractNode</a>.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a9645ebb72f7ce9b208e49f3510afe125"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a9645ebb72f7ce9b208e49f3510afe125">initializeNode</a> (String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a2fec798ddf0df1cd6a0aedcd8b3ea0a4">name</a>, String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a>, String <a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a0be85f69ebfad1f6fbb06495229a0dfa">leaderAddress</a>, int <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a0baa9f7e816448f789f25b2baa9a92ac">timeout</a>)  throws IOException, SocketZeroMQException </td></tr>
+<tr class="memdesc:a9645ebb72f7ce9b208e49f3510afe125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el nodo seguidor con la información específica.  <a href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a9645ebb72f7ce9b208e49f3510afe125">Más...</a><br /></td></tr>
+<tr class="separator:a9645ebb72f7ce9b208e49f3510afe125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed06cd149e1668825f1a55371b03aa27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#aed06cd149e1668825f1a55371b03aa27">startAlgorithm</a> ()  throws SocketZeroMQException </td></tr>
+<tr class="memdesc:aed06cd149e1668825f1a55371b03aa27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia el algoritmo configurando y enlazando el socket ZeroMQ.  <a href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#aed06cd149e1668825f1a55371b03aa27">Más...</a><br /></td></tr>
+<tr class="separator:aed06cd149e1668825f1a55371b03aa27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node')"><img src="../../closed.png" alt="-"/>&#160;Métodos públicos heredados desde <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html">org.jogugi.berkeley.AbstractNode</a></td></tr>
+<tr class="memitem:aab49bd4dbe8efa4fc5fcd3792964e796 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#aab49bd4dbe8efa4fc5fcd3792964e796">initializeNode</a> (String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a2fec798ddf0df1cd6a0aedcd8b3ea0a4">name</a>, String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a>, int <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a0baa9f7e816448f789f25b2baa9a92ac">timeout</a>)</td></tr>
+<tr class="memdesc:aab49bd4dbe8efa4fc5fcd3792964e796 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el nodo con el nombre, dirección y tiempo de espera.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#aab49bd4dbe8efa4fc5fcd3792964e796">Más...</a><br /></td></tr>
+<tr class="separator:aab49bd4dbe8efa4fc5fcd3792964e796 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39fe900fa81cdcd395e3782c7ca5a2c inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ac39fe900fa81cdcd395e3782c7ca5a2c">initializeNode</a> (String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a2fec798ddf0df1cd6a0aedcd8b3ea0a4">name</a>, String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a>, int <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a0baa9f7e816448f789f25b2baa9a92ac">timeout</a>, HashMap&lt; String, String &gt; listNodeAddresses)</td></tr>
+<tr class="memdesc:ac39fe900fa81cdcd395e3782c7ca5a2c inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el nodo con el nombre, dirección, tiempo de espera y la lista de nodos.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ac39fe900fa81cdcd395e3782c7ca5a2c">Más...</a><br /></td></tr>
+<tr class="separator:ac39fe900fa81cdcd395e3782c7ca5a2c inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af92f86656228a1b38583de8429c1e783 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#af92f86656228a1b38583de8429c1e783">sendMessageSync</a> (String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a>, String message)  throws SocketZeroMQException </td></tr>
+<tr class="memdesc:af92f86656228a1b38583de8429c1e783 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía un mensaje de manera síncrona y espera una respuesta.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#af92f86656228a1b38583de8429c1e783">Más...</a><br /></td></tr>
+<tr class="separator:af92f86656228a1b38583de8429c1e783 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51bbbcf52f5e11b754b424c426b1a58f inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a51bbbcf52f5e11b754b424c426b1a58f">sendMessageAsync</a> (String <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a>, String message)  throws SocketZeroMQException </td></tr>
+<tr class="memdesc:a51bbbcf52f5e11b754b424c426b1a58f inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía un mensaje de manera asíncrona.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a51bbbcf52f5e11b754b424c426b1a58f">Más...</a><br /></td></tr>
+<tr class="separator:a51bbbcf52f5e11b754b424c426b1a58f inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19dcf84e3b5eb0562779070022bb33b8 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a19dcf84e3b5eb0562779070022bb33b8">startListening</a> ()  throws SocketZeroMQException </td></tr>
+<tr class="memdesc:a19dcf84e3b5eb0562779070022bb33b8 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia el proceso de escucha de mensajes en el nodo.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a19dcf84e3b5eb0562779070022bb33b8">Más...</a><br /></td></tr>
+<tr class="separator:a19dcf84e3b5eb0562779070022bb33b8 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf96feb8bcc6248ee5098f3f9ab0c5b2 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#abf96feb8bcc6248ee5098f3f9ab0c5b2">close</a> ()  throws SocketZeroMQException </td></tr>
+<tr class="memdesc:abf96feb8bcc6248ee5098f3f9ab0c5b2 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cierra los recursos utilizados por el nodo, incluyendo el socket y el contexto.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#abf96feb8bcc6248ee5098f3f9ab0c5b2">Más...</a><br /></td></tr>
+<tr class="separator:abf96feb8bcc6248ee5098f3f9ab0c5b2 inherit pub_methods_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Métodos protegidos</h2></td></tr>
+<tr class="memitem:a47fda8712ae1cac72ade2e942ebfcea4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a47fda8712ae1cac72ade2e942ebfcea4">handleProcess</a> (String message)  throws SocketZeroMQException </td></tr>
+<tr class="memdesc:a47fda8712ae1cac72ade2e942ebfcea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maneja y procesa los mensajes recibidos del líder.  <a href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a47fda8712ae1cac72ade2e942ebfcea4">Más...</a><br /></td></tr>
+<tr class="separator:a47fda8712ae1cac72ade2e942ebfcea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a1f664e73aada1bf311d75bb1f8d57f9f"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a1f664e73aada1bf311d75bb1f8d57f9f">displayLeaderMessage</a> (String leaderName, String leaderMessage, long T0, long localTime)</td></tr>
+<tr class="memdesc:a1f664e73aada1bf311d75bb1f8d57f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra el mensaje del líder y calcula un valor intermedio de tiempo (TP).  <a href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a1f664e73aada1bf311d75bb1f8d57f9f">Más...</a><br /></td></tr>
+<tr class="separator:a1f664e73aada1bf311d75bb1f8d57f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6a8b4410e479c8372205a5e5b899cd"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#afb6a8b4410e479c8372205a5e5b899cd">modSystemTime</a> (long delta)</td></tr>
+<tr class="memdesc:afb6a8b4410e479c8372205a5e5b899cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifica el tiempo local del sistema en función de un delta.  <a href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#afb6a8b4410e479c8372205a5e5b899cd">Más...</a><br /></td></tr>
+<tr class="separator:afb6a8b4410e479c8372205a5e5b899cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79033a6460c65997aeabab8dfc204aae"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a79033a6460c65997aeabab8dfc204aae">getCurrentTime</a> ()</td></tr>
+<tr class="memdesc:a79033a6460c65997aeabab8dfc204aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la hora actual del sistema en milisegundos desde la época Unix.  <a href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a79033a6460c65997aeabab8dfc204aae">Más...</a><br /></td></tr>
+<tr class="separator:a79033a6460c65997aeabab8dfc204aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a0be85f69ebfad1f6fbb06495229a0dfa"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a0be85f69ebfad1f6fbb06495229a0dfa">leaderAddress</a></td></tr>
+<tr class="memdesc:a0be85f69ebfad1f6fbb06495229a0dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección del nodo líder en formato <code>host:puerto</code>.  <a href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#a0be85f69ebfad1f6fbb06495229a0dfa">Más...</a><br /></td></tr>
+<tr class="separator:a0be85f69ebfad1f6fbb06495229a0dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:af811a672a8df9e299e5768716ab098b1"><td class="memItemLeft" align="right" valign="top">static final Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#af811a672a8df9e299e5768716ab098b1">logger</a> = LoggerFactory.getLogger(Follower.class)</td></tr>
+<tr class="memdesc:af811a672a8df9e299e5768716ab098b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logger para registrar eventos y mensajes del nodo seguidor.  <a href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html#af811a672a8df9e299e5768716ab098b1">Más...</a><br /></td></tr>
+<tr class="separator:af811a672a8df9e299e5768716ab098b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node')"><img src="../../closed.png" alt="-"/>&#160;Atributos protegidos heredados desde <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html">org.jogugi.berkeley.AbstractNode</a></td></tr>
+<tr class="memitem:ad19b245b7e970f01a8b0b5429226511c inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">ZContext&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ad19b245b7e970f01a8b0b5429226511c">context</a> = null</td></tr>
+<tr class="memdesc:ad19b245b7e970f01a8b0b5429226511c inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contexto de ZeroMQ utilizado para la creación de sockets.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ad19b245b7e970f01a8b0b5429226511c">Más...</a><br /></td></tr>
+<tr class="separator:ad19b245b7e970f01a8b0b5429226511c inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a993bd16dddf72a4650dd5d78e58d68ea inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">ZMQ.Socket&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a993bd16dddf72a4650dd5d78e58d68ea">socket</a> = null</td></tr>
+<tr class="memdesc:a993bd16dddf72a4650dd5d78e58d68ea inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket REP del nodo utilizado para recibir mensajes.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a993bd16dddf72a4650dd5d78e58d68ea">Más...</a><br /></td></tr>
+<tr class="separator:a993bd16dddf72a4650dd5d78e58d68ea inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fec798ddf0df1cd6a0aedcd8b3ea0a4 inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a2fec798ddf0df1cd6a0aedcd8b3ea0a4">name</a></td></tr>
+<tr class="memdesc:a2fec798ddf0df1cd6a0aedcd8b3ea0a4 inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre del nodo.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a2fec798ddf0df1cd6a0aedcd8b3ea0a4">Más...</a><br /></td></tr>
+<tr class="separator:a2fec798ddf0df1cd6a0aedcd8b3ea0a4 inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8298e431c5984409d9a1df4213ab687e inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">address</a></td></tr>
+<tr class="memdesc:a8298e431c5984409d9a1df4213ab687e inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección del nodo en formato <code>host:puerto</code>.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a8298e431c5984409d9a1df4213ab687e">Más...</a><br /></td></tr>
+<tr class="separator:a8298e431c5984409d9a1df4213ab687e inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0baa9f7e816448f789f25b2baa9a92ac inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a0baa9f7e816448f789f25b2baa9a92ac">timeout</a></td></tr>
+<tr class="memdesc:a0baa9f7e816448f789f25b2baa9a92ac inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tiempo de espera en milisegundos para operaciones de socket.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a0baa9f7e816448f789f25b2baa9a92ac">Más...</a><br /></td></tr>
+<tr class="separator:a0baa9f7e816448f789f25b2baa9a92ac inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad28f213086afa19e58f83686cf70fdd8 inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">Map&lt; String, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ad28f213086afa19e58f83686cf70fdd8">nodeAddresses</a> = null</td></tr>
+<tr class="memdesc:ad28f213086afa19e58f83686cf70fdd8 inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapa que contiene las direcciones de otros nodos en el sistema.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#ad28f213086afa19e58f83686cf70fdd8">Más...</a><br /></td></tr>
+<tr class="separator:ad28f213086afa19e58f83686cf70fdd8 inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd5c79735d554a9c6c124c43bbb3d1a8 inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memItemLeft" align="right" valign="top">List&lt; ZMQ.Socket &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#acd5c79735d554a9c6c124c43bbb3d1a8">listSocketsREQ</a></td></tr>
+<tr class="memdesc:acd5c79735d554a9c6c124c43bbb3d1a8 inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de sockets REQ utilizados para enviar solicitudes a otros nodos.  <a href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#acd5c79735d554a9c6c124c43bbb3d1a8">Más...</a><br /></td></tr>
+<tr class="separator:acd5c79735d554a9c6c124c43bbb3d1a8 inherit pro_attribs_classorg_1_1jogugi_1_1berkeley_1_1_abstract_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase que representa un nodo seguidor en un sistema distribuido. </p>
+<p>La clase <code><a class="el" href="../../df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower.html" title="Clase que representa un nodo seguidor en un sistema distribuido.">Follower</a></code> extiende la funcionalidad de la clase abstracta <code><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html" title="Clase abstracta que implementa la interfaz INode.">AbstractNode</a></code>. Representa un nodo seguidor que interactúa con un nodo líder en un sistema distribuido. El seguidor es capaz de recibir y procesar mensajes del líder, así como manejar operaciones específicas como obtener la hora, modificarla, y cerrar la conexión. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/de6/_follower_8java_source.html#l00021">21</a> del archivo <a class="el" href="../../d3/de6/_follower_8java_source.html">Follower.java</a>.</p>
+</div><h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="a1f664e73aada1bf311d75bb1f8d57f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f664e73aada1bf311d75bb1f8d57f9f">&#9670;&nbsp;</a></span>displayLeaderMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long org.jogugi.berkeley.Follower.displayLeaderMessage </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>leaderName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>leaderMessage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>T0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>localTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Muestra el mensaje del líder y calcula un valor intermedio de tiempo (TP). </p>
+<p>Este método registra el mensaje del líder recibido, la hora proporcionada por el líder (T0), y la hora local del seguidor. Además, calcula un tiempo promedio (TP) basado en T0 y el tiempo local del seguidor, y lo registra en el log.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">leaderName</td><td>El nombre del líder que envía el mensaje. </td></tr>
+    <tr><td class="paramname">leaderMessage</td><td>El mensaje recibido del líder. </td></tr>
+    <tr><td class="paramname">T0</td><td>La marca de tiempo enviada por el líder en milisegundos desde la época. </td></tr>
+    <tr><td class="paramname">localTime</td><td>La hora local actual del seguidor en milisegundos desde la época. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El tiempo promedio (TP) calculado a partir de T0 y la hora local del seguidor. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/de6/_follower_8java_source.html#l00131">131</a> del archivo <a class="el" href="../../d3/de6/_follower_8java_source.html">Follower.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d3/de6/_follower_8java_source.html#l00031">org.jogugi.berkeley.Follower.logger</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00038">org.jogugi.berkeley.AbstractNode.name</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d3/de6/_follower_8java_source.html#l00069">org.jogugi.berkeley.Follower.handleProcess()</a>.</p>
+
+</div>
+</div>
+<a id="a79033a6460c65997aeabab8dfc204aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79033a6460c65997aeabab8dfc204aae">&#9670;&nbsp;</a></span>getCurrentTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long org.jogugi.berkeley.Follower.getCurrentTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene la hora actual del sistema en milisegundos desde la época Unix. </p>
+<p>Este método registra el tiempo actual en milisegundos (TP) junto con la dirección del seguidor y también lo convierte en una fecha legible para su registro.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>El tiempo actual del sistema en milisegundos desde el 1 de enero de 1970 (época Unix). </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/de6/_follower_8java_source.html#l00175">175</a> del archivo <a class="el" href="../../d3/de6/_follower_8java_source.html">Follower.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d3/de6/_follower_8java_source.html#l00031">org.jogugi.berkeley.Follower.logger</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d3/de6/_follower_8java_source.html#l00069">org.jogugi.berkeley.Follower.handleProcess()</a>.</p>
+
+</div>
+</div>
+<a id="a47fda8712ae1cac72ade2e942ebfcea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47fda8712ae1cac72ade2e942ebfcea4">&#9670;&nbsp;</a></span>handleProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String org.jogugi.berkeley.Follower.handleProcess </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td> throws <a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html">SocketZeroMQException</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maneja y procesa los mensajes recibidos del líder. </p>
+<p>Este método deserializa un mensaje JSON enviado por el líder, identifica la operación solicitada (por ejemplo, obtener la hora, modificar el tiempo o cerrar la conexión) y responde de acuerdo con la operación especificada.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>El mensaje JSON recibido del líder. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Una cadena JSON con la respuesta apropiada para la operación realizada. </dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html" title="Excepción personalizada para errores en la operación de sockets de ZeroMQ.">SocketZeroMQException</a></td><td>En caso de errores relacionados con el socket. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#adb62b4dd7636e684f787de2a1f62d771">org.jogugi.berkeley.AbstractNode</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/de6/_follower_8java_source.html#l00069">69</a> del archivo <a class="el" href="../../d3/de6/_follower_8java_source.html">Follower.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00043">org.jogugi.berkeley.AbstractNode.address</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00131">org.jogugi.berkeley.Follower.displayLeaderMessage()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00175">org.jogugi.berkeley.Follower.getCurrentTime()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00026">org.jogugi.berkeley.Follower.leaderAddress</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00031">org.jogugi.berkeley.Follower.logger</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00154">org.jogugi.berkeley.Follower.modSystemTime()</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00038">org.jogugi.berkeley.AbstractNode.name</a>.</p>
+
+</div>
+</div>
+<a id="a9645ebb72f7ce9b208e49f3510afe125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9645ebb72f7ce9b208e49f3510afe125">&#9670;&nbsp;</a></span>initializeNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void org.jogugi.berkeley.Follower.initializeNode </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>leaderAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> throws IOException, <a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html">SocketZeroMQException</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el nodo seguidor con la información específica. </p>
+<p>Este método configura el nodo seguidor asignándole su nombre, dirección, dirección del líder y tiempo de espera. Extiende la funcionalidad de la clase base <code><a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html" title="Clase abstracta que implementa la interfaz INode.">AbstractNode</a></code>.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nombre del nodo seguidor. </td></tr>
+    <tr><td class="paramname">address</td><td>Dirección del nodo seguidor en formato <code>host:puerto</code>. </td></tr>
+    <tr><td class="paramname">leaderAddress</td><td>Dirección del líder en formato <code>host:puerto</code>. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Tiempo de espera (en milisegundos) para las operaciones del nodo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>Si ocurre un error al inicializar el nodo. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html" title="Excepción personalizada para errores en la operación de sockets de ZeroMQ.">SocketZeroMQException</a></td><td>Si ocurre un error relacionado con ZeroMQ. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/de6/_follower_8java_source.html#l00049">49</a> del archivo <a class="el" href="../../d3/de6/_follower_8java_source.html">Follower.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00043">org.jogugi.berkeley.AbstractNode.address</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00026">org.jogugi.berkeley.Follower.leaderAddress</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00038">org.jogugi.berkeley.AbstractNode.name</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00048">org.jogugi.berkeley.AbstractNode.timeout</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d0/da5/_main_8java_source.html#l00042">org.jogugi.berkeley.Main.main()</a>.</p>
+
+</div>
+</div>
+<a id="afb6a8b4410e479c8372205a5e5b899cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6a8b4410e479c8372205a5e5b899cd">&#9670;&nbsp;</a></span>modSystemTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String org.jogugi.berkeley.Follower.modSystemTime </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>delta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modifica el tiempo local del sistema en función de un delta. </p>
+<p>Este método simula un cambio en el tiempo del sistema sumando un delta al tiempo local actual. También registra el tiempo antes y después de la modificación en los logs y devuelve una representación JSON de la operación.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delta</td><td>El desplazamiento en milisegundos a aplicar al tiempo local actual. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Una cadena JSON que contiene el nombre del seguidor, el nuevo tiempo local modificado y el estado de la operación. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/de6/_follower_8java_source.html#l00154">154</a> del archivo <a class="el" href="../../d3/de6/_follower_8java_source.html">Follower.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d3/de6/_follower_8java_source.html#l00031">org.jogugi.berkeley.Follower.logger</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00038">org.jogugi.berkeley.AbstractNode.name</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d3/de6/_follower_8java_source.html#l00069">org.jogugi.berkeley.Follower.handleProcess()</a>.</p>
+
+</div>
+</div>
+<a id="aed06cd149e1668825f1a55371b03aa27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed06cd149e1668825f1a55371b03aa27">&#9670;&nbsp;</a></span>startAlgorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void org.jogugi.berkeley.Follower.startAlgorithm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> throws <a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html">SocketZeroMQException</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicia el algoritmo configurando y enlazando el socket ZeroMQ. </p>
+<p>Este método configura un socket de tipo REP (respuesta) para recibir mensajes y lo enlaza a la dirección especificada. Luego inicia el proceso de escucha de mensajes entrantes.</p>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception.html" title="Excepción personalizada para errores en la operación de sockets de ZeroMQ.">SocketZeroMQException</a></td><td>Si ocurre un error al configurar o enlazar el socket. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="../../d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node.html#a003b04707fccab72d90325720750e272">org.jogugi.berkeley.AbstractNode</a>.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/de6/_follower_8java_source.html#l00196">196</a> del archivo <a class="el" href="../../d3/de6/_follower_8java_source.html">Follower.java</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00043">org.jogugi.berkeley.AbstractNode.address</a>, <a class="el" href="../../db/dbc/_socket_zero_m_q_exception_8java_source.html#l00024">org.jogugi.berkeley.SocketZeroMQException.ErrorType.CONNECTION_ERROR</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00028">org.jogugi.berkeley.AbstractNode.context</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00031">org.jogugi.berkeley.Follower.logger</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00038">org.jogugi.berkeley.AbstractNode.name</a>, <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00033">org.jogugi.berkeley.AbstractNode.socket</a> y <a class="el" href="../../d8/d6a/_abstract_node_8java_source.html#l00184">org.jogugi.berkeley.AbstractNode.startListening()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d0/da5/_main_8java_source.html#l00042">org.jogugi.berkeley.Main.main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a id="a0be85f69ebfad1f6fbb06495229a0dfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be85f69ebfad1f6fbb06495229a0dfa">&#9670;&nbsp;</a></span>leaderAddress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String org.jogugi.berkeley.Follower.leaderAddress</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dirección del nodo líder en formato <code>host:puerto</code>. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/de6/_follower_8java_source.html#l00026">26</a> del archivo <a class="el" href="../../d3/de6/_follower_8java_source.html">Follower.java</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d3/de6/_follower_8java_source.html#l00069">org.jogugi.berkeley.Follower.handleProcess()</a> y <a class="el" href="../../d3/de6/_follower_8java_source.html#l00049">org.jogugi.berkeley.Follower.initializeNode()</a>.</p>
+
+</div>
+</div>
+<a id="af811a672a8df9e299e5768716ab098b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af811a672a8df9e299e5768716ab098b1">&#9670;&nbsp;</a></span>logger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Logger org.jogugi.berkeley.Follower.logger = LoggerFactory.getLogger(Follower.class)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logger para registrar eventos y mensajes del nodo seguidor. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="../../d3/de6/_follower_8java_source.html#l00031">31</a> del archivo <a class="el" href="../../d3/de6/_follower_8java_source.html">Follower.java</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="../../d3/de6/_follower_8java_source.html#l00131">org.jogugi.berkeley.Follower.displayLeaderMessage()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00175">org.jogugi.berkeley.Follower.getCurrentTime()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00069">org.jogugi.berkeley.Follower.handleProcess()</a>, <a class="el" href="../../d3/de6/_follower_8java_source.html#l00154">org.jogugi.berkeley.Follower.modSystemTime()</a> y <a class="el" href="../../d3/de6/_follower_8java_source.html#l00196">org.jogugi.berkeley.Follower.startAlgorithm()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li><a class="el" href="../../d3/de6/_follower_8java_source.html">Follower.java</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

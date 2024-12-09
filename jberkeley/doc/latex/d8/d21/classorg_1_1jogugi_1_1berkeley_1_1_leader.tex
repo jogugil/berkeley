@@ -1,0 +1,654 @@
+\doxysection{Referencia de la Clase org.\+jogugi.\+berkeley.\+Leader}
+\label{classorg_1_1jogugi_1_1berkeley_1_1_leader}\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+
+
+Representa un nodo líder en el sistema.  
+
+
+
+
+Herencias \textbf{ org.\+jogugi.\+berkeley.\+Abstract\+Node}.
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ initialize\+Node} (String \textbf{ address}, String \textbf{ name}, int \textbf{ timeout}, Hash\+Map$<$ String, String $>$ followers)
+\begin{DoxyCompactList}\small\item\em Inicializa el nodo líder con la dirección, nombre, timeout y lista de seguidores. \end{DoxyCompactList}\item 
+void \textbf{ start\+Algorithm} ()  throws Interrupted\+Exception, Execution\+Exception 
+\begin{DoxyCompactList}\small\item\em Inicia el algoritmo de sincronización de relojes entre el líder y los seguidores. \end{DoxyCompactList}\item 
+void \textbf{ close} ()  throws Socket\+Zero\+M\+Q\+Exception 
+\begin{DoxyCompactList}\small\item\em Cierra el socket del líder y el contexto de Zero\+MQ. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+String \textbf{ handle\+Process} (String message)
+\begin{DoxyCompactList}\small\item\em Función que debe sobrecargarse e implementar la lógica para procesar el mensaje recibido y realizar la lógica de negocio correspondiente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ process\+Followers} ()  throws Interrupted\+Exception 
+\begin{DoxyCompactList}\small\item\em Procesa las respuestas de todos los seguidores en paralelo. \end{DoxyCompactList}\item 
+\textbf{ Follower\+Info} \textbf{ process\+Follower\+Time} (String follower\+Name, String follower\+Address, long T0)
+\begin{DoxyCompactList}\small\item\em Procesa la solicitud de hora a un seguidor y calcula el tiempo de comunicación. \end{DoxyCompactList}\item 
+long \textbf{ calculate\+Delta\+Time\+Difference} ()
+\begin{DoxyCompactList}\small\item\em Calcula la diferencia de tiempo (delta) entre el tiempo local y los tiempos de los seguidores válidos. \end{DoxyCompactList}\item 
+void \textbf{ call\+Followers\+With\+Updated\+Time} (long delta)  throws Execution\+Exception 
+\begin{DoxyCompactList}\small\item\em Envía actualizaciones de tiempo a los seguidores en paralelo utilizando un {\ttfamily Executor\+Service}. \end{DoxyCompactList}\item 
+\textbf{ Follower\+Info} \textbf{ send\+Time\+Update\+To\+Follower} (\textbf{ Follower\+Info} follower, long delta)
+\begin{DoxyCompactList}\small\item\em Envía una solicitud para actualizar el tiempo de un seguidor en el sistema. \end{DoxyCompactList}\item 
+void \textbf{ send\+Close\+Message} (String follower\+Address)
+\begin{DoxyCompactList}\small\item\em Envía un mensaje de cierre a un seguidor especificado. \end{DoxyCompactList}\item 
+void \textbf{ send\+Close\+Messages\+To\+Followers} ()  throws Execution\+Exception 
+\begin{DoxyCompactList}\small\item\em Envía un mensaje de cierre a todos los seguidores que respondieron con éxito. \end{DoxyCompactList}\item 
+String \textbf{ get\+Follower\+Name} (Future$<$ \textbf{ Follower\+Info} $>$ future, Map$<$ String, Future$<$ \textbf{ Follower\+Info} $>$$>$ future\+Map)
+\begin{DoxyCompactList}\small\item\em Obtiene el nombre del seguidor asociado al futuro pasado como argumento. \end{DoxyCompactList}\item 
+void \textbf{ print\+Results} ()
+\begin{DoxyCompactList}\small\item\em Imprime los resultados del algoritmo, mostrando los diferentes estados de los seguidores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+Concurrent\+Hash\+Map$<$ String, \textbf{ Follower\+Info} $>$ \textbf{ unreachable\+Followers} = new Concurrent\+Hash\+Map$<$$>$()
+\begin{DoxyCompactList}\small\item\em Mapa de seguidores no alcanzables. \end{DoxyCompactList}\item 
+Concurrent\+Hash\+Map$<$ String, \textbf{ Follower\+Info} $>$ \textbf{ successful\+Followers} = new Concurrent\+Hash\+Map$<$$>$()
+\begin{DoxyCompactList}\small\item\em Mapa de seguidores exitosos. \end{DoxyCompactList}\item 
+Concurrent\+Hash\+Map$<$ String, \textbf{ Follower\+Info} $>$ \textbf{ non\+Responding\+Followers} = new Concurrent\+Hash\+Map$<$$>$()
+\begin{DoxyCompactList}\small\item\em Mapa de seguidores que no respondieron. \end{DoxyCompactList}\item 
+Concurrent\+Hash\+Map$<$ String, \textbf{ Follower\+Info} $>$ \textbf{ time\+Updated\+Followers} = new Concurrent\+Hash\+Map$<$$>$()
+\begin{DoxyCompactList}\small\item\em Mapa de seguidores con tiempo actualizado. \end{DoxyCompactList}\item 
+Concurrent\+Hash\+Map$<$ String, \textbf{ Follower\+Info} $>$ \textbf{ failed\+Followers} = new Concurrent\+Hash\+Map$<$$>$()
+\begin{DoxyCompactList}\small\item\em Mapa de seguidores fallidos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \textbf{ logger} = Logger\+Factory.\+get\+Logger(Leader.\+class)
+\begin{DoxyCompactList}\small\item\em Logger para registrar la actividad de la clase \doxyref{Leader}{p.}{d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Otros miembros heredados}
+
+
+\doxysubsection{Descripción detallada}
+Representa un nodo líder en el sistema. 
+
+La clase \doxyref{Leader}{p.}{d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader} gestiona el estado de los seguidores (followers) en el sistema. Administra los seguidores que están alcanzables, exitosos, no responden, actualizados o fallidos, y se comunica con ellos a través de mensajes. 
+
+Definición en la línea 33 del archivo Leader.\+java.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_aa297a94454f80a28b4a91d9335578e16}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!calculateDeltaTimeDifference@{calculateDeltaTimeDifference}}
+\index{calculateDeltaTimeDifference@{calculateDeltaTimeDifference}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{calculateDeltaTimeDifference()}
+{\footnotesize\ttfamily long org.\+jogugi.\+berkeley.\+Leader.\+calculate\+Delta\+Time\+Difference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calcula la diferencia de tiempo (delta) entre el tiempo local y los tiempos de los seguidores válidos. 
+
+Esta función calcula un promedio de los tiempos ajustados de los seguidores que han enviado respuestas válidas, y calcula la diferencia entre el tiempo local del líder y el promedio calculado. El valor de delta se usa para sincronizar el tiempo entre el líder y los seguidores. Si no se reciben respuestas válidas de los seguidores, se retorna 0.
+
+\begin{DoxyReturn}{Devuelve}
+La diferencia de tiempo (delta) calculada en milisegundos. Si no hay seguidores válidos, retorna 0. 
+\end{DoxyReturn}
+
+
+Definición en la línea 361 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Leader.\+logger y org.\+jogugi.\+berkeley.\+Leader.\+successful\+Followers.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+start\+Algorithm().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_a9af6886e0fc77501bf532a751552a4d7}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!callFollowersWithUpdatedTime@{callFollowersWithUpdatedTime}}
+\index{callFollowersWithUpdatedTime@{callFollowersWithUpdatedTime}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{callFollowersWithUpdatedTime()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time (\begin{DoxyParamCaption}\item[{long}]{delta }\end{DoxyParamCaption}) throws Execution\+Exception\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Envía actualizaciones de tiempo a los seguidores en paralelo utilizando un {\ttfamily Executor\+Service}. 
+
+Esta función recorre los seguidores exitosos y envía una solicitud de actualización de tiempo a cada uno de ellos. Las actualizaciones se realizan en paralelo utilizando un pool de hilos. Se gestionan las respuestas de cada seguidor y se espera un resultado con un tiempo de espera definido. Si no se recibe respuesta a tiempo, se registra un mensaje de advertencia.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta} & El valor diferencial de tiempo que se debe aplicar a cada seguidor. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Execution\+Exception} & Si ocurre un error durante la ejecución de alguna de las tareas en paralelo. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 410 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Leader.\+failed\+Followers, org.\+jogugi.\+berkeley.\+Leader.\+get\+Follower\+Name(), org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+Name(), org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+State(), org.\+jogugi.\+berkeley.\+Leader.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+node\+Addresses, org.\+jogugi.\+berkeley.\+Leader.\+send\+Time\+Update\+To\+Follower(), org.\+jogugi.\+berkeley.\+Follower\+Info.\+set\+State(), org.\+jogugi.\+berkeley.\+Leader.\+successful\+Followers, org.\+jogugi.\+berkeley.\+Follower\+State.\+T\+I\+M\+E\+\_\+\+U\+P\+D\+A\+T\+ED y org.\+jogugi.\+berkeley.\+Leader.\+time\+Updated\+Followers.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+start\+Algorithm().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_ab6780212726f5b68e762290ed83e01c4}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!close@{close}}
+\index{close@{close}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{close()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Leader.\+close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws \textbf{ Socket\+Zero\+M\+Q\+Exception}}
+
+
+
+Cierra el socket del líder y el contexto de Zero\+MQ. 
+
+Este método se encarga de cerrar el socket del líder si está abierto y el contexto de Zero\+MQ, liberando los recursos asociados. Si el socket o el contexto no están inicializados, se emite un mensaje de advertencia. Si ocurre un error durante el cierre, se registra un mensaje de error correspondiente.
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & Si ocurre un error durante el cierre del socket. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \textbf{ org.\+jogugi.\+berkeley.\+Abstract\+Node} \doxyref{}{p.}{d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_abf96feb8bcc6248ee5098f3f9ab0c5b2}.
+
+
+
+Definición en la línea 688 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+context, org.\+jogugi.\+berkeley.\+Leader.\+logger y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+socket.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Main.\+main().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_afe84f9306c24463e170c003efe276451}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!getFollowerName@{getFollowerName}}
+\index{getFollowerName@{getFollowerName}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{getFollowerName()}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Leader.\+get\+Follower\+Name (\begin{DoxyParamCaption}\item[{Future$<$ \textbf{ Follower\+Info} $>$}]{future,  }\item[{Map$<$ String, Future$<$ \textbf{ Follower\+Info} $>$$>$}]{future\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obtiene el nombre del seguidor asociado al futuro pasado como argumento. 
+
+Este método busca el nombre de un seguidor en el mapa de futuros ({\ttfamily future\+Map}) en función del objeto {\ttfamily Future$<$\doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}$>$}. Si el futuro corresponde a uno de los seguidores registrados en el mapa, se devuelve el nombre asociado a ese seguidor. Si no se encuentra el seguidor, se devuelve un nombre por defecto\+: \char`\"{}\+Unknown\char`\"{}.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em future} & El objeto {\ttfamily Future$<$\doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}$>$} que se está buscando en el mapa de futuros. \\
+\hline
+{\em future\+Map} & El mapa de futuros ({\ttfamily Map$<$String, Future$<$\doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}$>$$>$}) que asocia nombres de seguidores con sus futuros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+El nombre del seguidor asociado al futuro, o \char`\"{}\+Unknown\char`\"{} si no se encuentra el seguidor. 
+\end{DoxyReturn}
+
+
+Definición en la línea 722 del archivo Leader.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time() y org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_a18c735ec7effdc8e73f9335b8c6a7bdc}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!handleProcess@{handleProcess}}
+\index{handleProcess@{handleProcess}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{handleProcess()}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Leader.\+handle\+Process (\begin{DoxyParamCaption}\item[{String}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Función que debe sobrecargarse e implementar la lógica para procesar el mensaje recibido y realizar la lógica de negocio correspondiente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em message} & El mensaje que se recibirá para ser procesado. Este mensaje podría ser de cualquier tipo, dependiendo de la implementación futura.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+El resultado del procesamiento del mensaje. Actualmente siempre retorna null, pero se espera que devuelva un resultado significativo en el futuro según la lógica de procesamiento.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Exception} & Si ocurre algún error durante el procesamiento del mensaje, se lanzará una excepción. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \textbf{ org.\+jogugi.\+berkeley.\+Abstract\+Node} \doxyref{}{p.}{d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_adb62b4dd7636e684f787de2a1f62d771}.
+
+
+
+Definición en la línea 784 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Leader.\+logger.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_a7c5229a90d24deef6473a8b3bbfa5f17}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!initializeNode@{initializeNode}}
+\index{initializeNode@{initializeNode}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{initializeNode()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Leader.\+initialize\+Node (\begin{DoxyParamCaption}\item[{String}]{address,  }\item[{String}]{name,  }\item[{int}]{timeout,  }\item[{Hash\+Map$<$ String, String $>$}]{followers }\end{DoxyParamCaption})}
+
+
+
+Inicializa el nodo líder con la dirección, nombre, timeout y lista de seguidores. 
+
+Este método configura el nodo líder. Llama al método de inicialización de la clase base para configurar el contexto y los parámetros comunes del nodo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em address} & Dirección del nodo líder. \\
+\hline
+{\em name} & Nombre del nodo líder. \\
+\hline
+{\em timeout} & Tiempo de espera en milisegundos para las operaciones de comunicación. \\
+\hline
+{\em followers} & Lista de direcciones de los seguidores que están conectados al líder. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \textbf{ org.\+jogugi.\+berkeley.\+Abstract\+Node} \doxyref{}{p.}{d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_ac39fe900fa81cdcd395e3782c7ca5a2c}.
+
+
+
+Definición en la línea 78 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+address, org.\+jogugi.\+berkeley.\+Leader.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+timeout.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Main.\+main().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_a31f15c4836dba9ebb46d95f699506965}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!printResults@{printResults}}
+\index{printResults@{printResults}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{printResults()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Leader.\+print\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Imprime los resultados del algoritmo, mostrando los diferentes estados de los seguidores. 
+
+Este método imprime tres grupos de seguidores\+:
+\begin{DoxyItemize}
+\item Seguidores inalcanzables\+: Aquellos que no pudieron ser contactados.
+\item Seguidores que no respondieron a tiempo\+: Aquellos que no enviaron su respuesta dentro del plazo esperado.
+\item Seguidores que respondieron correctamente\+: Aquellos que respondieron con éxito y dentro del tiempo esperado. 
+\end{DoxyItemize}
+
+Definición en la línea 739 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Leader.\+failed\+Followers, org.\+jogugi.\+berkeley.\+Leader.\+logger, org.\+jogugi.\+berkeley.\+Leader.\+non\+Responding\+Followers, org.\+jogugi.\+berkeley.\+Leader.\+successful\+Followers, org.\+jogugi.\+berkeley.\+Leader.\+time\+Updated\+Followers y org.\+jogugi.\+berkeley.\+Leader.\+unreachable\+Followers.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+start\+Algorithm().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_aab7e6d23cdcc97dd2e33488fb5f166c0}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!processFollowers@{processFollowers}}
+\index{processFollowers@{processFollowers}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{processFollowers()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Interrupted\+Exception\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Procesa las respuestas de todos los seguidores en paralelo. 
+
+Este método solicita la hora a todos los seguidores y luego procesa las respuestas a medida que llegan. Los seguidores son procesados en paralelo utilizando un {\ttfamily Executor\+Service} y {\ttfamily Executor\+Completion\+Service} para manejar la ejecución de múltiples hilos.
+
+Fases\+:
+\begin{DoxyItemize}
+\item {\bfseries{Fase 1.\+1}}\+: Lanzar tareas concurrentes para solicitar la hora a todos los seguidores.
+\item {\bfseries{Fase 1.\+2}}\+: Procesar los resultados conforme se completan.
+\end{DoxyItemize}
+
+Los resultados de las respuestas de los seguidores se almacenan en dos mapas\+:
+\begin{DoxyItemize}
+\item {\bfseries{successful\+Followers}}\+: Los seguidores que respondieron correctamente.
+\item {\bfseries{non\+Responding\+Followers}}\+: Los seguidores que no respondieron o respondieron incorrectamente.
+\end{DoxyItemize}
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Interrupted\+Exception} & Si el hilo principal es interrumpido mientras espera los resultados. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 149 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+address, org.\+jogugi.\+berkeley.\+Leader.\+get\+Follower\+Name(), org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+State(), org.\+jogugi.\+berkeley.\+Leader.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name, org.\+jogugi.\+berkeley.\+Follower\+State.\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+node\+Addresses, org.\+jogugi.\+berkeley.\+Leader.\+non\+Responding\+Followers, org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time(), org.\+jogugi.\+berkeley.\+Follower\+State.\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+N\+O\+T\+\_\+\+S\+E\+NT, org.\+jogugi.\+berkeley.\+Follower\+State.\+R\+E\+S\+P\+O\+N\+D\+ED, org.\+jogugi.\+berkeley.\+Follower\+Info.\+set\+State(), org.\+jogugi.\+berkeley.\+Leader.\+successful\+Followers, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+timeout y org.\+jogugi.\+berkeley.\+Leader.\+unreachable\+Followers.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+start\+Algorithm().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_a578f183614dee9e3953f51a8d42cc64e}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!processFollowerTime@{processFollowerTime}}
+\index{processFollowerTime@{processFollowerTime}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{processFollowerTime()}
+{\footnotesize\ttfamily \textbf{ Follower\+Info} org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time (\begin{DoxyParamCaption}\item[{String}]{follower\+Name,  }\item[{String}]{follower\+Address,  }\item[{long}]{T0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Procesa la solicitud de hora a un seguidor y calcula el tiempo de comunicación. 
+
+Este método establece una conexión con un seguidor a través de un socket de tipo R\+E\+Q/\+R\+EP utilizando Z\+MQ. Envía una solicitud para obtener la hora local del seguidor y calcula el tiempo que tarda en recibir la respuesta. Si se recibe una respuesta válida, devuelve un objeto {\ttfamily \doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}} con la información del seguidor. Si no se recibe respuesta o ocurre un error, se registra la incidencia y devuelve una respuesta con valores por defecto.
+
+El proceso de solicitud de tiempo se realiza de la siguiente manera\+:
+\begin{DoxyItemize}
+\item Se crea un socket de tipo R\+EQ para realizar la solicitud de hora.
+\item Se envía una solicitud en formato J\+S\+ON al seguidor con la hora inicial ({\ttfamily T0}).
+\item Se espera la respuesta con la hora local del seguidor.
+\item Si la respuesta es válida, se calcula el tiempo de comunicación y se devuelve el resultado.
+\item Si no se recibe respuesta o ocurre un error, se gestionan estos casos mediante valores predeterminados.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em follower\+Name} & Nombre del seguidor al que se le solicita la hora. \\
+\hline
+{\em follower\+Address} & Dirección del seguidor al que se conecta. \\
+\hline
+{\em T0} & Tiempo de referencia desde el cual se mide el tiempo de comunicación. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Un objeto {\ttfamily \doxyref{Follower\+Info}{p.}{d3/da3/classorg_1_1jogugi_1_1berkeley_1_1_follower_info}} con la hora del seguidor, el tiempo de comunicación, y otros datos relevantes. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Json\+Processing\+Exception} & Si ocurre un error al procesar el J\+S\+ON. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 267 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+context, org.\+jogugi.\+berkeley.\+Leader.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name, org.\+jogugi.\+berkeley.\+Follower\+State.\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+node\+Addresses, org.\+jogugi.\+berkeley.\+Follower\+State.\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+N\+O\+T\+\_\+\+S\+E\+NT, org.\+jogugi.\+berkeley.\+Follower\+State.\+R\+E\+S\+P\+O\+N\+D\+ED, org.\+jogugi.\+berkeley.\+Follower\+Info.\+set\+State() y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+timeout.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_ab1facb19b79cd51ec59359de7ead17cf}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!sendCloseMessage@{sendCloseMessage}}
+\index{sendCloseMessage@{sendCloseMessage}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{sendCloseMessage()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Message (\begin{DoxyParamCaption}\item[{String}]{follower\+Address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Envía un mensaje de cierre a un seguidor especificado. 
+
+Este método crea una solicitud de cierre para desconectar un seguidor del líder. El mensaje se envía de manera síncrona a la dirección del seguidor proporcionada. Si el seguidor responde, se registra la respuesta, indicando si la operación de cierre fue realizada correctamente.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em follower\+Address} & Dirección del seguidor al que se enviará el mensaje de cierre.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Si no se recibe respuesta del seguidor, se emite una advertencia en los logs. 
+\end{DoxyNote}
+
+
+Definición en la línea 566 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+context, org.\+jogugi.\+berkeley.\+Leader.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+timeout.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Messages\+To\+Followers().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_a5b34f986e643ab2521fcd94de261e3b0}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!sendCloseMessagesToFollowers@{sendCloseMessagesToFollowers}}
+\index{sendCloseMessagesToFollowers@{sendCloseMessagesToFollowers}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{sendCloseMessagesToFollowers()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Messages\+To\+Followers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Execution\+Exception\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Envía un mensaje de cierre a todos los seguidores que respondieron con éxito. 
+
+Este método utiliza un {\ttfamily Executor\+Service} con un grupo de hilos para enviar un mensaje de cierre a cada uno de los seguidores que han respondido correctamente. El mensaje de cierre es enviado de manera asíncrona, y el método espera las respuestas o el tiempo de espera para cada uno de los seguidores.
+
+Para cada seguidor\+:
+\begin{DoxyItemize}
+\item Se envía un mensaje de cierre en un hilo separado.
+\item Se espera hasta que el mensaje se haya enviado correctamente o se alcance un tiempo de espera.
+\item Se registran las respuestas o se manejan los errores (por ejemplo, tiempo de espera alcanzado).
+\end{DoxyItemize}
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Execution\+Exception} & Si ocurre un error durante la ejecución de las tareas asíncronas. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definición en la línea 625 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Leader.\+logger, org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Message(), org.\+jogugi.\+berkeley.\+Leader.\+successful\+Followers y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+timeout.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+start\+Algorithm().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_af413ca3135d9c7cf44f78cdcf6497cc4}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!sendTimeUpdateToFollower@{sendTimeUpdateToFollower}}
+\index{sendTimeUpdateToFollower@{sendTimeUpdateToFollower}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{sendTimeUpdateToFollower()}
+{\footnotesize\ttfamily \textbf{ Follower\+Info} org.\+jogugi.\+berkeley.\+Leader.\+send\+Time\+Update\+To\+Follower (\begin{DoxyParamCaption}\item[{\textbf{ Follower\+Info}}]{follower,  }\item[{long}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Envía una solicitud para actualizar el tiempo de un seguidor en el sistema. 
+
+Esta función establece una conexión de tipo {\ttfamily R\+EQ} con un seguidor a través de Zero\+MQ, enviando una solicitud de actualización de tiempo con un valor delta proporcionado. Si la respuesta es recibida, se procesa y se muestra en el log. Si no se recibe respuesta o ocurre un error, se registra un mensaje adecuado.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em follower\+Address} & Dirección del seguidor a donde enviar la solicitud. \\
+\hline
+{\em delta} & El valor diferencial de tiempo que se debe aplicar en el seguidor. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 493 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+context, org.\+jogugi.\+berkeley.\+Follower\+Info.\+get\+Adrress\+Follower(), org.\+jogugi.\+berkeley.\+Leader.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name, org.\+jogugi.\+berkeley.\+Follower\+Info.\+set\+State(), org.\+jogugi.\+berkeley.\+Follower\+State.\+T\+I\+M\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+E\+N\+T\+\_\+\+U\+P\+D\+A\+TE, org.\+jogugi.\+berkeley.\+Follower\+State.\+T\+I\+M\+E\+\_\+\+U\+P\+D\+A\+T\+ED y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+timeout.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_aec7d580d39a7959adbb12b5fd450f83d}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!startAlgorithm@{startAlgorithm}}
+\index{startAlgorithm@{startAlgorithm}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{startAlgorithm()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Leader.\+start\+Algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Interrupted\+Exception, Execution\+Exception}
+
+
+
+Inicia el algoritmo de sincronización de relojes entre el líder y los seguidores. 
+
+El algoritmo se ejecuta en varias fases\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Fase 1}}\+: Solicitar la hora a todos los seguidores en paralelo.
+\item {\bfseries{Fase 2}}\+: Calcular el delta entre los tiempos de los seguidores obteniendo la media de esos tiempos (delta).
+\item {\bfseries{Fase 3}}\+: Actualizar los relojes de los seguidores con el delta calculado.
+\item {\bfseries{Fase 4}}\+: Enviar un mensaje de cierre a los seguidores.
+\item {\bfseries{Fase 5}}\+: Mostrar los resultados finales de la sincronización.
+\end{DoxyItemize}
+
+El método utiliza un pool de hilos para ejecutar la solicitud de hora a cada seguidor en paralelo. Se gestionan las respuestas de cada seguidor y se realiza el cálculo necesario para sincronizar los relojes. En esta versión, para simplificar el código, generramos tantos hilos en el pool como seguidores teenmos.
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Interrupted\+Exception} & Si el hilo es interrumpido durante la ejecución. \\
+\hline
+{\em Execution\+Exception} & Si ocurre un error durante la ejecución de las tareas en paralelo. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \textbf{ org.\+jogugi.\+berkeley.\+Abstract\+Node} \doxyref{}{p.}{d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_a003b04707fccab72d90325720750e272}.
+
+
+
+Definición en la línea 101 del archivo Leader.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Leader.\+calculate\+Delta\+Time\+Difference(), org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time(), org.\+jogugi.\+berkeley.\+Leader.\+logger, org.\+jogugi.\+berkeley.\+Leader.\+print\+Results(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers() y org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Messages\+To\+Followers().
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Main.\+main().
+
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_a48d340516333acc212a70879b1dd9735}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!failedFollowers@{failedFollowers}}
+\index{failedFollowers@{failedFollowers}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{failedFollowers}
+{\footnotesize\ttfamily Concurrent\+Hash\+Map$<$String, \textbf{ Follower\+Info}$>$ org.\+jogugi.\+berkeley.\+Leader.\+failed\+Followers = new Concurrent\+Hash\+Map$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa de seguidores fallidos. 
+
+
+
+Definición en la línea 63 del archivo Leader.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time() y org.\+jogugi.\+berkeley.\+Leader.\+print\+Results().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_a2d46fdb3636f5b64e9b24826ea0cce20}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!logger@{logger}}
+\index{logger@{logger}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{logger}
+{\footnotesize\ttfamily final Logger org.\+jogugi.\+berkeley.\+Leader.\+logger = Logger\+Factory.\+get\+Logger(Leader.\+class)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Logger para registrar la actividad de la clase \doxyref{Leader}{p.}{d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader}. 
+
+
+
+Definición en la línea 38 del archivo Leader.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+calculate\+Delta\+Time\+Difference(), org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time(), org.\+jogugi.\+berkeley.\+Leader.\+close(), org.\+jogugi.\+berkeley.\+Leader.\+handle\+Process(), org.\+jogugi.\+berkeley.\+Leader.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Leader.\+print\+Results(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time(), org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Message(), org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Messages\+To\+Followers(), org.\+jogugi.\+berkeley.\+Leader.\+send\+Time\+Update\+To\+Follower() y org.\+jogugi.\+berkeley.\+Leader.\+start\+Algorithm().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_aea51885226b5b32b33b03db64b528c3f}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!nonRespondingFollowers@{nonRespondingFollowers}}
+\index{nonRespondingFollowers@{nonRespondingFollowers}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{nonRespondingFollowers}
+{\footnotesize\ttfamily Concurrent\+Hash\+Map$<$String, \textbf{ Follower\+Info}$>$ org.\+jogugi.\+berkeley.\+Leader.\+non\+Responding\+Followers = new Concurrent\+Hash\+Map$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa de seguidores que no respondieron. 
+
+
+
+Definición en la línea 53 del archivo Leader.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+print\+Results() y org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_aef3fe9bd9c42a7a5d1a27d94d2dd541c}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!successfulFollowers@{successfulFollowers}}
+\index{successfulFollowers@{successfulFollowers}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{successfulFollowers}
+{\footnotesize\ttfamily Concurrent\+Hash\+Map$<$String, \textbf{ Follower\+Info}$>$ org.\+jogugi.\+berkeley.\+Leader.\+successful\+Followers = new Concurrent\+Hash\+Map$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa de seguidores exitosos. 
+
+
+
+Definición en la línea 48 del archivo Leader.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+calculate\+Delta\+Time\+Difference(), org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time(), org.\+jogugi.\+berkeley.\+Leader.\+print\+Results(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers() y org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Messages\+To\+Followers().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_ad038797f6d00b8ce7cc863f90731a9d3}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!timeUpdatedFollowers@{timeUpdatedFollowers}}
+\index{timeUpdatedFollowers@{timeUpdatedFollowers}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{timeUpdatedFollowers}
+{\footnotesize\ttfamily Concurrent\+Hash\+Map$<$String, \textbf{ Follower\+Info}$>$ org.\+jogugi.\+berkeley.\+Leader.\+time\+Updated\+Followers = new Concurrent\+Hash\+Map$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa de seguidores con tiempo actualizado. 
+
+
+
+Definición en la línea 58 del archivo Leader.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time() y org.\+jogugi.\+berkeley.\+Leader.\+print\+Results().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_leader_a2ef8cc2f2a5825f90a460461255e0cf2}} 
+\index{org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}!unreachableFollowers@{unreachableFollowers}}
+\index{unreachableFollowers@{unreachableFollowers}!org.jogugi.berkeley.Leader@{org.jogugi.berkeley.Leader}}
+\doxysubsubsection{unreachableFollowers}
+{\footnotesize\ttfamily Concurrent\+Hash\+Map$<$String, \textbf{ Follower\+Info}$>$ org.\+jogugi.\+berkeley.\+Leader.\+unreachable\+Followers = new Concurrent\+Hash\+Map$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa de seguidores no alcanzables. 
+
+
+
+Definición en la línea 43 del archivo Leader.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+print\+Results() y org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers().
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Leader.\+java}\end{DoxyCompactItemize}

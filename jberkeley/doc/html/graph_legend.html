@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Algoritmo Berkeley con sockets REQ/REP ZeroMMQ: Colores y flechas del Gráfico</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Algoritmo Berkeley con sockets REQ/REP ZeroMMQ
+   &#160;<span id="projectnumber">Jos�JavierGuti�rrezGil(jogugi@posgrado.upv.es)V0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.16 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Buscar');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Colores y flechas del Gráfico</div>  </div>
+</div><!--header-->
+<div class="contents">
+<p>Esta página explica como interpretar los gráficos que son generados por doxygen.</p>
+<p>Considere el siguiente ejemplo: </p><div class="fragment"><div class="line">/*! Clase invisible por truncamiento */</div>
+<div class="line">class Invisible { };</div>
+<div class="line"> </div>
+<div class="line">/*! Clase truncada, relación de herencia escondida */</div>
+<div class="line">class Truncated : public Invisible { };</div>
+<div class="line"> </div>
+<div class="line">/* Clase no documentada con comentarios de doxygen */</div>
+<div class="line">class Undocumented { };</div>
+<div class="line"> </div>
+<div class="line">/*! Clase que es heredera usando herencia publica */</div>
+<div class="line">class PublicBase : public Truncated { };</div>
+<div class="line"> </div>
+<div class="line">/*! Clase plantilla */</div>
+<div class="line">template&lt;class T&gt; class Templ { };</div>
+<div class="line"> </div>
+<div class="line">/*! Clase que es heredera usando herencia protegida  */</div>
+<div class="line">class ProtectedBase { };</div>
+<div class="line"> </div>
+<div class="line">/*! Clase que es heredera usando herencia privada  */</div>
+<div class="line">class PrivateBase { };</div>
+<div class="line"> </div>
+<div class="line">/*! Clase que es usada por la clase heredada */</div>
+<div class="line">class Used { };</div>
+<div class="line"> </div>
+<div class="line">/*! Super-Clase que hereda de varias otras clases */</div>
+<div class="line">class Inherited : public PublicBase,</div>
+<div class="line">                  protected ProtectedBase,</div>
+<div class="line">                  private PrivateBase,</div>
+<div class="line">                  public Undocumented,</div>
+<div class="line">                  public Templ&lt;int&gt;</div>
+<div class="line">{</div>
+<div class="line">  private:</div>
+<div class="line">    Used *m_usedClass;</div>
+<div class="line">};</div>
+</div><!-- fragment --><p> Dará como resultado el siguiente gráfico:</p>
+<center><img src="graph_legend.png" alt="" class="inline"/></center><p>Las cajas en el gráfico arriba tienen el siguiente significado: </p>
+<ul>
+<li>
+Una caja llena gris representa la estructura o clase para la cuálse generó el gráfico. </li>
+<li>
+Una caja con borde negro señala una estructura o clase documentada. </li>
+<li>
+Una caja con borde griz señala una estructura o clase no documentada. </li>
+<li>
+una caja con borde rojo señala una estructura o clase documentada de la cuál no toda las relaciones de jerarquía/contenido son mostradas. El gráfico sera truncado si este no calza dentro de los límites especificados.</li>
+</ul>
+<p>Las flechas tienen el siguiente significado: </p>
+<ul>
+<li>
+Una flecha azul oscuro es usada para visualizar una relación herencia publica entre dos clases. </li>
+<li>
+Una flecha verde oscuro es usada para herencia protegida. </li>
+<li>
+Una flecha rojo oscuro es usada para herencia privada. </li>
+<li>
+Una flecha segmentada púrpura se usa si la clase es contenida o usada por otra clase. La flecha está etiquetada por la variable con que se accede a la clase o estructura apuntada. </li>
+<li>
+Una flecha segmentada amarilla indica la relación entre una instancia template y la clase template de la que se ha instanciado. La flecha se etiqueta con los parámetros con que se llama al template. </li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

@@ -1,0 +1,159 @@
+\doxysection{Referencia del enum org.\+jogugi.\+berkeley.\+Follower\+State}
+\label{enumorg_1_1jogugi_1_1berkeley_1_1_follower_state}\index{org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}}
+
+
+Enumeración que define los posibles estados de un seguidor durante el proceso de actualización de la hora del sistema.  
+
+
+\doxysubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ R\+E\+S\+P\+O\+N\+D\+ED}
+\begin{DoxyCompactList}\small\item\em El seguidor ha respondido correctamente a la solicitud del líder. \end{DoxyCompactList}\item 
+\textbf{ N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE}
+\begin{DoxyCompactList}\small\item\em El seguidor no ha respondido a la solicitud dentro del tiempo esperado. \end{DoxyCompactList}\item 
+\textbf{ C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR}
+\begin{DoxyCompactList}\small\item\em Hubo un error de conexión al intentar comunicarse con el seguidor. \end{DoxyCompactList}\item 
+\textbf{ R\+E\+Q\+U\+E\+S\+T\+\_\+\+N\+O\+T\+\_\+\+S\+E\+NT}
+\begin{DoxyCompactList}\small\item\em La solicitud de actualización de la hora no fue enviada debido a algún error. \end{DoxyCompactList}\item 
+\textbf{ R\+E\+Q\+U\+E\+S\+T\+\_\+\+D\+E\+L\+T\+A\+\_\+\+S\+E\+NT}
+\begin{DoxyCompactList}\small\item\em La solicitud de actualización de la hora fue enviada al seguidor para actualizar su hora. \end{DoxyCompactList}\item 
+\textbf{ T\+I\+M\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+E\+N\+T\+\_\+\+U\+P\+D\+A\+TE}
+\begin{DoxyCompactList}\small\item\em La solicitud de actualización de la hora fue enviada pero hubo un error en ese envío. \end{DoxyCompactList}\item 
+\textbf{ T\+I\+M\+E\+\_\+\+U\+P\+D\+A\+T\+ED}
+\begin{DoxyCompactList}\small\item\em La hora del sistema del seguidor se actualizó correctamente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Enumeración que define los posibles estados de un seguidor durante el proceso de actualización de la hora del sistema. 
+
+Cada estado representa una etapa en la interacción entre el líder y el seguidor. 
+
+Definición en la línea 7 del archivo Follower\+State.\+java.
+
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\label{enumorg_1_1jogugi_1_1berkeley_1_1_follower_state_a37b737ba89a01c089a80eab208e74b8b}} 
+\index{org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}!CONNECTION\_ERROR@{CONNECTION\_ERROR}}
+\index{CONNECTION\_ERROR@{CONNECTION\_ERROR}!org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}}
+\doxysubsubsection{CONNECTION\_ERROR}
+{\footnotesize\ttfamily org.\+jogugi.\+berkeley.\+Follower\+State.\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR}
+
+
+
+Hubo un error de conexión al intentar comunicarse con el seguidor. 
+
+
+
+Definición en la línea 22 del archivo Follower\+State.\+java.
+
+\mbox{\label{enumorg_1_1jogugi_1_1berkeley_1_1_follower_state_a0d3384d13a413abade6461decd7a8502}} 
+\index{org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}!NO\_RESPONSE@{NO\_RESPONSE}}
+\index{NO\_RESPONSE@{NO\_RESPONSE}!org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}}
+\doxysubsubsection{NO\_RESPONSE}
+{\footnotesize\ttfamily org.\+jogugi.\+berkeley.\+Follower\+State.\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE}
+
+
+
+El seguidor no ha respondido a la solicitud dentro del tiempo esperado. 
+
+
+
+Definición en la línea 17 del archivo Follower\+State.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers() y org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time().
+
+\mbox{\label{enumorg_1_1jogugi_1_1berkeley_1_1_follower_state_a8ebe036598386b53018081f957636876}} 
+\index{org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}!REQUEST\_DELTA\_SENT@{REQUEST\_DELTA\_SENT}}
+\index{REQUEST\_DELTA\_SENT@{REQUEST\_DELTA\_SENT}!org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}}
+\doxysubsubsection{REQUEST\_DELTA\_SENT}
+{\footnotesize\ttfamily org.\+jogugi.\+berkeley.\+Follower\+State.\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+D\+E\+L\+T\+A\+\_\+\+S\+E\+NT}
+
+
+
+La solicitud de actualización de la hora fue enviada al seguidor para actualizar su hora. 
+
+
+
+Definición en la línea 32 del archivo Follower\+State.\+java.
+
+\mbox{\label{enumorg_1_1jogugi_1_1berkeley_1_1_follower_state_ab4a29e1ee4a2f443fb1cb8535a77b5f0}} 
+\index{org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}!REQUEST\_NOT\_SENT@{REQUEST\_NOT\_SENT}}
+\index{REQUEST\_NOT\_SENT@{REQUEST\_NOT\_SENT}!org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}}
+\doxysubsubsection{REQUEST\_NOT\_SENT}
+{\footnotesize\ttfamily org.\+jogugi.\+berkeley.\+Follower\+State.\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+N\+O\+T\+\_\+\+S\+E\+NT}
+
+
+
+La solicitud de actualización de la hora no fue enviada debido a algún error. 
+
+
+
+Definición en la línea 27 del archivo Follower\+State.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Follower\+Info.\+Follower\+Info(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers() y org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time().
+
+\mbox{\label{enumorg_1_1jogugi_1_1berkeley_1_1_follower_state_a8476f96dee5a30bef85e009e6406d236}} 
+\index{org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}!RESPONDED@{RESPONDED}}
+\index{RESPONDED@{RESPONDED}!org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}}
+\doxysubsubsection{RESPONDED}
+{\footnotesize\ttfamily org.\+jogugi.\+berkeley.\+Follower\+State.\+R\+E\+S\+P\+O\+N\+D\+ED}
+
+
+
+El seguidor ha respondido correctamente a la solicitud del líder. 
+
+
+
+Definición en la línea 12 del archivo Follower\+State.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers() y org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time().
+
+\mbox{\label{enumorg_1_1jogugi_1_1berkeley_1_1_follower_state_af4a17c69274b7946d5457388c6bac0cc}} 
+\index{org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}!TIME\_ERROR\_SENT\_UPDATE@{TIME\_ERROR\_SENT\_UPDATE}}
+\index{TIME\_ERROR\_SENT\_UPDATE@{TIME\_ERROR\_SENT\_UPDATE}!org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}}
+\doxysubsubsection{TIME\_ERROR\_SENT\_UPDATE}
+{\footnotesize\ttfamily org.\+jogugi.\+berkeley.\+Follower\+State.\+T\+I\+M\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+E\+N\+T\+\_\+\+U\+P\+D\+A\+TE}
+
+
+
+La solicitud de actualización de la hora fue enviada pero hubo un error en ese envío. 
+
+
+
+Definición en la línea 36 del archivo Follower\+State.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+send\+Time\+Update\+To\+Follower().
+
+\mbox{\label{enumorg_1_1jogugi_1_1berkeley_1_1_follower_state_a725f8f1f61117fe2c8585569e7063c0a}} 
+\index{org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}!TIME\_UPDATED@{TIME\_UPDATED}}
+\index{TIME\_UPDATED@{TIME\_UPDATED}!org.jogugi.berkeley.FollowerState@{org.jogugi.berkeley.FollowerState}}
+\doxysubsubsection{TIME\_UPDATED}
+{\footnotesize\ttfamily org.\+jogugi.\+berkeley.\+Follower\+State.\+T\+I\+M\+E\+\_\+\+U\+P\+D\+A\+T\+ED}
+
+
+
+La hora del sistema del seguidor se actualizó correctamente. 
+
+
+
+Definición en la línea 40 del archivo Follower\+State.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time() y org.\+jogugi.\+berkeley.\+Leader.\+send\+Time\+Update\+To\+Follower().
+
+
+
+La documentación para este enum ha sido generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Follower\+State.\+java}\end{DoxyCompactItemize}

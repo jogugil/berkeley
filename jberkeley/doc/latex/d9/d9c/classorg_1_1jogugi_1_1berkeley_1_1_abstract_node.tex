@@ -1,0 +1,506 @@
+\doxysection{Referencia de la Clase org.\+jogugi.\+berkeley.\+Abstract\+Node}
+\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node}\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+
+
+Clase abstracta que implementa la interfaz {\ttfamily \doxyref{I\+Node}{p.}{d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node}}.  
+
+
+
+
+Herencias \textbf{ org.\+jogugi.\+berkeley.\+I\+Node}.
+
+
+
+Heredado por \textbf{ org.\+jogugi.\+berkeley.\+Follower} y \textbf{ org.\+jogugi.\+berkeley.\+Leader}.
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ initialize\+Node} (String \textbf{ name}, String \textbf{ address}, int \textbf{ timeout})
+\begin{DoxyCompactList}\small\item\em Inicializa el nodo con el nombre, dirección y tiempo de espera. \end{DoxyCompactList}\item 
+void \textbf{ initialize\+Node} (String \textbf{ name}, String \textbf{ address}, int \textbf{ timeout}, Hash\+Map$<$ String, String $>$ list\+Node\+Addresses)
+\begin{DoxyCompactList}\small\item\em Inicializa el nodo con el nombre, dirección, tiempo de espera y la lista de nodos. \end{DoxyCompactList}\item 
+String \textbf{ send\+Message\+Sync} (String \textbf{ address}, String message)  throws Socket\+Zero\+M\+Q\+Exception 
+\begin{DoxyCompactList}\small\item\em Envía un mensaje de manera síncrona y espera una respuesta. \end{DoxyCompactList}\item 
+void \textbf{ send\+Message\+Async} (String \textbf{ address}, String message)  throws Socket\+Zero\+M\+Q\+Exception 
+\begin{DoxyCompactList}\small\item\em Envía un mensaje de manera asíncrona. \end{DoxyCompactList}\item 
+void \textbf{ start\+Listening} ()  throws Socket\+Zero\+M\+Q\+Exception 
+\begin{DoxyCompactList}\small\item\em Inicia el proceso de escucha de mensajes en el nodo. \end{DoxyCompactList}\item 
+void \textbf{ close} ()  throws Socket\+Zero\+M\+Q\+Exception 
+\begin{DoxyCompactList}\small\item\em Cierra los recursos utilizados por el nodo, incluyendo el socket y el contexto. \end{DoxyCompactList}\item 
+void \textbf{ start\+Algorithm} ()  throws Socket\+Zero\+M\+Q\+Exception, Interrupted\+Exception, Execution\+Exception 
+\begin{DoxyCompactList}\small\item\em Método para iniciar el algoritmo del nodo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+abstract String \textbf{ handle\+Process} (String message)  throws Socket\+Zero\+M\+Q\+Exception
+\begin{DoxyCompactList}\small\item\em Método abstracto para manejar el procesamiento de los mensajes recibidos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+Z\+Context \textbf{ context} = null
+\begin{DoxyCompactList}\small\item\em Contexto de Zero\+MQ utilizado para la creación de sockets. \end{DoxyCompactList}\item 
+Z\+M\+Q.\+Socket \textbf{ socket} = null
+\begin{DoxyCompactList}\small\item\em Socket R\+EP del nodo utilizado para recibir mensajes. \end{DoxyCompactList}\item 
+String \textbf{ name}
+\begin{DoxyCompactList}\small\item\em Nombre del nodo. \end{DoxyCompactList}\item 
+String \textbf{ address}
+\begin{DoxyCompactList}\small\item\em Dirección del nodo en formato {\ttfamily host\+:puerto}. \end{DoxyCompactList}\item 
+int \textbf{ timeout}
+\begin{DoxyCompactList}\small\item\em Tiempo de espera en milisegundos para operaciones de socket. \end{DoxyCompactList}\item 
+Map$<$ String, String $>$ \textbf{ node\+Addresses} = null
+\begin{DoxyCompactList}\small\item\em Mapa que contiene las direcciones de otros nodos en el sistema. \end{DoxyCompactList}\item 
+List$<$ Z\+M\+Q.\+Socket $>$ \textbf{ list\+Sockets\+R\+EQ}
+\begin{DoxyCompactList}\small\item\em Lista de sockets R\+EQ utilizados para enviar solicitudes a otros nodos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static final Logger \textbf{ logger} = Logger\+Factory.\+get\+Logger(Abstract\+Node.\+class)
+\begin{DoxyCompactList}\small\item\em Logger utilizado para registrar información, advertencias y errores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase abstracta que implementa la interfaz {\ttfamily \doxyref{I\+Node}{p.}{d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node}}. 
+
+La clase {\ttfamily \doxyref{Abstract\+Node}{p.}{d9/d9c/classorg_1_1jogugi_1_1berkeley_1_1_abstract_node}} proporciona la implementación base para un nodo en el sistema. Maneja el contexto de Zero\+MQ, los sockets de comunicación y contiene las operaciones comunes para el envío y recepción de mensajes, además de almacenar la información del nodo como su nombre, dirección y tiempos de espera. 
+
+Definición en la línea 23 del archivo Abstract\+Node.\+java.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_abf96feb8bcc6248ee5098f3f9ab0c5b2}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!close@{close}}
+\index{close@{close}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{close()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Abstract\+Node.\+close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws \textbf{ Socket\+Zero\+M\+Q\+Exception}}
+
+
+
+Cierra los recursos utilizados por el nodo, incluyendo el socket y el contexto. 
+
+Este método cierra el socket asociado al nodo y también el contexto Zero\+MQ, liberando así los recursos utilizados por el nodo. Una vez cerrados estos recursos, el nodo deja de poder enviar o recibir mensajes. El proceso de cierre es registrado en los logs del sistema.
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & Si ocurre un error al intentar cerrar el socket o el contexto. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ org.\+jogugi.\+berkeley.\+I\+Node} \doxyref{}{p.}{d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node_a756a0475f96adcaf2a22ce3819748b78}.
+
+
+
+Reimplementado en \textbf{ org.\+jogugi.\+berkeley.\+Leader} \doxyref{}{p.}{d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader_ab6780212726f5b68e762290ed83e01c4}.
+
+
+
+Definición en la línea 240 del archivo Abstract\+Node.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+context, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+socket.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Abstract\+Node.\+start\+Listening().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_adb62b4dd7636e684f787de2a1f62d771}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!handleProcess@{handleProcess}}
+\index{handleProcess@{handleProcess}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{handleProcess()}
+{\footnotesize\ttfamily abstract String org.\+jogugi.\+berkeley.\+Abstract\+Node.\+handle\+Process (\begin{DoxyParamCaption}\item[{String}]{message }\end{DoxyParamCaption}) throws \textbf{ Socket\+Zero\+M\+Q\+Exception}\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}
+
+
+
+Método abstracto para manejar el procesamiento de los mensajes recibidos. 
+
+Este método debe ser implementado en las subclases específicas para definir el comportamiento que debe seguir el nodo al recibir un mensaje. El mensaje es procesado y se devuelve una respuesta basada en la lógica del nodo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em message} & El mensaje recibido que debe ser procesado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La respuesta procesada al mensaje. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & Si ocurre un error al procesar el mensaje. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado en \textbf{ org.\+jogugi.\+berkeley.\+Leader} \doxyref{}{p.}{d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader_a18c735ec7effdc8e73f9335b8c6a7bdc} y \textbf{ org.\+jogugi.\+berkeley.\+Follower} \doxyref{}{p.}{df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower_a47fda8712ae1cac72ade2e942ebfcea4}.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Abstract\+Node.\+start\+Listening().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_aab49bd4dbe8efa4fc5fcd3792964e796}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!initializeNode@{initializeNode}}
+\index{initializeNode@{initializeNode}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{initializeNode()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Abstract\+Node.\+initialize\+Node (\begin{DoxyParamCaption}\item[{String}]{name,  }\item[{String}]{address,  }\item[{int}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Inicializa el nodo con el nombre, dirección y tiempo de espera. 
+
+Este constructor inicializa un nodo con los parámetros básicos\+: nombre del nodo, dirección del nodo y el tiempo de espera. También crea el contexto de Zero\+MQ para la comunicación.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del nodo. \\
+\hline
+{\em address} & Dirección del nodo en formato {\ttfamily host\+:puerto}. \\
+\hline
+{\em timeout} & Tiempo de espera para las operaciones de socket. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ org.\+jogugi.\+berkeley.\+I\+Node} \doxyref{}{p.}{d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node_a9a22482529407a899e3d3588d76d2ede}.
+
+
+
+Definición en la línea 78 del archivo Abstract\+Node.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+address, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+timeout.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_ac39fe900fa81cdcd395e3782c7ca5a2c}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!initializeNode@{initializeNode}}
+\index{initializeNode@{initializeNode}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{initializeNode()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Abstract\+Node.\+initialize\+Node (\begin{DoxyParamCaption}\item[{String}]{name,  }\item[{String}]{address,  }\item[{int}]{timeout,  }\item[{Hash\+Map$<$ String, String $>$}]{list\+Node\+Addresses }\end{DoxyParamCaption})}
+
+
+
+Inicializa el nodo con el nombre, dirección, tiempo de espera y la lista de nodos. 
+
+Este constructor inicializa un nodo con los parámetros básicos\+: nombre del nodo, dirección del nodo, tiempo de espera y la lista de direcciones de otros nodos en el sistema. También crea el contexto de Zero\+MQ para la comunicación.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del nodo. \\
+\hline
+{\em address} & Dirección del nodo en formato {\ttfamily host\+:puerto}. \\
+\hline
+{\em timeout} & Tiempo de espera para las operaciones de socket. \\
+\hline
+{\em list\+Node\+Addresses} & Lista de direcciones de otros nodos en el sistema. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ org.\+jogugi.\+berkeley.\+I\+Node} \doxyref{}{p.}{d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node_a4413fdf941804e7b0e5828ad26ac5738}.
+
+
+
+Reimplementado en \textbf{ org.\+jogugi.\+berkeley.\+Leader} \doxyref{}{p.}{d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader_a7c5229a90d24deef6473a8b3bbfa5f17}.
+
+
+
+Definición en la línea 100 del archivo Abstract\+Node.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+address, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+timeout.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_a51bbbcf52f5e11b754b424c426b1a58f}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!sendMessageAsync@{sendMessageAsync}}
+\index{sendMessageAsync@{sendMessageAsync}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{sendMessageAsync()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Abstract\+Node.\+send\+Message\+Async (\begin{DoxyParamCaption}\item[{String}]{address,  }\item[{String}]{message }\end{DoxyParamCaption}) throws \textbf{ Socket\+Zero\+M\+Q\+Exception}}
+
+
+
+Envía un mensaje de manera asíncrona. 
+
+Este método crea un socket P\+U\+SH para enviar un mensaje de manera asíncrona a la dirección especificada. No espera una respuesta, sino que simplemente envía el mensaje y termina la operación.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em address} & La dirección a la que se enviará el mensaje en formato {\ttfamily host\+:puerto}. \\
+\hline
+{\em message} & El mensaje que se va a enviar.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & Si ocurre un error al enviar el mensaje. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ org.\+jogugi.\+berkeley.\+I\+Node} \doxyref{}{p.}{d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node_ab8d0af46efd0473d96eb662515f82739}.
+
+
+
+Definición en la línea 159 del archivo Abstract\+Node.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+address, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+context, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+logger y org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+Error\+Type.\+S\+E\+N\+D\+\_\+\+E\+R\+R\+OR.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_af92f86656228a1b38583de8429c1e783}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!sendMessageSync@{sendMessageSync}}
+\index{sendMessageSync@{sendMessageSync}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{sendMessageSync()}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Abstract\+Node.\+send\+Message\+Sync (\begin{DoxyParamCaption}\item[{String}]{address,  }\item[{String}]{message }\end{DoxyParamCaption}) throws \textbf{ Socket\+Zero\+M\+Q\+Exception}}
+
+
+
+Envía un mensaje de manera síncrona y espera una respuesta. 
+
+Este método crea un socket R\+EQ para enviar un mensaje a una dirección específica y espera una respuesta del servidor. Si no se recibe respuesta dentro del tiempo de espera o si ocurre un error durante el envío/recepción, se lanza una excepción.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em address} & La dirección a la que se enviará el mensaje en formato {\ttfamily host\+:puerto}. \\
+\hline
+{\em message} & El mensaje que se va a enviar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La respuesta recibida del servidor.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & Si ocurre un error al enviar o recibir el mensaje. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ org.\+jogugi.\+berkeley.\+I\+Node} \doxyref{}{p.}{d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node_abad023c34433d9562d957c68bbe10295}.
+
+
+
+Definición en la línea 123 del archivo Abstract\+Node.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+address, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+context, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+logger, org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+Error\+Type.\+R\+E\+C\+E\+I\+V\+E\+\_\+\+E\+R\+R\+OR y org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+Error\+Type.\+S\+E\+N\+D\+\_\+\+E\+R\+R\+OR.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_a003b04707fccab72d90325720750e272}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!startAlgorithm@{startAlgorithm}}
+\index{startAlgorithm@{startAlgorithm}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{startAlgorithm()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Abstract\+Node.\+start\+Algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws \textbf{ Socket\+Zero\+M\+Q\+Exception}, Interrupted\+Exception, Execution\+Exception}
+
+
+
+Método para iniciar el algoritmo del nodo. 
+
+Este método se sobrecarga por el tipo de nodo (por ejemplo, nodo líder o seguidor) y debe ser implementado en las subclases específicas. Si no se implementa en una subclase, lanza un error.
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & Si ocurre un error en la comunicación con Zero\+MQ. \\
+\hline
+{\em Interrupted\+Exception} & Si el hilo es interrumpido mientras se ejecuta el algoritmo. \\
+\hline
+{\em Execution\+Exception} & Si ocurre un error durante la ejecución del algoritmo. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ org.\+jogugi.\+berkeley.\+I\+Node} \doxyref{}{p.}{d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node_a60c5f589181ec612d790a994adcf9ef1}.
+
+
+
+Reimplementado en \textbf{ org.\+jogugi.\+berkeley.\+Follower} \doxyref{}{p.}{df/df2/classorg_1_1jogugi_1_1berkeley_1_1_follower_aed06cd149e1668825f1a55371b03aa27} y \textbf{ org.\+jogugi.\+berkeley.\+Leader} \doxyref{}{p.}{d8/d21/classorg_1_1jogugi_1_1berkeley_1_1_leader_aec7d580d39a7959adbb12b5fd450f83d}.
+
+
+
+Definición en la línea 267 del archivo Abstract\+Node.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+logger.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_a19dcf84e3b5eb0562779070022bb33b8}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!startListening@{startListening}}
+\index{startListening@{startListening}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{startListening()}
+{\footnotesize\ttfamily void org.\+jogugi.\+berkeley.\+Abstract\+Node.\+start\+Listening (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws \textbf{ Socket\+Zero\+M\+Q\+Exception}}
+
+
+
+Inicia el proceso de escucha de mensajes en el nodo. 
+
+Este método pone al nodo en un estado en el que puede escuchar mensajes entrantes en su socket. El nodo recibe mensajes de forma continua en un hilo separado, los procesa y, opcionalmente, responde con un mensaje. Si recibe un mensaje que indica que el nodo debe cerrarse (por ejemplo, un mensaje con la operación {\ttfamily \char`\"{}\+C\+L\+O\+S\+E\char`\"{}}), el nodo cierra su socket y termina el proceso de escucha.
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em \doxyref{Socket\+Zero\+M\+Q\+Exception}{p.}{d9/d05/classorg_1_1jogugi_1_1berkeley_1_1_socket_zero_m_q_exception}} & Si el socket no está inicializado o ocurre un error en el proceso de escucha. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \textbf{ org.\+jogugi.\+berkeley.\+I\+Node} \doxyref{}{p.}{d4/df5/interfaceorg_1_1jogugi_1_1berkeley_1_1_i_node_a81112a22f34be7566a521851110f0745}.
+
+
+
+Definición en la línea 184 del archivo Abstract\+Node.\+java.
+
+
+
+Hace referencia a org.\+jogugi.\+berkeley.\+Abstract\+Node.\+close(), org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+Error\+Type.\+C\+O\+N\+N\+E\+C\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+handle\+Process(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+logger, org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name, org.\+jogugi.\+berkeley.\+Socket\+Zero\+M\+Q\+Exception.\+Error\+Type.\+R\+E\+C\+E\+I\+V\+E\+\_\+\+E\+R\+R\+OR y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+socket.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Follower.\+start\+Algorithm().
+
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_a8298e431c5984409d9a1df4213ab687e}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!address@{address}}
+\index{address@{address}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{address}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Abstract\+Node.\+address\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Dirección del nodo en formato {\ttfamily host\+:puerto}. 
+
+
+
+Definición en la línea 43 del archivo Abstract\+Node.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Follower.\+handle\+Process(), org.\+jogugi.\+berkeley.\+Follower.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Leader.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+send\+Message\+Async(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+send\+Message\+Sync() y org.\+jogugi.\+berkeley.\+Follower.\+start\+Algorithm().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_ad19b245b7e970f01a8b0b5429226511c}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!context@{context}}
+\index{context@{context}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{context}
+{\footnotesize\ttfamily Z\+Context org.\+jogugi.\+berkeley.\+Abstract\+Node.\+context = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Contexto de Zero\+MQ utilizado para la creación de sockets. 
+
+
+
+Definición en la línea 28 del archivo Abstract\+Node.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Abstract\+Node.\+close(), org.\+jogugi.\+berkeley.\+Leader.\+close(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time(), org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Message(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+send\+Message\+Async(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+send\+Message\+Sync(), org.\+jogugi.\+berkeley.\+Leader.\+send\+Time\+Update\+To\+Follower() y org.\+jogugi.\+berkeley.\+Follower.\+start\+Algorithm().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_acd5c79735d554a9c6c124c43bbb3d1a8}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!listSocketsREQ@{listSocketsREQ}}
+\index{listSocketsREQ@{listSocketsREQ}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{listSocketsREQ}
+{\footnotesize\ttfamily List$<$Z\+M\+Q.\+Socket$>$ org.\+jogugi.\+berkeley.\+Abstract\+Node.\+list\+Sockets\+R\+EQ\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Lista de sockets R\+EQ utilizados para enviar solicitudes a otros nodos. 
+
+
+
+Definición en la línea 58 del archivo Abstract\+Node.\+java.
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_add7ebbfee9f199fd67834eeb40bb1c29}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!logger@{logger}}
+\index{logger@{logger}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{logger}
+{\footnotesize\ttfamily final Logger org.\+jogugi.\+berkeley.\+Abstract\+Node.\+logger = Logger\+Factory.\+get\+Logger(Abstract\+Node.\+class)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Logger utilizado para registrar información, advertencias y errores. 
+
+
+
+Definición en la línea 63 del archivo Abstract\+Node.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Abstract\+Node.\+close(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+send\+Message\+Async(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+send\+Message\+Sync(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+start\+Algorithm() y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+start\+Listening().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_a2fec798ddf0df1cd6a0aedcd8b3ea0a4}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!name@{name}}
+\index{name@{name}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{name}
+{\footnotesize\ttfamily String org.\+jogugi.\+berkeley.\+Abstract\+Node.\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Nombre del nodo. 
+
+
+
+Definición en la línea 38 del archivo Abstract\+Node.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Abstract\+Node.\+close(), org.\+jogugi.\+berkeley.\+Follower.\+display\+Leader\+Message(), org.\+jogugi.\+berkeley.\+Follower.\+handle\+Process(), org.\+jogugi.\+berkeley.\+Follower.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Leader.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Follower.\+mod\+System\+Time(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time(), org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Message(), org.\+jogugi.\+berkeley.\+Leader.\+send\+Time\+Update\+To\+Follower(), org.\+jogugi.\+berkeley.\+Follower.\+start\+Algorithm() y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+start\+Listening().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_ad28f213086afa19e58f83686cf70fdd8}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!nodeAddresses@{nodeAddresses}}
+\index{nodeAddresses@{nodeAddresses}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{nodeAddresses}
+{\footnotesize\ttfamily Map$<$String, String$>$ org.\+jogugi.\+berkeley.\+Abstract\+Node.\+node\+Addresses = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mapa que contiene las direcciones de otros nodos en el sistema. 
+
+
+
+Definición en la línea 53 del archivo Abstract\+Node.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Leader.\+call\+Followers\+With\+Updated\+Time(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers() y org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_a993bd16dddf72a4650dd5d78e58d68ea}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!socket@{socket}}
+\index{socket@{socket}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{socket}
+{\footnotesize\ttfamily Z\+M\+Q.\+Socket org.\+jogugi.\+berkeley.\+Abstract\+Node.\+socket = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Socket R\+EP del nodo utilizado para recibir mensajes. 
+
+
+
+Definición en la línea 33 del archivo Abstract\+Node.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Abstract\+Node.\+close(), org.\+jogugi.\+berkeley.\+Leader.\+close(), org.\+jogugi.\+berkeley.\+Follower.\+start\+Algorithm() y org.\+jogugi.\+berkeley.\+Abstract\+Node.\+start\+Listening().
+
+\mbox{\label{classorg_1_1jogugi_1_1berkeley_1_1_abstract_node_a0baa9f7e816448f789f25b2baa9a92ac}} 
+\index{org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}!timeout@{timeout}}
+\index{timeout@{timeout}!org.jogugi.berkeley.AbstractNode@{org.jogugi.berkeley.AbstractNode}}
+\doxysubsubsection{timeout}
+{\footnotesize\ttfamily int org.\+jogugi.\+berkeley.\+Abstract\+Node.\+timeout\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tiempo de espera en milisegundos para operaciones de socket. 
+
+
+
+Definición en la línea 48 del archivo Abstract\+Node.\+java.
+
+
+
+Referenciado por org.\+jogugi.\+berkeley.\+Follower.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Abstract\+Node.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Leader.\+initialize\+Node(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Followers(), org.\+jogugi.\+berkeley.\+Leader.\+process\+Follower\+Time(), org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Message(), org.\+jogugi.\+berkeley.\+Leader.\+send\+Close\+Messages\+To\+Followers() y org.\+jogugi.\+berkeley.\+Leader.\+send\+Time\+Update\+To\+Follower().
+
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Abstract\+Node.\+java}\end{DoxyCompactItemize}
